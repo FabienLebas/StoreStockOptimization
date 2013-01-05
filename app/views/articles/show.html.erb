@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Articlecode:</b>
+  <%= @article.articleCode %>
+</p>
+
+<p>
+  <b>Articletext:</b>
+  <%= @article.articleText %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @article.supplier %>
+</p>
+
+<p>
+  <b>Box:</b>
+  <%= @article.box %>
+</p>
+
+<p>
+  <b>Minimumofqty:</b>
+  <%= @article.minimumOfQty %>
+</p>
+
+<p>
+  <b>Stockrisk:</b>
+  <%= @article.stockRisk %>
+</p>
+
+<p>
+  <b>Unitarypriceifbox:</b>
+  <%= @article.unitaryPriceIfBox %>
+</p>
+
+<p>
+  <b>Unitarypriceifmassive:</b>
+  <%= @article.unitaryPriceIfMassive %>
+</p>
+
+<p>
+  <b>Sellingpriceincvat:</b>
+  <%= @article.sellingPriceIncVAT %>
+</p>
+
+<p>
+  <b>Vatrate:</b>
+  <%= @article.vATRate %>
+</p>
+
+<p>
+  <b>Estimatedpricedecreaseratio:</b>
+  <%= @article.estimatedPriceDecreaseRatio %>
+</p>
+
+<p>
+  <b>Endlifedate:</b>
+  <%= @article.endLifeDate %>
+</p>
+
+<p>
+  <b>Endlifeoption:</b>
+  <%= @article.endLifeOption %>
+</p>
+
+<p>
+  <b>Seasonalitycode:</b>
+  <%= @article.seasonalityCode %>
+</p>
+
+<p>
+  <b>Stockqty:</b>
+  <%= @article.stockQty %>
+</p>
+
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

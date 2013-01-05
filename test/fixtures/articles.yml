@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  articleCode: MyString
+  articleText: MyString
+  supplier: MyString
+  box: 1
+  minimumOfQty: 1
+  stockRisk: MyString
+  unitaryPriceIfBox: 1.5
+  unitaryPriceIfMassive: 1.5
+  sellingPriceIncVAT: 1.5
+  vATRate: 1.5
+  estimatedPriceDecreaseRatio: 1.5
+  endLifeDate: 2013-01-05
+  endLifeOption: MyString
+  seasonalityCode: MyString
+  stockQty: 1
+
+two:
+  articleCode: MyString
+  articleText: MyString
+  supplier: MyString
+  box: 1
+  minimumOfQty: 1
+  stockRisk: MyString
+  unitaryPriceIfBox: 1.5
+  unitaryPriceIfMassive: 1.5
+  sellingPriceIncVAT: 1.5
+  vATRate: 1.5
+  estimatedPriceDecreaseRatio: 1.5
+  endLifeDate: 2013-01-05
+  endLifeOption: MyString
+  seasonalityCode: MyString
+  stockQty: 1

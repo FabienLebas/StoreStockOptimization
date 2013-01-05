@@ -1,0 +1,77 @@
+<%= form_for(@article) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :articleCode %><br />
+    <%= f.text_field :articleCode %>
+  </div>
+  <div class="field">
+    <%= f.label :articleText %><br />
+    <%= f.text_field :articleText %>
+  </div>
+  <div class="field">
+    <%= f.label :supplier %><br />
+    <%= f.text_field :supplier %>
+  </div>
+  <div class="field">
+    <%= f.label :box %><br />
+    <%= f.number_field :box %>
+  </div>
+  <div class="field">
+    <%= f.label :minimumOfQty %><br />
+    <%= f.number_field :minimumOfQty %>
+  </div>
+  <div class="field">
+    <%= f.label :stockRisk %><br />
+    <%= f.text_field :stockRisk %>
+  </div>
+  <div class="field">
+    <%= f.label :unitaryPriceIfBox %><br />
+    <%= f.text_field :unitaryPriceIfBox %>
+  </div>
+  <div class="field">
+    <%= f.label :unitaryPriceIfMassive %><br />
+    <%= f.text_field :unitaryPriceIfMassive %>
+  </div>
+  <div class="field">
+    <%= f.label :sellingPriceIncVAT %><br />
+    <%= f.text_field :sellingPriceIncVAT %>
+  </div>
+  <div class="field">
+    <%= f.label :vATRate %><br />
+    <%= f.text_field :vATRate %>
+  </div>
+  <div class="field">
+    <%= f.label :estimatedPriceDecreaseRatio %><br />
+    <%= f.text_field :estimatedPriceDecreaseRatio %>
+  </div>
+  <div class="field">
+    <%= f.label :endLifeDate %><br />
+    <%= f.date_select :endLifeDate %>
+  </div>
+  <div class="field">
+    <%= f.label :endLifeOption %><br />
+    <%= f.text_field :endLifeOption %>
+  </div>
+  <div class="field">
+    <%= f.label :seasonalityCode %><br />
+    <%= f.text_field :seasonalityCode %>
+  </div>
+  <div class="field">
+    <%= f.label :stockQty %><br />
+    <%= f.number_field :stockQty %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

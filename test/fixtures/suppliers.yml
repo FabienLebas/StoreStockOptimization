@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  supplier: MyString
+  supplierText: MyString
+  leadtime: 1
+  orderMinimumQty: 1.5
+  orderMinimumValue: 1.5
+
+two:
+  supplier: MyString
+  supplierText: MyString
+  leadtime: 1
+  orderMinimumQty: 1.5
+  orderMinimumValue: 1.5

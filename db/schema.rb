@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130105223016) do
+ActiveRecord::Schema.define(:version => 20130108212642) do
 
   create_table "articles", :force => true do |t|
     t.string   "articleCode"
@@ -30,6 +30,36 @@ ActiveRecord::Schema.define(:version => 20130105223016) do
     t.integer  "stockQty"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
+  end
+
+  create_table "movements", :force => true do |t|
+    t.string   "articleCode"
+    t.date     "movementDate"
+    t.float    "turnover"
+    t.integer  "quantity"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.string   "articleCode"
+    t.string   "supplier"
+    t.integer  "quantity"
+    t.date     "creationDate"
+    t.date     "expectedDeliveryDate"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "planned_orders", :force => true do |t|
+    t.string   "articleCode"
+    t.string   "supplier"
+    t.integer  "quantity"
+    t.date     "creationDate"
+    t.date     "expectedDeliveryDate"
+    t.boolean  "validated"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "suppliers", :force => true do |t|

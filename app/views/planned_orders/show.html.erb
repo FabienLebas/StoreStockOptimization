@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Articlecode:</b>
+  <%= @planned_order.articleCode %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @planned_order.supplier %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @planned_order.quantity %>
+</p>
+
+<p>
+  <b>Creationdate:</b>
+  <%= @planned_order.creationDate %>
+</p>
+
+<p>
+  <b>Expecteddeliverydate:</b>
+  <%= @planned_order.expectedDeliveryDate %>
+</p>
+
+<p>
+  <b>Validated:</b>
+  <%= @planned_order.validated %>
+</p>
+
+
+<%= link_to 'Edit', edit_planned_order_path(@planned_order) %> |
+<%= link_to 'Back', planned_orders_path %>

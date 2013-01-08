@@ -1,4 +1,13 @@
 StoreStockOptimization::Application.routes.draw do
+  resources :planned_orders
+
+
+  resources :orders
+
+
+  resources :movements
+
+
   resources :suppliers
 
 

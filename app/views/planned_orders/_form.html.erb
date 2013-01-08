@@ -1,0 +1,41 @@
+<%= form_for(@planned_order) do |f| %>
+  <% if @planned_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planned_order.errors.count, "error") %> prohibited this planned_order from being saved:</h2>
+
+      <ul>
+      <% @planned_order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :articleCode %><br />
+    <%= f.text_field :articleCode %>
+  </div>
+  <div class="field">
+    <%= f.label :supplier %><br />
+    <%= f.text_field :supplier %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br />
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :creationDate %><br />
+    <%= f.date_select :creationDate %>
+  </div>
+  <div class="field">
+    <%= f.label :expectedDeliveryDate %><br />
+    <%= f.date_select :expectedDeliveryDate %>
+  </div>
+  <div class="field">
+    <%= f.label :validated %><br />
+    <%= f.check_box :validated %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

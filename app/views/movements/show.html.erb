@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Articlecode:</b>
+  <%= @movement.articleCode %>
+</p>
+
+<p>
+  <b>Movementdate:</b>
+  <%= @movement.movementDate %>
+</p>
+
+<p>
+  <b>Turnover:</b>
+  <%= @movement.turnover %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @movement.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_movement_path(@movement) %> |
+<%= link_to 'Back', movements_path %>

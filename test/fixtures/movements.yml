@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  articleCode: MyString
+  movementDate: 2013-01-08
+  turnover: 1.5
+  quantity: 1
+
+two:
+  articleCode: MyString
+  movementDate: 2013-01-08
+  turnover: 1.5
+  quantity: 1

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  articleCode: MyString
+  supplier: MyString
+  quantity: 1
+  creationDate: 2013-01-08
+  expectedDeliveryDate: 2013-01-08
+
+two:
+  articleCode: MyString
+  supplier: MyString
+  quantity: 1
+  creationDate: 2013-01-08
+  expectedDeliveryDate: 2013-01-08

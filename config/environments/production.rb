@@ -1,7 +1,7 @@
 StoreStockOptimization::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
-  config.assets.precompile += %w( screen.css print.css )
+  config.assets.precompile += %w( assets/screen.css assets/print.css )
 
   # Code is not reloaded between requests
   config.cache_classes = true

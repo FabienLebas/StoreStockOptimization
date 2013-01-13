@@ -16,9 +16,12 @@
         <%= image_tag("logo.jpg", :alt => "Application Exemple", :class => "round") %>
         <nav class="round">
           <ul>
-            <li><%= link_to "Accueil", '#' %></li>
-            <li><%= link_to "Aide", '#' %></li>
-            <li><%= link_to "Inscription", '#' %></li>
+            <a href="/articles"> Articles |</a>
+			<a href="/suppliers"> Suppliers |</a>
+			<a href="/movements"> Stock Movements |</a>
+			<a href="/orders"> Orders |</a>
+			<a href="/planned_orders"> Planned Orders |</a>
+            <a><%= link_to "Help", '#' %></a>
           </ul>
         </nav>
       </header>

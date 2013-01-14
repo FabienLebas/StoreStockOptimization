@@ -1,48 +1,45 @@
 <h1>Listing articles</h1>
 
-<table>
-  <tr>
-    <th>Articlecode</th>
-    <th>Articletext</th>
-    <th>Supplier</th>
-    <th>Box</th>
-    <th>Minimumofqty</th>
-    <th>Stockrisk</th>
-    <th>Unitarypriceifbox</th>
-    <th>Unitarypriceifmassive</th>
-    <th>Sellingpriceincvat</th>
-    <th>Vatrate</th>
-    <th>Estimatedpricedecreaseratio</th>
-    <th>Endlifedate</th>
-    <th>Endlifeoption</th>
-    <th>Seasonalitycode</th>
-    <th>Stockqty</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.articleCode %></td>
-    <td><%= article.articleText %></td>
-    <td><%= article.supplier %></td>
-    <td><%= article.box %></td>
-    <td><%= article.minimumOfQty %></td>
-    <td><%= article.stockRisk %></td>
-    <td><%= article.unitaryPriceIfBox %></td>
-    <td><%= article.unitaryPriceIfMassive %></td>
-    <td><%= article.sellingPriceIncVAT %></td>
-    <td><%= article.vATRate %></td>
-    <td><%= article.estimatedPriceDecreaseRatio %></td>
-    <td><%= article.endLifeDate %></td>
-    <td><%= article.endLifeOption %></td>
-    <td><%= article.seasonalityCode %></td>
-    <td><%= article.stockQty %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   <tr style="background-color:lightgrey;"> 
+      <th style="width:150px;">Article code</th> 
+      <th style="width:150px;">Article text</th> 
+      <th style="width:150px;">Supplier</th> 
+      <th style="width:150px;">Box</th> 
+      <th style="width:150px;">Minimum of qty</th> 
+      <th style="width:150px;">Stock risk</th> 
+      <th style="width:150px;">Price if box</th> 
+      <th style="width:150px;">Price if massive</th> 
+      <th style="width:150px;">Selling price incl VAT</th> 
+      <th style="width:150px;">VAT rate</th> 
+      <th style="width:150px;">Estimated price decrease %</th> 
+      <th style="width:150px;">End of life</th> 
+      <th style="width:150px;">End of life option</th> 
+      <th style="width:150px;">Seasonality</th> 
+      <th style="width:150px;">Stock</th> 
+   </tr> 
+   <% @articles.each do |article| %>
+	<tr> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= article.articleCode %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= article.articleText %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= article.supplier %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.box %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.minimumOfQty %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.stockRisk %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.unitaryPriceIfBox %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.unitaryPriceIfMassive %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.sellingPriceIncVAT %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.vATRate %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.estimatedPriceDecreaseRatio %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.endLifeDate %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.endLifeOption %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.seasonalityCode %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.stockQty %></td> 
+		<td><%= link_to 'Show', article %></td>
+	    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+	    <td><%= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+   </tr> 
 <% end %>
 </table>
 

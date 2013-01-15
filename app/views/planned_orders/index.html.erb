@@ -1,32 +1,30 @@
 <h1>Listing planned_orders</h1>
 
-<table>
-  <tr>
-    <th>Articlecode</th>
-    <th>Supplier</th>
-    <th>Quantity</th>
-    <th>Creationdate</th>
-    <th>Expecteddeliverydate</th>
-    <th>Validated</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @planned_orders.each do |planned_order| %>
-  <tr>
-    <td><%= planned_order.articleCode %></td>
-    <td><%= planned_order.supplier %></td>
-    <td><%= planned_order.quantity %></td>
-    <td><%= planned_order.creationDate %></td>
-    <td><%= planned_order.expectedDeliveryDate %></td>
-    <td><%= planned_order.validated %></td>
-    <td><%= link_to 'Show', planned_order %></td>
-    <td><%= link_to 'Edit', edit_planned_order_path(planned_order) %></td>
-    <td><%= link_to 'Destroy', planned_order, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   <tr style="background-color:lightgrey;"> 
+      <th style="width:150px;">Article code</th> 
+      <th style="width:150px;">Supplier</th> 
+      <th style="width:150px;">Quantity</th> 
+      <th style="width:150px;">Creation date</th> 
+      <th style="width:150px;">Expected delivery date</th> 
+      <th style="width:150px;">Validated</th> 
+   </tr> 
+   <% @planned_orders.each do |planned_order| %>
+	<tr> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= planned_order.articleCode %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= planned_order.supplier %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= planned_order.quantity %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= planned_order.creationDate %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= planned_order.expectedDeliveryDate %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= planned_order.validated %></td> 
+	    <td><%= link_to 'Show', planned_order %></td>
+	    <td><%= link_to 'Edit', edit_planned_order_path(planned_order) %></td>
+	    <td><%= link_to 'Destroy', planned_order, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
 </table>
+
 
 <br />
 

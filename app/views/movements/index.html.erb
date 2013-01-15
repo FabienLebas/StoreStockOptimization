@@ -1,27 +1,24 @@
 <h1>Listing movements</h1>
 
-<table>
-  <tr>
-    <th>Articlecode</th>
-    <th>Movementdate</th>
-    <th>Turnover</th>
-    <th>Quantity</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @movements.each do |movement| %>
-  <tr>
-    <td><%= movement.articleCode %></td>
-    <td><%= movement.movementDate %></td>
-    <td><%= movement.turnover %></td>
-    <td><%= movement.quantity %></td>
-    <td><%= link_to 'Show', movement %></td>
-    <td><%= link_to 'Edit', edit_movement_path(movement) %></td>
-    <td><%= link_to 'Destroy', movement, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   <tr style="background-color:lightgrey;"> 
+      <th style="width:150px;">Article code</th> 
+      <th style="width:150px;">Movement Date</th> 
+      <th style="width:150px;">Turnover</th> 
+      <th style="width:150px;">Quantity</th> 
+   </tr> 
+   <% @movements.each do |movement| %>
+	<tr> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= movement.articleCode %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movementDate %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= movement.turnover %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= movement.quantity %></td> 
+		<td><%= link_to 'Show', movement %></td>
+	    <td><%= link_to 'Edit', edit_movement_path(movement) %></td>
+	    <td><%= link_to 'Destroy', movement, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
 </table>
 
 <br />

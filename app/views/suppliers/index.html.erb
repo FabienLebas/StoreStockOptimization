@@ -1,30 +1,28 @@
 <h1>Listing suppliers</h1>
 
-<table>
-  <tr>
-    <th>Supplier</th>
-    <th>Suppliertext</th>
-    <th>Leadtime</th>
-    <th>Orderminimumqty</th>
-    <th>Orderminimumvalue</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @suppliers.each do |supplier| %>
-  <tr>
-    <td><%= supplier.supplier %></td>
-    <td><%= supplier.supplierText %></td>
-    <td><%= supplier.leadtime %></td>
-    <td><%= supplier.orderMinimumQty %></td>
-    <td><%= supplier.orderMinimumValue %></td>
-    <td><%= link_to 'Show', supplier %></td>
-    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-    <td><%= link_to 'Destroy', supplier, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   <tr style="background-color:lightgrey;"> 
+      <th style="width:150px;">Supplier</th> 
+      <th style="width:150px;">Supplier text</th> 
+      <th style="width:150px;">Leadtime</th> 
+      <th style="width:150px;">Order minimum qty</th> 
+      <th style="width:150px;">Order minimum value</th> 
+   </tr> 
+   <% @suppliers.each do |supplier| %>
+	<tr> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= supplier.supplier %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= supplier.supplierText %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= supplier.leadtime %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= supplier.orderMinimumQty %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= supplier.orderMinimumValue %></td> 
+	  	<td><%= link_to 'Show', supplier %></td>
+	    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+	    <td><%= link_to 'Destroy', supplier, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
 </table>
+
 
 <br />
 

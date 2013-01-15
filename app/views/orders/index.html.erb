@@ -1,30 +1,28 @@
 <h1>Listing orders</h1>
 
-<table>
-  <tr>
-    <th>Articlecode</th>
-    <th>Supplier</th>
-    <th>Quantity</th>
-    <th>Creationdate</th>
-    <th>Expecteddeliverydate</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.articleCode %></td>
-    <td><%= order.supplier %></td>
-    <td><%= order.quantity %></td>
-    <td><%= order.creationDate %></td>
-    <td><%= order.expectedDeliveryDate %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   <tr style="background-color:lightgrey;"> 
+      <th style="width:150px;">Article code</th> 
+      <th style="width:150px;">Supplier</th> 
+      <th style="width:150px;">Quantity</th> 
+      <th style="width:150px;">Creation Date</th> 
+      <th style="width:150px;">Expected delivery date</th> 
+   </tr> 
+   <% @orders.each do |order| %>
+	<tr> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= order.articleCode %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= order.supplier %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= order.quantity %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= order.creationDate %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= order.expectedDeliveryDate %></td> 
+	    <td><%= link_to 'Show', order %></td>
+	    <td><%= link_to 'Edit', edit_order_path(order) %></td>
+	    <td><%= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  	</tr>
 <% end %>
 </table>
+
 
 <br />
 

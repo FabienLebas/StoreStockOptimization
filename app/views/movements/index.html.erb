@@ -1,9 +1,15 @@
 <h1>Reporting</h1>
 
-<li>Total turnover for today:<%= Movement.where(:movementDate =>Date.today).sum("turnover")%></li>
-<li>Total turnover for this week:<%= Movement.where(:movementDate => Date.today-6..Date.today).sum("turnover")%></li>
-<li>Best seller for today:<%= Movement.where(:movementDate =>Date.today).select("articleCode, sum(turnover)").group("articleCode").order("sum(turnover) DESC").first.articleCode%></li>
-<li>Best seller for this week:<%= Movement.where(:movementDate => Date.today-6..Date.today).select("articleCode, sum(turnover)").group("articleCode").order("sum(turnover) DESC").first.articleCode%></li>
+<li>Total turnover for today: <%= Movement.where(:movementDate =>Date.today).sum("turnover")%></li>
+<li>Total turnover for this week: <%= Movement.where(:movementDate => Date.today-6..Date.today).sum("turnover")%></li>
+<li>Best seller for today: <%= if !Movement.where(:movementDate =>Date.today).empty? 
+							then Movement.where(:movementDate =>Date.today).select("articleCode, sum(turnover)").group("articleCode").order("sum(turnover) DESC").first.articleCode
+							else 0
+								end%></li>
+<li>Best seller for this week: <%= if !Movement.where(:movementDate => Date.today-6..Date.today).empty?
+								then Movement.where(:movementDate => Date.today-6..Date.today).select("articleCode, sum(turnover)").group("articleCode").order("sum(turnover) DESC").first.articleCode
+								else 0
+									end%></li>
 <br />
 <h1>Listing movements</h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 

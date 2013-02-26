@@ -18,7 +18,42 @@
 								<%= if !Movement.where(:movementDate => Date.today-6..Date.today).empty?
 								then Article.where(:articleCode =>Movement.where(:movementDate => Date.today-6..Date.today).select("articleCode, sum(turnover)").group("articleCode").order("sum(turnover) DESC").first.articleCode).first.articleText
 								else 0
-								end%>
+								end%><link rel="stylesheet" type="text/css" href="/css/ui-lightness/jquery-ui-1.8.5.custom.css" />
+</li>
+							
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+	<link rel="stylesheet" href="/resources/demos/style.css" />
+	<script>
+	$(function() {
+					$( "#datepicker" ).datepicker();
+				 });
+	</script>
+</head>
+<body>	
+	<div>Date: <input type="text" id="datepicker"/></div> 
+	<button class="trigger">Calculate</button>
+	<div id="result"> Turnover: </div>	
+	<div class="result2"></div>
+<script>
+		$("#datepicker").change(function(){
+		 	var currentDate = $( "#datepicker" ).datepicker( "getDate" );
+			var dateString = $.datepicker.formatDate("yy-mm-dd", currentDate);	
+			alert(dateString);
+			var wantedTO = <%=Movement.where(:movementDate =>Date.parse("2013-02-25")).sum("turnover")%>;	
+			$(document).ajaxComplete(function(){ $("#result").html("<p>Result here : </p>" + wantedTO);		
+			});				
+		});	
+		$( ".trigger" ).click(function() {
+  			$( ".result2" ).load( "ajax/test.html" );
+		});
+</script>		
+</body>
+</html>
 
 <br />
 <h1>Listing movements</h1>

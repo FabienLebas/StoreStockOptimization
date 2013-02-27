@@ -1,0 +1,80 @@
+<h1>Reporting</h1>
+
+<li>Total turnover for today: <%= Movement.where(:movementDate =>Date.today).sum("turnover")%></li>
+<li>Total turnover for this week: <%= Movement.where(:movementDate => Date.today-6..Date.today).sum("turnover")%></li>
+<li>Best seller for today: <%= if !Movement.where(:movementDate =>Date.today).empty? 
+							then Movement.where(:movementDate =>Date.today).select("articleCode, sum(turnover)").group("articleCode").order("sum(turnover) DESC").first.articleCode
+							else 0
+							end%>
+							<%= if !Movement.where(:movementDate =>Date.today).empty? 
+								then Article.where(:articleCode =>Movement.where(:movementDate =>Date.today).select("articleCode, sum(turnover)").group("articleCode").order("sum(turnover) DESC").first.articleCode).first.articleText
+								else 0
+								end%>
+</li>
+<li>Best seller for this week: <%= if !Movement.where(:movementDate => Date.today-6..Date.today).empty?
+								then Movement.where(:movementDate => Date.today-6..Date.today).select("articleCode, sum(turnover)").group("articleCode").order("sum(turnover) DESC").first.articleCode
+								else 0
+									end%>
+								<%= if !Movement.where(:movementDate => Date.today-6..Date.today).empty?
+								then Article.where(:articleCode =>Movement.where(:movementDate => Date.today-6..Date.today).select("articleCode, sum(turnover)").group("articleCode").order("sum(turnover) DESC").first.articleCode).first.articleText
+								else 0
+								end%><link rel="stylesheet" type="text/css" href="/css/ui-lightness/jquery-ui-1.8.5.custom.css" />
+</li>
+							
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+	<link rel="stylesheet" href="/resources/demos/style.css" />
+	<script>
+	$(function() {
+					$( "#datepicker" ).datepicker();
+				 });
+	</script>
+</head>
+<body>	
+	<div>Date: <input type="text" id="datepicker"/></div> 
+	<button class="trigger">Calculate</button>
+	<div id="result"> Turnover: </div>	
+	<div class="result2"></div>
+<script>
+		$("#datepicker").change(function(){
+		 	var currentDate = $( "#datepicker" ).datepicker( "getDate" );
+			var dateString = $.datepicker.formatDate("yy-mm-dd", currentDate);	
+			var wantedTO = <%= Movement.where(:movementDate =>Date.parse("2013-02-25")).sum("turnover")%>;	
+			$(document).ajaxComplete(function(){ $("#result").html("<p>Result here : </p>" + wantedTO);		
+			});				
+		});	
+		$( ".trigger" ).click(function() {
+  			$( ".result2" ).load( "ajax/test.html" );
+		});
+</script>		
+</body>
+	
+<br />
+<h1>Listing movements</h1>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   <tr style="background-color:lightgrey;"> 
+      <th style="width:150px;">Article code</th> 
+      <th style="width:150px;">Movement Date</th> 
+      <th style="width:150px;">Turnover</th> 
+      <th style="width:150px;">Quantity</th> 
+   </tr> 
+   <% @movements.each do |movement| %>
+	<tr> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= movement.articleCode %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movementDate %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= movement.turnover %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= movement.quantity %></td> 
+		<td><%= link_to 'Show', movement %></td>
+	    <td><%= link_to 'Edit', edit_movement_path(movement) %></td>
+	    <td><%= link_to 'Destroy', movement, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Movement', new_movement_path %>

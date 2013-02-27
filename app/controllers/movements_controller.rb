@@ -80,4 +80,11 @@ class MovementsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def sort
+  	selected_date = params[:date]
+  	new_html_to_return = Movement.where(:movementDate =>Date.parse(params[:date])).sum("turnover")
+     render :text => new_html_to_return
+  end
+  
 end

@@ -13,6 +13,7 @@ StoreStockOptimization::Application.routes.draw do
 
   resources :articles
 
+  post "movements/sort" 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

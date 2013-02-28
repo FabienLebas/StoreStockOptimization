@@ -14,30 +14,43 @@
 <body id='#my_page'>
 <h1>Reporting</h1>
 
-<li>Total turnover for today: <%= Movement.where(:movement_date =>Date.today).sum("turnover")%></li>
-<li>Total turnover for this week: <%= Movement.where(:movement_date => Date.today-6..Date.today).sum("turnover")%></li>
-<li>Best seller for today: <%= if !Movement.where(:movement_date =>Date.today).empty? 
-							then Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
-							else 0
-							end%>
-							<%= if !Movement.where(:movement_date =>Date.today).empty? 
-								then Article.where(:article_code =>Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
-								else 0
-								end%>
-</li>
-<li>Best seller for this week: <%= if !Movement.where(:movement_date => Date.today-6..Date.today).empty?
-								then Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
-								else 0
-									end%>
-								<%= if !Movement.where(:movement_date => Date.today-6..Date.today).empty?
-								then Article.where(:article_code =>Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
-								else 0
-								end%><link rel="stylesheet" type="text/css" href="/css/ui-lightness/jquery-ui-1.8.5.custom.css" />
-</li>	
-	</br>	
-	<div>Date: <input type="text" id="datepicker"/></div> 
-	<div id="result"> Turnover: </div>	
-	<div class="result2"></div>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   		<tr style="background-color:lightgrey;">
+		  <th style="width:150px;"></th> 
+	      <th style="width:150px;">Today</th> 
+	      <th style="width:150px;">This week</th> 
+	      <th style="width:150px;">Date: <input type="text" id="datepicker"/></th> 
+	      <th style="width:150px;">From xx to yy</th>
+		</tr>
+		<tr><th style="background-color:lightgrey;"> Turnover </th>
+			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date =>Date.today).sum("turnover")%></td>
+			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date => Date.today-6..Date.today).sum("turnover")%></td>			
+			<td style="padding-left:10px; color:midnightblue;" id="resultTO"></td>			
+		</tr>
+		<tr><th style="background-color:lightgrey;"> Quantities </th>
+			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date =>Date.today).sum("quantity")%></td>
+			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date => Date.today-6..Date.today).sum("quantity")%></td>
+			<td style="padding-left:10px; color:midnightblue;" id="resultQty"></td>												
+		</tr>
+		<tr><th style="background-color:lightgrey;"> Best seller </th>
+			<td style="padding-left:10px; color:midnightblue;"><%= if !Movement.where(:movement_date =>Date.today).empty? 
+																	then Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
+																	else 0
+																	end%> <%= if !Movement.where(:movement_date =>Date.today).empty? 
+																				then Article.where(:article_code =>Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
+																				else 0
+																				end%></td>
+			<td style="padding-left:10px; color:midnightblue;"><%= if !Movement.where(:movement_date => Date.today-6..Date.today).empty?
+																	then Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
+																	else 0
+																	end%> <%= if !Movement.where(:movement_date => Date.today-6..Date.today).empty?
+																				then Article.where(:article_code =>Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
+																				else 0
+																				end%></td>
+			<td style="padding-left:10px; color:midnightblue;" id="resultBestSeller"></td>																													
+		</tr>
+</table>	
 	
 	
 	<br />
@@ -87,10 +100,12 @@ $(document).ready(function(){
 			$.ajax({
 				  type: "POST",
 				  // You're sending the variable to your Ruby on Rails controller
-				  url: "movements/sort/",
+				  url: "movements/getTO/",
 				  data: {"date":dateString},
 				}).done(function(data) {
-				  	$("#result").html("<p>Turnover: </p>" + data)
+				  	$("#resultTO").html(data[0])
+					$("#resultQty").html(data[1])
+					$("#resultBestSeller").html(data[2]+" "+data[3])
 				});							
 			});	
 });

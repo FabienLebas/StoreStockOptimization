@@ -11,11 +11,11 @@
    </tr> 
    <% @orders.each do |order| %>
 	<tr> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= order.articleCode %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= order.article_code %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= order.supplier %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= order.quantity %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= order.creationDate %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= order.expectedDeliveryDate %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= order.creation_date %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= order.expected_delivery_date %></td> 
 	    <td><%= link_to 'Show', order %></td>
 	    <td><%= link_to 'Edit', edit_order_path(order) %></td>
 	    <td><%= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>

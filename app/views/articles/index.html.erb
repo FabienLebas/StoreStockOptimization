@@ -21,21 +21,21 @@
    </tr> 
    <% @articles.each do |article| %>
 	<tr> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= article.articleCode %></td> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= article.articleText %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= article.article_code %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= article.article_text %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= article.supplier %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.box %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.minimumOfQty %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.stockRisk %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.unitaryPriceIfBox %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.unitaryPriceIfMassive %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.sellingPriceIncVAT %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.vATRate %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.estimatedPriceDecreaseRatio %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.endLifeDate %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.endLifeOption %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.seasonalityCode %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.stockQty %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.minimum_of_qty %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.stock_risk %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.unitary_price_if_box %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.unitary_price_if_massive %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.selling_price_inc_vat %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.vat_rate %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.estimated_price_decrease_ratio %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.end_life_date %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.end_life_option %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.seasonality_code %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.stock_qty %></td> 
 		<td><%= link_to 'Show', article %></td>
 	    <td><%= link_to 'Edit', edit_article_path(article) %></td>
 	    <td><%= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>

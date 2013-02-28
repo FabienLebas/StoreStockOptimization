@@ -12,10 +12,10 @@
    <% @suppliers.each do |supplier| %>
 	<tr> 
       	<td style="padding-left:10px; color:midnightblue;"><%= supplier.supplier %></td> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= supplier.supplierText %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= supplier.supplier_text %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= supplier.leadtime %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= supplier.orderMinimumQty %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= supplier.orderMinimumValue %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= supplier.order_minimum_qty %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= supplier.order_minimum_value %></td> 
 	  	<td><%= link_to 'Show', supplier %></td>
 	    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
 	    <td><%= link_to 'Destroy', supplier, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>

@@ -1,3 +1,3 @@
 class PlannedOrder < ActiveRecord::Base
-  attr_accessible :articleCode, :creationDate, :expectedDeliveryDate, :quantity, :supplier, :validated
+  attr_accessible :article_code, :creation_date, :expected_delivery_date, :quantity, :supplier, :validated
 end

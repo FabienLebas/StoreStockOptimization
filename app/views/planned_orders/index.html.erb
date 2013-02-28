@@ -12,11 +12,11 @@
    </tr> 
    <% @planned_orders.each do |planned_order| %>
 	<tr> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= planned_order.articleCode %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= planned_order.article_code %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= planned_order.supplier %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= planned_order.quantity %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= planned_order.creationDate %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= planned_order.expectedDeliveryDate %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= planned_order.creation_date %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= planned_order.expected_delivery_date %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= planned_order.validated %></td> 
 	    <td><%= link_to 'Show', planned_order %></td>
 	    <td><%= link_to 'Edit', edit_planned_order_path(planned_order) %></td>

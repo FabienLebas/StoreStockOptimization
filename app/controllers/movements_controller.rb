@@ -101,5 +101,13 @@ class MovementsController < ApplicationController
   	  	@table = [new_html_to_return1, new_html_to_return2, new_html_to_return3, new_html_to_return4]
         render :json => @table
   end
+  
+  def getStartDate
+    @startDate = [Date.parse(Movement.order("movement_date ASC").first.movement_date)]
+    respond_to do |format|
+        format.html
+        format.json { render :json => @startDate }
+      end
+  end
 
 end

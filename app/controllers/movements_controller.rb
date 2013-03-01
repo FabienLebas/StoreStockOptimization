@@ -90,5 +90,16 @@ class MovementsController < ApplicationController
   	  	@table = [new_html_to_return1, new_html_to_return2, new_html_to_return3, new_html_to_return4]
         render :json => @table
   end
-  
+
+  def getTO2Dates
+  	selected_date1 = Date.parse(params[:date1])
+  	selected_date2 = Date.parse(params[:date2])
+  	new_html_to_return1 = Movement.where(:movement_date =>selected_date1..selected_date2).sum("turnover")
+  	new_html_to_return2 = Movement.where(:movement_date =>selected_date1..selected_date2).sum("quantity")
+  	new_html_to_return3 = Movement.where(:movement_date =>selected_date1..selected_date2).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
+  	new_html_to_return4 = Article.where(:article_code =>Movement.where(:movement_date => selected_date1..selected_date2).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
+  	  	@table = [new_html_to_return1, new_html_to_return2, new_html_to_return3, new_html_to_return4]
+        render :json => @table
+  end
+
 end

@@ -14,6 +14,7 @@ StoreStockOptimization::Application.routes.draw do
   resources :articles
 
   post "movements/getTO" 
+  post "movements/getTO2Dates" 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -9,6 +9,13 @@
 	$(function() {
 					$( "#datepicker" ).datepicker();
 				 });
+	$(function() {
+					$( "#datepickerFrom" ).datepicker();
+				 });
+	$(function() {
+					$( "#datepickerTo" ).datepicker();
+				 });
+
 	</script>
 </head>
 <body id='#my_page'>
@@ -17,21 +24,23 @@
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
    		<tr style="background-color:lightgrey;">
-		  <th style="width:150px;"></th> 
-	      <th style="width:150px;">Today</th> 
-	      <th style="width:150px;">This week</th> 
-	      <th style="width:150px;">Date: <input type="text" id="datepicker"/></th> 
-	      <th style="width:150px;">From xx to yy</th>
+		  <th style="width:30px;"></th> 
+	      <th style="width:75px;">Today</th> 
+	      <th style="width:75px;">This week</th> 
+	      <th style="width:75px;">Date: <input type="text" id="datepicker"/></th> 
+	      <th style="width:150px;">From <input type="text" id="datepickerFrom"/> to <input type="text" id="datepickerTo"/></th>
 		</tr>
 		<tr><th style="background-color:lightgrey;"> Turnover </th>
 			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date =>Date.today).sum("turnover")%></td>
 			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date => Date.today-6..Date.today).sum("turnover")%></td>			
-			<td style="padding-left:10px; color:midnightblue;" id="resultTO"></td>			
+			<td style="padding-left:10px; color:midnightblue;" id="resultTO"></td>
+			<td style="padding-left:10px; color:midnightblue;" id="resultTOFromTo"></td>						
 		</tr>
 		<tr><th style="background-color:lightgrey;"> Quantities </th>
 			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date =>Date.today).sum("quantity")%></td>
 			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date => Date.today-6..Date.today).sum("quantity")%></td>
-			<td style="padding-left:10px; color:midnightblue;" id="resultQty"></td>												
+			<td style="padding-left:10px; color:midnightblue;" id="resultQty"></td>	
+			<td style="padding-left:10px; color:midnightblue;" id="resultQtyFromTo"></td>																	
 		</tr>
 		<tr><th style="background-color:lightgrey;"> Best seller </th>
 			<td style="padding-left:10px; color:midnightblue;"><%= if !Movement.where(:movement_date =>Date.today).empty? 
@@ -48,7 +57,8 @@
 																				then Article.where(:article_code =>Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
 																				else 0
 																				end%></td>
-			<td style="padding-left:10px; color:midnightblue;" id="resultBestSeller"></td>																													
+			<td style="padding-left:10px; color:midnightblue;" id="resultBestSeller"></td>
+			<td style="padding-left:10px; color:midnightblue;" id="resultBestSellerFromTo"></td>																																
 		</tr>
 </table>	
 	
@@ -84,16 +94,20 @@
 $(document).ready(function(){
 
 	var $datepicker = $("#datepicker"),
+		$datepickerFrom = $("#datepickerFrom"),
+		$datepickerTo = $("#datepickerTo"),
 	 	currentDate = new Date(),
-		dateString = "";
-	
-	$datepicker.change(function(){
-				
+	 	currentDateFrom = new Date(),
+	 	currentDateTo = new Date(),
+		dateString = "",
+		dateStringFrom = "",
+		dateStringTo = "";
+			
+	$datepicker.change(function(){				
 				// Get the selected date
 			 	currentDate = $datepicker.datepicker( "getDate" );
 				// Convert the date to desired format
-				dateString = $.datepicker.formatDate("yy-mm-dd", currentDate);	
-				
+				dateString = $.datepicker.formatDate("yy-mm-dd", currentDate);					
 				// Rule: Never use alert() but console.log()
 				//console.log("My dateString is: "+dateString);
 				
@@ -108,6 +122,48 @@ $(document).ready(function(){
 					$("#resultBestSeller").html(data[2]+" "+data[3])
 				});							
 			});	
+
+	$datepickerFrom.change(function(){				
+				currentDateFrom = $datepickerFrom.datepicker( "getDate" );
+				dateStringFrom = $.datepicker.formatDate("yy-mm-dd", currentDateFrom);	
+				currentDateTo = $datepickerTo.datepicker( "getDate" );
+				dateStringTo = $.datepicker.formatDate("yy-mm-dd", currentDateTo);
+				if (currentDateTo==null){0} else 
+				{if (currentDateFrom > currentDateTo) {
+					alert("Beginning date should be before ending date : result will not be calculated");}
+			 	else {
+				$.ajax({
+					type: "POST",
+				  	url: "movements/getTO2Dates/",
+				  	data: {"date1":dateStringFrom, "date2":dateStringTo},
+					}).done(function(data) {
+						$("#resultTOFromTo").html(data[0])
+						$("#resultQtyFromTo").html(data[1])
+						$("#resultBestSellerFromTo").html(data[2]+" "+data[3])
+						});	
+				}}				
+	});
+	
+	$datepickerTo.change(function(){				
+				currentDateFrom = $datepickerFrom.datepicker( "getDate" );
+				dateStringFrom = $.datepicker.formatDate("yy-mm-dd", currentDateFrom);	
+				currentDateTo = $datepickerTo.datepicker( "getDate" );
+				dateStringTo = $.datepicker.formatDate("yy-mm-dd", currentDateTo);
+				if(currentDateFrom==null){0} else
+				{if (currentDateFrom > currentDateTo) {
+					alert("Beginning date should be before ending date : result will not be calculated");}
+			 	else {
+				$.ajax({
+					type: "POST",
+				  	url: "movements/getTO2Dates/",
+				  	data: {"date1":dateStringFrom, "date2":dateStringTo},
+					}).done(function(data) {
+						$("#resultTOFromTo").html(data[0])
+						$("#resultQtyFromTo").html(data[1])
+						$("#resultBestSellerFromTo").html(data[2]+" "+data[3])
+						});	
+				}}				
+	});
 });
 </script>		
 </body>

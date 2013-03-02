@@ -1,80 +1,148 @@
+<head>
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+	
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script type="text/javascript" src="/js/themes/gray.js"></script>	
+
+</head>
+<body>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Articlecode:</b>
-  <%= @article.article_code %>
-</p>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   		<tr style="background-color:lightgrey;">
+	      <th style="width:75px;">Article Code</th> 
+	      <th style="width:75px;">Article Text</th> 
+	      <th style="width:75px;">Stock</th> 
+	      <th style="width:75px;">Supplier</th> 
+	      <th style="width:75px;">Box</th> 
+	      <th style="width:75px;">Min order qty</th> 
+	      <th style="width:75px;">Unit buying price if box</th> 
+	      <th style="width:75px;">Unit buying price if massive</th> 
+	      <th style="width:75px;">Selling price inc VAT</th> 
+	      <th style="width:75px;">VAT rate</th> 
+	      <th style="width:75px;">Seasonality</th> 
+	      <th style="width:75px;">End life date</th> 
+	      <th style="width:75px;">End life option</th> 
+	      <th style="width:75px;">Estimated price decrease ratio</th> 
+	      <th style="width:75px;">Stock risk</th> 
+	
 
-<p>
-  <b>Articletext:</b>
-  <%= @article.article_text %>
-</p>
+		</tr>
+			<td><%= @article.article_code %></td>
+			<td><%= @article.article_text %></td>
+			<td><%= @article.stock_qty %></td>
+			<td><%= @article.supplier %></td>
+			<td><%= @article.box %></td>
+			<td><%= @article.minimum_of_qty %></td>
+			<td><%= @article.unitary_price_if_box %></td>
+			<td><%= @article.unitary_price_if_massive %></td>
+			<td><%= @article.selling_price_inc_vat %></td>
+			<td><%= @article.vat_rate %></td>
+			<td><%= @article.seasonality_code %></td>			
+			<td><%= @article.end_life_date %></td>
+			<td><%= @article.end_life_option %></td>
+			<td><%= @article.estimated_price_decrease_ratio %></td>
+			<td><%= @article.stock_risk %></td>
 
-<p>
-  <b>Supplier:</b>
-  <%= @article.supplier %>
-</p>
-
-<p>
-  <b>Box:</b>
-  <%= @article.box %>
-</p>
-
-<p>
-  <b>Minimumofqty:</b>
-  <%= @article.minimum_of_qty %>
-</p>
-
-<p>
-  <b>Stockrisk:</b>
-  <%= @article.stock_risk %>
-</p>
-
-<p>
-  <b>Unitarypriceifbox:</b>
-  <%= @article.unitary_price_if_box %>
-</p>
-
-<p>
-  <b>Unitarypriceifmassive:</b>
-  <%= @article.unitary_price_if_massive %>
-</p>
-
-<p>
-  <b>Sellingpriceincvat:</b>
-  <%= @article.selling_price_inc_vat %>
-</p>
-
-<p>
-  <b>Vatrate:</b>
-  <%= @article.vat_rate %>
-</p>
-
-<p>
-  <b>Estimatedpricedecreaseratio:</b>
-  <%= @article.estimated_price_decrease_ratio %>
-</p>
-
-<p>
-  <b>Endlifedate:</b>
-  <%= @article.end_life_date %>
-</p>
-
-<p>
-  <b>Endlifeoption:</b>
-  <%= @article.end_life_option %>
-</p>
-
-<p>
-  <b>Seasonalitycode:</b>
-  <%= @article.seasonality_code %>
-</p>
-
-<p>
-  <b>Stockqty:</b>
-  <%= @article.stock_qty %>
-</p>
-
-
+		</tr>
+</table>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+</br>
+</br>
+<h1>Performances</h1>
+<div id="container" style="width:100%; height:400px;"></div>
+
+<script>
+$(document).ready(function(){
+	// Highcharts (see www.highcharts.com)
+			var chart;
+	        chart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'container',
+	                zoomType: 'x',
+	                spacingRight: 20
+	            },
+	            title: {
+	                text: 'Overall results'
+	            },
+	            subtitle: {
+	                text: document.ontouchstart === undefined ?
+	                    'Click and drag in the plot area to zoom in' :
+	                    'Drag your finger over the plot to zoom in'
+	            },
+	            xAxis: {
+	                type: 'datetime',
+	                maxZoom: 14 * 24 * 3600000, // fourteen days
+	                title: {
+	                    text: null
+	                }
+	            },
+	            yAxis: {
+	                title: {
+	                    text: ''
+	                },
+	                showFirstLabel: false
+	            },
+	            tooltip: {
+	                shared: true,
+					formatter: function(){
+						return Highcharts.dateFormat("%B %e, %Y", this.x) + ': ' + "$" + Highcharts.numberFormat(this.y, 2);
+					}
+	            },
+	            legend: {
+	                enabled: true
+	            },
+	            plotOptions: {
+	                area: {
+	                    fillColor: {
+	                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+	                        stops: [
+	                            [0, Highcharts.getOptions().colors[0]],
+	                            [1, 'rgba(2,0,0,0)']
+	                        ]
+	                    },
+	                    lineWidth: 1,
+	                    marker: {
+	                        enabled: false,
+	                        states: {
+	                            hover: {
+	                                enabled: true,
+	                                radius: 5
+	                            }
+	                        }
+	                    },
+	                    shadow: false,
+	                    states: {
+	                        hover: {
+	                            lineWidth: 1
+	                        }
+	                    },
+	                    threshold: null
+	                }
+	            },
+
+	            series: [{
+	                type: 'line',
+	                name: 'Turnover',
+	                pointInterval: <%= 1.day * 1000%>,
+	                pointStart: <%= 12.weeks.ago.to_i * 1000%>,
+	                data: <%= article_chart_series_to(@article, 12.weeks.ago).to_json %> 
+					},
+					{
+		            type: 'line',
+		            name: 'Quantities',
+		            pointInterval: <%= 1.day * 1000%>,
+		            pointStart: <%= 12.weeks.ago.to_i * 1000%>,
+		            data: <%= article_chart_series_qty(@movements, 12.weeks.ago).to_json %> 
+					}
+					]
+	        });	
+});
+
+</script>
+
+</body>
+

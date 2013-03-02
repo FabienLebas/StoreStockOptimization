@@ -47,17 +47,17 @@
 		</tr>
 		<tr><th style="background-color:lightgrey;"> Best seller </th>
 			<td style="padding-left:10px; color:midnightblue;"><%= if !Movement.where(:movement_date =>Date.today).empty? 
-																	then Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
+																	then link_to Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code, Article.where(:article_code =>Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first
 																	else 0
 																	end%> <%= if !Movement.where(:movement_date =>Date.today).empty? 
-																				then Article.where(:article_code =>Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
+																				then link_to Article.where(:article_code =>Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text, Article.where(:article_code =>Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first
 																				else 0
 																				end%></td>
 			<td style="padding-left:10px; color:midnightblue;"><%= if !Movement.where(:movement_date => Date.today-6..Date.today).empty?
-																	then Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
+																	then link_to Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code, Article.where(:article_code =>Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first
 																	else 0
 																	end%> <%= if !Movement.where(:movement_date => Date.today-6..Date.today).empty?
-																				then Article.where(:article_code =>Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
+																				then link_to Article.where(:article_code =>Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text, Article.where(:article_code =>Movement.where(:movement_date => Date.today-6..Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first
 																				else 0
 																				end%></td>
 			<td style="padding-left:10px; color:midnightblue;" id="resultBestSeller"></td>
@@ -81,7 +81,7 @@
 	   </tr> 
 	<% @movements.each do |movement| %>
 		<tr> 
-	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.article_code %></td> 
+	      	<td style="padding-left:10px; color:midnightblue;"><%= link_to movement.article_code, Article.where(:article_code => movement.article_code).first %></td> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_date %></td> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.turnover %></td> 
 			<td style="padding-left:10px; color:midnightblue;"><%= movement.quantity %></td> 

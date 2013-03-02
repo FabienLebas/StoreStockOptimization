@@ -18,6 +18,8 @@
       <th style="width:150px;">End of life option</th> 
       <th style="width:150px;">Seasonality</th> 
       <th style="width:150px;">Stock</th> 
+      <th style="width:150px;">Creation date</th> 
+
    </tr> 
    <% @articles.each do |article| %>
 	<tr> 
@@ -32,10 +34,11 @@
 		<td style="padding-left:10px; color:midnightblue;"><%= article.selling_price_inc_vat %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.vat_rate %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.estimated_price_decrease_ratio %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.end_life_date %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.end_life_date.strftime("%B %d, %Y") %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.end_life_option %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.seasonality_code %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.stock_qty %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.created_at.strftime("%B %d, %Y") %></td> 
 		<td><%= link_to 'Show', article %></td>
 	    <td><%= link_to 'Edit', edit_article_path(article) %></td>
 	    <td><%= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>

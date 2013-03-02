@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
+    @movements = Movement.where(:article_code => @article.article_code).order("movement_date DESC").all
 
     respond_to do |format|
       format.html # show.html.erb

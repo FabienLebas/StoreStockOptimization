@@ -82,7 +82,7 @@
 	<% @movements.each do |movement| %>
 		<tr> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= link_to movement.article_code, Article.where(:article_code => movement.article_code).first %></td> 
-	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_date %></td> 
+	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_date.strftime("%B %d, %Y") %></td> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.turnover %></td> 
 			<td style="padding-left:10px; color:midnightblue;"><%= movement.quantity %></td> 
 			<td><%= link_to 'Show', movement %></td>
@@ -91,7 +91,6 @@
 		  </tr>
 		<% end %>
 </table>
-<br />
 
 <%= link_to 'New Movement', new_movement_path %>
 	

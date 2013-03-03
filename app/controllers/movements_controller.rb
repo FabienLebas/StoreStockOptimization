@@ -44,6 +44,9 @@ class MovementsController < ApplicationController
 
     respond_to do |format|
       if @movement.save
+        article = Article.where(:article_code => @movement.article_code).first
+        article.stock_qty = article.stock_qty - @movement.quantity
+        article.save
         format.html { redirect_to @movement, :notice => 'Movement was successfully created.' }
         format.json { render :json => @movement, :status => :created, :location => @movement }
       else
@@ -73,6 +76,9 @@ class MovementsController < ApplicationController
   # DELETE /movements/1.json
   def destroy
     @movement = Movement.find(params[:id])
+    article = Article.where(:article_code => @movement.article_code).first
+    article.stock_qty = article.stock_qty + @movement.quantity
+    article.save    
     @movement.destroy
 
     respond_to do |format|

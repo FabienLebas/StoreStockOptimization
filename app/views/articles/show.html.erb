@@ -51,8 +51,9 @@
 </br>
 </br>
 <h1>Performances</h1>
-<p>Average sales per day: <%=number_with_precision(Movement.where(:article_code => @article.article_code, :movement_date => Date.today-6..Date.today).sum("quantity")/7.to_f, :precision =>2)%></p>
-<p>Stock lifetime: <%=%></p>
+<p>Average sales per day: <%=number_with_precision(@average_sales, :precision =>2)%></p>
+<p>Stock lifetime: <%=number_with_precision(@article.stock_qty/@average_sales, :precision =>2)%> days</p>
+<p>Stock ce matin: <%=@article.stock_qty + Movement.where(:article_code =>@article.article_code, :movement_date => Date.today).sum("quantity")%>
 <div id="container" style="width:100%; height:400px;"></div>
 </br>
 

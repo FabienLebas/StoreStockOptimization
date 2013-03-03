@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @movements = Movement.where(:article_code => @article.article_code).order("movement_date DESC").all
+    @average_sales = Movement.where(:article_code => @article.article_code, :movement_date => Date.today-6..Date.today).sum("quantity")/7.to_f
 
     respond_to do |format|
       format.html # show.html.erb
@@ -81,4 +82,5 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 end

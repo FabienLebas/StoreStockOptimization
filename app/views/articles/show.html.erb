@@ -7,8 +7,7 @@
 
 </head>
 <body>
-<p id="notice"><%= notice %></p>
-
+<h1>Article view</h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
    		<tr style="background-color:lightgrey;">
@@ -32,7 +31,7 @@
 			<td><%= @article.article_code %></td>
 			<td><%= @article.article_text %></td>
 			<td><%= @article.stock_qty %></td>
-			<td><%= @article.supplier %></td>
+			<td><%= link_to @article.supplier, Supplier.where(:supplier => @article.supplier).first %></td>
 			<td><%= @article.box %></td>
 			<td><%= @article.minimum_of_qty %></td>
 			<td><%= @article.unitary_price_if_box %></td>

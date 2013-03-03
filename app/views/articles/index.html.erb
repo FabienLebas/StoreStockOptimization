@@ -25,7 +25,7 @@
 	<tr> 
       	<td style="padding-left:10px; color:midnightblue;"><%= article.article_code %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= article.article_text %></td> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= article.supplier %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= link_to article.supplier, Supplier.where(:supplier => article.supplier).first %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.box %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.minimum_of_qty %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.stock_risk %></td> 

@@ -3,4 +3,5 @@ class Article < ActiveRecord::Base
   has_many:movements
   has_many:orders
   has_many:plannedorders
+  has_many:suppliers
 end

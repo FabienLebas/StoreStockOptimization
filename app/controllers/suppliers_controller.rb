@@ -14,6 +14,8 @@ class SuppliersController < ApplicationController
   # GET /suppliers/1.json
   def show
     @supplier = Supplier.find(params[:id])
+    @articles = Article.where(:supplier => @supplier.supplier)
+    @movements = Movement.where(:article_code => @articles.select("article_code")).order("movement_date DESC").all
 
     respond_to do |format|
       format.html # show.html.erb

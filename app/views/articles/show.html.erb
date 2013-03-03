@@ -61,8 +61,8 @@
 	   <tr style="background-color:lightgrey;"> 
 	      <th style="width:150px;">Article code</th> 
 	      <th style="width:150px;">Movement Date</th> 
-	      <th style="width:150px;">Turnover</th> 
-	      <th style="width:150px;">Quantity</th> 
+	      <th style="width:150px;">Turnover: <%= Movement.where(:article_code => @article.article_code).sum("turnover")%></th> 
+	      <th style="width:150px;">Quantity: <%= Movement.where(:article_code => @article.article_code).sum("quantity")%></th> 
 	   </tr> 
 	<% @movements.each do |movement| %>
 		<tr> 

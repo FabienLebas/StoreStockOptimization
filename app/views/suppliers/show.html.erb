@@ -33,13 +33,17 @@
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;">Article code</th> 
+	      <th style="width:150px;">Article code: <%= Article.where(:article_code => @articles.select("article_code")).count%></th> 
 	      <th style="width:150px;">Article text</th> 
+	      <th style="width:150px;">Total turnover: <%= Movement.where(:article_code => @articles.select("article_code")).sum("turnover")%></th> 
+	      <th style="width:150px;">Total quantity: <%= Movement.where(:article_code => @articles.select("article_code")).sum("quantity")%></th> 
 	   </tr> 
 	<% @articles.each do |article| %>
 		<tr> 
-	      	<td style="padding-left:10px; color:midnightblue;"><%= article.article_code%></td> 
-	      	<td style="padding-left:10px; color:midnightblue;"><%= article.article_text%></td> 
+	      	<td style="padding-left:10px; color:midnightblue;"><%= link_to article.article_code, Article.where(:article_code => article.article_code).first%></td> 
+	      	<td style="padding-left:10px; color:midnightblue;"><%= link_to article.article_text, Article.where(:article_code => article.article_code).first%></td> 
+	      	<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:article_code => article.article_code).sum("turnover")%></td> 
+	      	<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:article_code => article.article_code).sum("quantity")%></td> 
 		 </tr>
 		<% end %>
 </table>
@@ -48,15 +52,17 @@
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;">Article code</th> 
+	      <th style="width:150px;">Article code: <%= @movements.count%></th> 
 	      <th style="width:150px;">Date</th> 
-	      <th style="width:150px;">Turnover</th> 
+	      <th style="width:150px;">Turnover: <%= Movement.where(:article_code => @articles.select("article_code")).sum("turnover")%></th> 
+	      <th style="width:150px;">Quantity: <%= Movement.where(:article_code => @articles.select("article_code")).sum("quantity")%></th> 
 	   </tr> 
 	<% @movements.each do |movement| %>
 		<tr> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.article_code%></td> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_date.strftime("%B %d, %Y")%></td> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.turnover%></td> 
+	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.quantity%></td> 
 		 </tr>
 		<% end %>
 </table>

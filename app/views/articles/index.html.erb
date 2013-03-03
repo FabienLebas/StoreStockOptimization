@@ -5,7 +5,9 @@
    <tr style="background-color:lightgrey;"> 
       <th style="width:150px;">Article code</th> 
       <th style="width:150px;">Article text</th> 
-      <th style="width:150px;">Supplier</th> 
+      <th style="width:150px;">Stock</th>
+      <th style="width:150px;">Sales/day</th> 
+	  <th style="width:150px;">Supplier</th> 
       <th style="width:150px;">Box</th> 
       <th style="width:150px;">Minimum of qty</th> 
       <th style="width:150px;">Stock risk</th> 
@@ -17,7 +19,6 @@
       <th style="width:150px;">End of life</th> 
       <th style="width:150px;">End of life option</th> 
       <th style="width:150px;">Seasonality</th> 
-      <th style="width:150px;">Stock</th> 
       <th style="width:150px;">Creation date</th> 
 
    </tr> 
@@ -25,6 +26,8 @@
 	<tr> 
       	<td style="padding-left:10px; color:midnightblue;"><%= article.article_code %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= article.article_text %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= article.stock_qty %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%= number_with_precision(Movement.where(:article_code => article.article_code, :movement_date => Date.today-6..Date.today).sum("quantity")/7.to_f, :precision =>2) %></td> 		
       	<td style="padding-left:10px; color:midnightblue;"><%= link_to article.supplier, Supplier.where(:supplier => article.supplier).first %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.box %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.minimum_of_qty %></td> 
@@ -37,7 +40,6 @@
 		<td style="padding-left:10px; color:midnightblue;"><%= article.end_life_date.strftime("%B %d, %Y") %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.end_life_option %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.seasonality_code %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= article.stock_qty %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.created_at.strftime("%B %d, %Y") %></td> 
 		<td><%= link_to 'Show', article %></td>
 	    <td><%= link_to 'Edit', edit_article_path(article) %></td>

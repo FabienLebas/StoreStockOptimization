@@ -154,21 +154,21 @@ $(document).ready(function(){
 	                name: 'Turnover',
 	                pointInterval: <%= 1.day * 1000%>,
 					pointStart: <%= @article.created_at.to_i * 1000%>,
-	                data: <%= article_chart_series_to(@article, 12.weeks.ago).to_json %> 
+	                data: <%= article_chart_series_to(@article, @article.created_at).to_json %> 
 					},
 					{
 		            type: 'line',
 		            name: 'Quantities',
 		            pointInterval: <%= 1.day * 1000%>,
 					pointStart: <%= @article.created_at.to_i * 1000%>,
-		            data: <%= article_chart_series_qty(@movements, 12.weeks.ago).to_json %> 
+		            data: <%= article_chart_series_qty(@movements, @article.created_at).to_json %> 
 					},
 					{
 		            type: 'line',
 		            name: 'Stock',
 		            pointInterval: <%= 1.day * 1000%>,
 					pointStart: <%= @article.created_at.to_i * 1000%>,
-		            data: <%= article_chart_series_stock(@article, 12.weeks.ago).to_json %> 
+		            data: <%= article_chart_series_stock(@article, @article.created_at).to_json %> 
 					}
 					]
 	        });	

@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-    @movements = Movement.where(:article_code => @article.article_code).select("movement_date, article_code, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date").order("movement_date DESC")
+    @movements = Movement.where(:article_code => @article.article_code).select("movement_date, article_code, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date, article_code").order("movement_date DESC")
     @average_sales = Movement.where(:article_code => @article.article_code, :movement_date => Date.today-6..Date.today).sum("quantity")/7.to_f
 
     respond_to do |format|

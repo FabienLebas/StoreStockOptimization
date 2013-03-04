@@ -70,6 +70,26 @@
 <div id="container" style="width:100%; height:400px;"> </div>
 <br/>
 
+<h1>Sales per day</h1>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+	   <tr style="background-color:lightgrey;"> 
+	      <th style="width:150px;">Movement Date</th> 
+	      <th style="width:150px;">Turnover: <%= Movement.sum("turnover")%></th> 
+	      <th style="width:150px;">Quantity: <%= Movement.sum("quantity")%></th> 
+	      <th style="width:150px;">Stock: <%= Article.sum("stock_qty")%></th> 
+	   </tr> 
+	<% @movements_grouped.each do |movement| %>
+		<tr> 
+	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_date.strftime("%B %d, %Y") %></td> 
+	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.turnover %></td> 
+			<td style="padding-left:10px; color:midnightblue;"><%= movement.quantity %></td> 
+			<td style="padding-left:10px; color:midnightblue;"><%= Article.sum("stock_qty").to_i + Movement.where(:movement_date => movement.movement_date+1..Date.today).sum("quantity").to_i%></td> 			
+		  </tr>
+		<% end %>
+</table>
+</br>
+
 <h1>Listing all movements</h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 

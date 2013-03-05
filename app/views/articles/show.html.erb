@@ -12,7 +12,11 @@
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
    		<tr style="background-color:lightgrey;">
 	      <th style="width:75px;">Article Code</th> 
-	      <th style="width:75px;">Article Text</th> 
+	      <th style="width:75px;">Article Text</th>
+	      <th style="width:75px;">Model Code</th>
+	      <th style="width:75px;">Model Text</th>	
+	      <th style="width:75px;">Family</th>
+	      <th style="width:75px;">Department</th>
 	      <th style="width:75px;">Stock</th> 
 	      <th style="width:75px;">Supplier</th> 
 	      <th style="width:75px;">Box</th> 
@@ -30,6 +34,10 @@
 		</tr>
 			<td><%= @article.article_code %></td>
 			<td><%= @article.article_text %></td>
+			<td><%= @article.model_code %></td>
+			<td><%= @article.model_name %></td>			
+			<td><%= @article.family %></td>
+			<td><%= @article.department %></td>			
 			<td><%= @article.stock_qty %></td>
 			<td><%= link_to @article.supplier, Supplier.where(:supplier => @article.supplier).first %></td>
 			<td><%= @article.box %></td>

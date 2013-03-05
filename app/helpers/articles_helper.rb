@@ -17,10 +17,9 @@ module ArticlesHelper
   end
   
   def article_chart_series_stock(article, start_time)
-    movement_by_day = Movement.where(:movement_date => start_time.to_date..Date.today, :article_code => @article.article_code).group("movement_date").select("movement_date, sum(quantity) as quantity")
+    movement_by_day = Movement.where(:movement_date => start_time.to_date..Date.today, :article_code => @article.article_code).group("movement_date").select("movement_date, sum(quantity) as quantity")   
     (start_time.to_date..Date.today).map do |date|
-      stock = movement_by_day.detect { |stock| stock.movement_date.to_date == date }
-      stock && (@article.stock_qty + Movement.where(:movement_date => stock.movement_date+1..Date.today, :article_code => @article.article_code).sum("quantity"))
+    stock = (@article.stock_qty + Movement.where(:movement_date => date+1..Date.today, :article_code => @article.article_code).sum("quantity")) 
     end
   end
   

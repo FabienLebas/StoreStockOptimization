@@ -213,17 +213,21 @@ $(document).ready(function(){
                     text: null
                 }
             },
-            yAxis: {
-                title: {
-                    text: ''
-                },
-                showFirstLabel: false
-            },
+            yAxis: [{
+                	title: {text: ''},
+                	},
+					{
+					labels: {formatter:function(){
+							return this.value;
+							}},
+					title: {text: 'Stock Value',
+							style: { color: '#33FF66'}
+							},
+					opposite: true,
+					},
+            ],
             tooltip: {
                 shared: true,
-				formatter: function(){
-					return Highcharts.dateFormat("%B %e, %Y", this.x) + ': ' + "$" + Highcharts.numberFormat(this.y, 2);
-				}
             },
             legend: {
                 enabled: true
@@ -273,10 +277,12 @@ $(document).ready(function(){
 				},
 				{
 	            type: 'line',
-	            name: 'Stock',
+	            name: 'Stock value',
+				yAxis: 1,
+				color: '#33FF66',
 	            pointInterval: <%= 1.day * 1000%>,
 	            pointStart: <%= 12.weeks.ago.to_i * 1000%>,
-	            data: <%= movements_chart_series_stock(@movements, 12.weeks.ago).to_json %> 
+	            data: <%= movements_chart_series_stockValue(@movements, 12.weeks.ago).to_json %> 
 				}
 				]
         });

@@ -22,5 +22,11 @@ module MovementsHelper
     end
   end
   
+  def movements_chart_series_stockValue(movements, start_time)
+    movement_by_day = Movement.where(:movement_date => start_time.to_date..Date.today).group("movement_date").select("movement_date, sum(quantity) as quantity")   
+    (start_time.to_date..Date.today).map do |date|
+    stock = (Article.sum("stock_qty * selling_price_inc_vat") + Movement.where(:movement_date => date+1..Date.today).sum("turnover")) 
+    end
+  end
   
 end

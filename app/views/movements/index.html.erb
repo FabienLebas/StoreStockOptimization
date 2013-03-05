@@ -270,6 +270,13 @@ $(document).ready(function(){
 	            pointInterval: <%= 1.day * 1000%>,
 	            pointStart: <%= 12.weeks.ago.to_i * 1000%>,
 	            data: <%= movements_chart_series_qty(@movements, 12.weeks.ago).to_json %> 
+				},
+				{
+	            type: 'line',
+	            name: 'Stock',
+	            pointInterval: <%= 1.day * 1000%>,
+	            pointStart: <%= 12.weeks.ago.to_i * 1000%>,
+	            data: <%= movements_chart_series_stock(@movements, 12.weeks.ago).to_json %> 
 				}
 				]
         });

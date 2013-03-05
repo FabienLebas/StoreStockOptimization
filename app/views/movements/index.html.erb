@@ -45,7 +45,7 @@
 			<td style="padding-left:10px; color:midnightblue;" id="resultQty"></td>	
 			<td style="padding-left:10px; color:midnightblue;" id="resultQtyFromTo"></td>																	
 		</tr>
-		<tr><th style="background-color:lightgrey;"> Best seller </th>
+		<tr><th style="background-color:lightgrey;"> Best sellers </th>
 			<td style="padding-left:10px; color:midnightblue;"><%= if !Movement.where(:movement_date =>Date.today).empty? 
 																	then link_to Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code, Article.where(:article_code =>Movement.where(:movement_date =>Date.today).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first
 																	else 0
@@ -74,9 +74,9 @@
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;">Movement Date</th> 
-	      <th style="width:150px;">Turnover: <%= Movement.sum("turnover")%></th> 
-	      <th style="width:150px;">Quantity: <%= Movement.sum("quantity")%></th> 
+	      <th style="width:150px;"><%= sortable "movement_date", "Movement date" %></th> 
+	      <th style="width:150px;"><%= sortable "turnover", "Turnover:" %> <%= Movement.sum("turnover")%></th> 
+	      <th style="width:150px;"><%= sortable "quantity", "Quantity:"%> <%= Movement.sum("quantity")%></th> 
 	      <th style="width:150px;">Stock: <%= Article.sum("stock_qty")%></th> 
 	   </tr> 
 	<% @movements_grouped.each do |movement| %>
@@ -94,10 +94,10 @@
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;">Article code</th> 
-	      <th style="width:150px;">Movement Date</th> 
-	      <th style="width:150px;">Turnover: <%= Movement.sum("turnover")%></th> 
-	      <th style="width:150px;">Quantity: <%= Movement.sum("quantity")%></th> 
+	      <th style="width:150px;"><%= sortable "article_code", "Article code"%></th> 
+	      <th style="width:150px;"><%= sortable "movement_date", "Movement Date"%></th> 
+	      <th style="width:150px;"><%= sortable "turnover", "Turnover:"%> <%= Movement.sum("turnover")%></th> 
+	      <th style="width:150px;"><%= sortable "quantity", "Quantity:"%> <%= Movement.sum("quantity")%></th> 
 	   </tr> 
 	<% @movements.each do |movement| %>
 		<tr> 

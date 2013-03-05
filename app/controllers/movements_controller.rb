@@ -2,8 +2,10 @@ class MovementsController < ApplicationController
   # GET /movements
   # GET /movements.json
   def index
-    @movements = Movement.order("movement_date DESC").all
-    @movements_grouped = Movement.select("movement_date, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date").order("movement_date DESC")
+    params[:sort] ||= "movement_date"
+    params[:direction] ||= "desc"    
+    @movements = Movement.order(params[:sort] + " " + params[:direction])
+    @movements_grouped = Movement.select("movement_date, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date").order(params[:sort] + " " + params[:direction])
 
     respond_to do |format|
       format.html # index.html.erb

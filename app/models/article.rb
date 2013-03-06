@@ -4,4 +4,5 @@ class Article < ActiveRecord::Base
   has_many:orders
   has_many:plannedorders
   has_many:suppliers
+  belongs_to:seasonalities
 end

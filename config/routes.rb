@@ -1,4 +1,7 @@
 StoreStockOptimization::Application.routes.draw do
+  resources :seasonalities
+
+
   resources :planned_orders
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305141406) do
+ActiveRecord::Schema.define(:version => 20130306131606) do
 
   create_table "articles", :force => true do |t|
     t.string   "article_code"
@@ -64,6 +64,65 @@ ActiveRecord::Schema.define(:version => 20130305141406) do
     t.boolean  "validated"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+  end
+
+  create_table "seasonalities", :force => true do |t|
+    t.string   "seasonality"
+    t.float    "w1"
+    t.float    "w2"
+    t.float    "w3"
+    t.float    "w4"
+    t.float    "w5"
+    t.float    "w6"
+    t.float    "w7"
+    t.float    "w8"
+    t.float    "w9"
+    t.float    "w10"
+    t.float    "w11"
+    t.float    "w12"
+    t.float    "w13"
+    t.float    "w14"
+    t.float    "w15"
+    t.float    "w16"
+    t.float    "w17"
+    t.float    "w18"
+    t.float    "w19"
+    t.float    "w20"
+    t.float    "w21"
+    t.float    "w22"
+    t.float    "w23"
+    t.float    "w24"
+    t.float    "w25"
+    t.float    "w26"
+    t.float    "w27"
+    t.float    "w28"
+    t.float    "w29"
+    t.float    "w30"
+    t.float    "w31"
+    t.float    "w32"
+    t.float    "w33"
+    t.float    "w34"
+    t.float    "w35"
+    t.float    "w36"
+    t.float    "w37"
+    t.float    "w38"
+    t.float    "w39"
+    t.float    "w40"
+    t.float    "w41"
+    t.float    "w42"
+    t.float    "w43"
+    t.float    "w44"
+    t.float    "w45"
+    t.float    "w46"
+    t.float    "w47"
+    t.float    "w48"
+    t.float    "w49"
+    t.float    "w50"
+    t.float    "w51"
+    t.float    "w52"
+    t.float    "w53"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "suppliers", :force => true do |t|

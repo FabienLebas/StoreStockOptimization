@@ -1,0 +1,129 @@
+<h1>Listing seasonalities</h1>
+
+<table>
+  <tr>
+    <th>Seasonality</th>
+    <th>W1</th>
+    <th>W2</th>
+    <th>W3</th>
+    <th>W4</th>
+    <th>W5</th>
+    <th>W6</th>
+    <th>W7</th>
+    <th>W8</th>
+    <th>W9</th>
+    <th>W10</th>
+    <th>W11</th>
+    <th>W12</th>
+    <th>W13</th>
+    <th>W14</th>
+    <th>W15</th>
+    <th>W16</th>
+    <th>W17</th>
+    <th>W18</th>
+    <th>W19</th>
+    <th>W20</th>
+    <th>W21</th>
+    <th>W22</th>
+    <th>W23</th>
+    <th>W24</th>
+    <th>W25</th>
+    <th>W26</th>
+    <th>W27</th>
+    <th>W28</th>
+    <th>W29</th>
+    <th>W30</th>
+    <th>W31</th>
+    <th>W32</th>
+    <th>W33</th>
+    <th>W34</th>
+    <th>W35</th>
+    <th>W36</th>
+    <th>W37</th>
+    <th>W38</th>
+    <th>W39</th>
+    <th>W40</th>
+    <th>W41</th>
+    <th>W42</th>
+    <th>W43</th>
+    <th>W44</th>
+    <th>W45</th>
+    <th>W46</th>
+    <th>W47</th>
+    <th>W48</th>
+    <th>W49</th>
+    <th>W50</th>
+    <th>W51</th>
+    <th>W52</th>
+    <th>W53</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @seasonalities.each do |seasonality| %>
+  <tr>
+    <td><%= seasonality.seasonality %></td>
+    <td><%= seasonality.w1 %></td>
+    <td><%= seasonality.w2 %></td>
+    <td><%= seasonality.w3 %></td>
+    <td><%= seasonality.w4 %></td>
+    <td><%= seasonality.w5 %></td>
+    <td><%= seasonality.w6 %></td>
+    <td><%= seasonality.w7 %></td>
+    <td><%= seasonality.w8 %></td>
+    <td><%= seasonality.w9 %></td>
+    <td><%= seasonality.w10 %></td>
+    <td><%= seasonality.w11 %></td>
+    <td><%= seasonality.w12 %></td>
+    <td><%= seasonality.w13 %></td>
+    <td><%= seasonality.w14 %></td>
+    <td><%= seasonality.w15 %></td>
+    <td><%= seasonality.w16 %></td>
+    <td><%= seasonality.w17 %></td>
+    <td><%= seasonality.w18 %></td>
+    <td><%= seasonality.w19 %></td>
+    <td><%= seasonality.w20 %></td>
+    <td><%= seasonality.w21 %></td>
+    <td><%= seasonality.w22 %></td>
+    <td><%= seasonality.w23 %></td>
+    <td><%= seasonality.w24 %></td>
+    <td><%= seasonality.w25 %></td>
+    <td><%= seasonality.w26 %></td>
+    <td><%= seasonality.w27 %></td>
+    <td><%= seasonality.w28 %></td>
+    <td><%= seasonality.w29 %></td>
+    <td><%= seasonality.w30 %></td>
+    <td><%= seasonality.w31 %></td>
+    <td><%= seasonality.w32 %></td>
+    <td><%= seasonality.w33 %></td>
+    <td><%= seasonality.w34 %></td>
+    <td><%= seasonality.w35 %></td>
+    <td><%= seasonality.w36 %></td>
+    <td><%= seasonality.w37 %></td>
+    <td><%= seasonality.w38 %></td>
+    <td><%= seasonality.w39 %></td>
+    <td><%= seasonality.w40 %></td>
+    <td><%= seasonality.w41 %></td>
+    <td><%= seasonality.w42 %></td>
+    <td><%= seasonality.w43 %></td>
+    <td><%= seasonality.w44 %></td>
+    <td><%= seasonality.w45 %></td>
+    <td><%= seasonality.w46 %></td>
+    <td><%= seasonality.w47 %></td>
+    <td><%= seasonality.w48 %></td>
+    <td><%= seasonality.w49 %></td>
+    <td><%= seasonality.w50 %></td>
+    <td><%= seasonality.w51 %></td>
+    <td><%= seasonality.w52 %></td>
+    <td><%= seasonality.w53 %></td>
+    <td><%= link_to 'Show', seasonality %></td>
+    <td><%= link_to 'Edit', edit_seasonality_path(seasonality) %></td>
+    <td><%= link_to 'Destroy', seasonality, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Seasonality', new_seasonality_path %>

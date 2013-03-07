@@ -1,3 +1,9 @@
+<head>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+</head>
+<body>
 <%= form_for(@seasonality) do |f| %>
   <% if @seasonality.errors.any? %>
     <div id="error_explanation">
@@ -15,6 +21,19 @@
     <%= f.label :seasonality %><br />
     <%= f.text_field :seasonality %>
   </div>
+
+<div id="apnd">
+	<div id="slider1"></div>
+	<div id="slider2"></div>
+	<div id="slider3"></div>
+</div>
+</br>
+<p>W1 W2 W3</p>
+<div size="1"; value="12"; id="W3"></div>
+<p>W3</p>
+
+
+
   <div class="field">
     <%= f.label :w1 %><br />
     <%= f.text_field :w1 %>
@@ -231,3 +250,38 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+$(document).ready(function(){
+		$( "#slider1" ).height(400);
+		$( "#slider1" ).slider({
+			min:0,
+			max:100,
+			orientation:"vertical",
+			slide: function(event, ui){
+				$("#W1").text(ui.value);
+			}	
+		});
+		
+		$( "#slider2" ).height(400);
+		$( "#slider2" ).slider({
+			min:0,
+			max:100,
+			orientation:"vertical",
+			slide: function(event, ui){
+				$("#W2").text(ui.value);
+			}	
+		});
+		
+		$( "#slider3" ).height(400);
+		$( "#slider3" ).slider({
+			min:0,
+			max:100,
+			orientation:"vertical",
+			slide: function(event, ui){
+				$("#W3").text(ui.value);
+			}	
+		});
+});
+</script>
+</body>

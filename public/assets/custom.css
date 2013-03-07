@@ -97,3 +97,10 @@ footer nav {
   -webkit-border-radius: 10px;
   border-radius:         10px;
 }
+
+/* Slider seasonality cote a cote */
+#apnd div{
+	width:10px;
+	margin-left:3px;
+	float:left;
+}

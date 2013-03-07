@@ -2,6 +2,7 @@
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
 	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+	
 </head>
 <body>
 <%= form_for(@seasonality) do |f| %>
@@ -22,73 +23,118 @@
     <%= f.text_field :seasonality %>
   </div>
 	</br>
+	
 <div id="apnd">	
 	<div>
-	<input type="range" min="0" max="100" name="slider1">
-	<input type="range" min="0" max="100" name="slider2">
-	<input type="range" min="0" max="100" name="slider3">
-	<input type="range" min="0" max="100" name="slider4">
-	<input type="range" min="0" max="100" name="slider5">
-	<input type="range" min="0" max="100" name="slider6">
-	<input type="range" min="0" max="100" name="slider7">
-	<input type="range" min="0" max="100" name="slider8">
-	<input type="range" min="0" max="100" name="slider9">
-	<input type="range" min="0" max="100" name="slider10">
-	<input type="range" min="0" max="100" name="slider11">
-	<input type="range" min="0" max="100" name="slider12">
-	<input type="range" min="0" max="100" name="slider13">
-	<input type="range" min="0" max="100" name="slider14">
-	<input type="range" min="0" max="100" name="slider15">
-	<input type="range" min="0" max="100" name="slider16">
-	<input type="range" min="0" max="100" name="slider17">
-	<input type="range" min="0" max="100" name="slider18">
-	<input type="range" min="0" max="100" name="slider19">
-	<input type="range" min="0" max="100" name="slider20">
-	<input type="range" min="0" max="100" name="slider21">
-	<input type="range" min="0" max="100" name="slider22">
-	<input type="range" min="0" max="100" name="slider23">
-	<input type="range" min="0" max="100" name="slider24">
-	<input type="range" min="0" max="100" name="slider25">
-	<input type="range" min="0" max="100" name="slider26">
-	<input type="range" min="0" max="100" name="slider27">
-	<input type="range" min="0" max="100" name="slider28">
-	<input type="range" min="0" max="100" name="slider29">
-	<input type="range" min="0" max="100" name="slider30">
-	<input type="range" min="0" max="100" name="slider31">
-	<input type="range" min="0" max="100" name="slider32">
-	<input type="range" min="0" max="100" name="slider33">
-	<input type="range" min="0" max="100" name="slider34">
-	<input type="range" min="0" max="100" name="slider35">
-	<input type="range" min="0" max="100" name="slider36">
-	<input type="range" min="0" max="100" name="slider37">
-	<input type="range" min="0" max="100" name="slider38">
-	<input type="range" min="0" max="100" name="slider39">
-	<input type="range" min="0" max="100" name="slider40">
-	<input type="range" min="0" max="100" name="slider41">
-	<input type="range" min="0" max="100" name="slider42">
-	<input type="range" min="0" max="100" name="slider43">
-	<input type="range" min="0" max="100" name="slider44">
-	<input type="range" min="0" max="100" name="slider45">
-	<input type="range" min="0" max="100" name="slider46">
-	<input type="range" min="0" max="100" name="slider47">
-	<input type="range" min="0" max="100" name="slider48">
-	<input type="range" min="0" max="100" name="slider49">
-	<input type="range" min="0" max="100" name="slider50">
-	<input type="range" min="0" max="100" name="slider51">
-	<input type="range" min="0" max="100" name="slider52">
-	<input type="range" min="0" max="100" name="slider53">
+	<input type="range" min="0" max="100" id="slider1"/>
+	<input type="range" min="0" max="100" id="slider2">
+	<input type="range" min="0" max="100" id="slider3">
+	<input type="range" min="0" max="100" id="slider4">
+	<input type="range" min="0" max="100" id="slider5">
+	<input type="range" min="0" max="100" id="slider6">
+	<input type="range" min="0" max="100" id="slider7">
+	<input type="range" min="0" max="100" id="slider8">
+	<input type="range" min="0" max="100" id="slider9">
+	<input type="range" min="0" max="100" id="slider10">
+	<input type="range" min="0" max="100" id="slider11">
+	<input type="range" min="0" max="100" id="slider12">
+	<input type="range" min="0" max="100" id="slider13">
+	<input type="range" min="0" max="100" id="slider14">
+	<input type="range" min="0" max="100" id="slider15">
+	<input type="range" min="0" max="100" id="slider16">
+	<input type="range" min="0" max="100" id="slider17">
+	<input type="range" min="0" max="100" id="slider18">
+	<input type="range" min="0" max="100" id="slider19">
+	<input type="range" min="0" max="100" id="slider20">
+	<input type="range" min="0" max="100" id="slider21">
+	<input type="range" min="0" max="100" id="slider22">
+	<input type="range" min="0" max="100" id="slider23">
+	<input type="range" min="0" max="100" id="slider24">
+	<input type="range" min="0" max="100" id="slider25">
+	<input type="range" min="0" max="100" id="slider26">
+	<input type="range" min="0" max="100" id="slider27">
+	<input type="range" min="0" max="100" id="slider28">
+	<input type="range" min="0" max="100" id="slider29">
+	<input type="range" min="0" max="100" id="slider30">
+	<input type="range" min="0" max="100" id="slider31">
+	<input type="range" min="0" max="100" id="slider32">
+	<input type="range" min="0" max="100" id="slider33">
+	<input type="range" min="0" max="100" id="slider34">
+	<input type="range" min="0" max="100" id="slider35">
+	<input type="range" min="0" max="100" id="slider36">
+	<input type="range" min="0" max="100" id="slider37">
+	<input type="range" min="0" max="100" id="slider38">
+	<input type="range" min="0" max="100" id="slider39">
+	<input type="range" min="0" max="100" id="slider40">
+	<input type="range" min="0" max="100" id="slider41">
+	<input type="range" min="0" max="100" id="slider42">
+	<input type="range" min="0" max="100" id="slider43">
+	<input type="range" min="0" max="100" id="slider44">
+	<input type="range" min="0" max="100" id="slider45">
+	<input type="range" min="0" max="100" id="slider46">
+	<input type="range" min="0" max="100" id="slider47">
+	<input type="range" min="0" max="100" id="slider48">
+	<input type="range" min="0" max="100" id="slider49">
+	<input type="range" min="0" max="100" id="slider50">
+	<input type="range" min="0" max="100" id="slider51">
+	<input type="range" min="0" max="100" id="slider52">
+	<input type="range" min="0" max="100" id="slider53">
 	</div>
-	<div>W1 W2
-	<div>W2</div>
-	<div>W3</div>
-	<div>W4</div>
-	<div>W5</div>
+		<text id="W1">50</text>
+		<text id="W2">50</text>
+		<text id="W3">50</text>
+		<text id="W4">50</text>
+		<text id="W5">50</text>
+		<text id="W6">50</text>
+		<text id="W7">50</text>
+		<text id="W8">50</text>
+		<text id="W9">50</text>
+		<text id="W10">50</text>
+		<text id="W11">50</text>
+		<text id="W12">50</text>
+		<text id="W13">50</text>
+		<text id="W14">50</text>
+		<text id="W15">50</text>
+		<text id="W16">50</text>
+		<text id="W17">50</text>
+		<text id="W18">50</text>
+		<text id="W19">50</text>
+		<text id="W20">50</text>
+		<text id="W21">50</text>
+		<text id="W22">50</text>
+		<text id="W23">50</text>
+		<text id="W24">50</text>
+		<text id="W25">50</text>
+		<text id="W26">50</text>
+		<text id="W27">50</text>
+		<text id="W28">50</text>
+		<text id="W29">50</text>
+		<text id="W30">50</text>
+		<text id="W31">50</text>
+		<text id="W32">50</text>
+		<text id="W33">50</text>
+		<text id="W34">50</text>
+		<text id="W35">50</text>
+		<text id="W36">50</text>
+		<text id="W37">50</text>
+		<text id="W38">50</text>
+		<text id="W39">50</text>
+		<text id="W40">50</text>
+		<text id="W41">50</text>
+		<text id="W42">50</text>
+		<text id="W43">50</text>
+		<text id="W44">50</text>
+		<text id="W45">50</text>
+		<text id="W46">50</text>
+		<text id="W47">50</text>
+		<text id="W48">50</text>
+		<text id="W49">50</text>
+		<text id="W50">50</text>
+		<text id="W51">50</text>
+		<text id="W52">50</text>
+		<text id="W53">50</text>
 </div>
 </br>
-<div size="1"; value="12"; id="W3"></div>
-
-
-
 
   <div class="field">
     <%= f.label :w1 %><br />
@@ -309,35 +355,220 @@
 
 <script>
 $(document).ready(function(){
-		$( "#slider1" ).height(400);
-		$( "#slider1" ).slider({
-			min:0,
-			max:100,
-			orientation:"vertical",
-			slide: function(event, ui){
-				$("#W1").text(ui.value);
-			}	
-		});
-		
-		$( "#slider2" ).height(400);
-		$( "#slider2" ).slider({
-			min:0,
-			max:100,
-			orientation:"vertical",
-			slide: function(event, ui){
-				$("#W2").text(ui.value);
-			}	
-		});
-		
-		$( "#slider3" ).height(400);
-		$( "#slider3" ).slider({
-			min:0,
-			max:100,
-			orientation:"vertical",
-			slide: function(event, ui){
-				$("#W3").text(ui.value);
-			}	
-		});
+	
+	$("#slider1").change(function () {                    
+	   var newValue = $('#slider1').val();
+	   $("#W1").html(newValue);
+	});
+	$("#slider2").change(function () {                    
+	   var newValue = $('#slider2').val();
+	   $("#W2").html(newValue);
+	});
+	$("#slider3").change(function () {                    
+	   var newValue = $('#slider3').val();
+	   $("#W3").html(newValue);
+	});
+	$("#slider4").change(function () {                    
+	   var newValue = $('#slider4').val();
+	   $("#W4").html(newValue);
+	});
+	$("#slider5").change(function () {                    
+	   var newValue = $('#slider5').val();
+	   $("#W5").html(newValue);
+	});	
+	$("#slider6").change(function () {                    
+	   var newValue = $('#slider6').val();
+	   $("#W6").html(newValue);
+	});
+	$("#slider7").change(function () {                    
+	   var newValue = $('#slider7').val();
+	   $("#W7").html(newValue);
+	});
+	$("#slider8").change(function () {                    
+	   var newValue = $('#slider8').val();
+	   $("#W8").html(newValue);
+	});
+	$("#slider9").change(function () {                    
+	   var newValue = $('#slider9').val();
+	   $("#W9").html(newValue);
+	});
+	$("#slider10").change(function () {                    
+	   var newValue = $('#slider10').val();
+	   $("#W10").html(newValue);
+	});
+	$("#slider11").change(function () {                    
+	   var newValue = $('#slider11').val();
+	   $("#W11").html(newValue);
+	});
+	$("#slider12").change(function () {                    
+	   var newValue = $('#slider12').val();
+	   $("#W12").html(newValue);
+	});
+	$("#slider13").change(function () {                    
+	   var newValue = $('#slider13').val();
+	   $("#W13").html(newValue);
+	});
+	$("#slider14").change(function () {                    
+	   var newValue = $('#slider14').val();
+	   $("#W14").html(newValue);
+	});
+	$("#slider15").change(function () {                    
+	   var newValue = $('#slider15').val();
+	   $("#W15").html(newValue);
+	});	
+	$("#slider16").change(function () {                    
+	   var newValue = $('#slider16').val();
+	   $("#W16").html(newValue);
+	});
+	$("#slider17").change(function () {                    
+	   var newValue = $('#slider17').val();
+	   $("#W17").html(newValue);
+	});
+	$("#slider18").change(function () {                    
+	   var newValue = $('#slider18').val();
+	   $("#W18").html(newValue);
+	});
+	$("#slider19").change(function () {                    
+	   var newValue = $('#slider19').val();
+	   $("#W19").html(newValue);
+	});
+	$("#slider20").change(function () {                    
+	   var newValue = $('#slider20').val();
+	   $("#W20").html(newValue);
+	});
+	$("#slider21").change(function () {                    
+	   var newValue = $('#slider21').val();
+	   $("#W21").html(newValue);
+	});
+	$("#slider22").change(function () {                    
+	   var newValue = $('#slider22').val();
+	   $("#W22").html(newValue);
+	});
+	$("#slider23").change(function () {                    
+	   var newValue = $('#slider23').val();
+	   $("#W23").html(newValue);
+	});
+	$("#slider24").change(function () {                    
+	   var newValue = $('#slider24').val();
+	   $("#W24").html(newValue);
+	});
+	$("#slider25").change(function () {                    
+	   var newValue = $('#slider25').val();
+	   $("#W25").html(newValue);
+	});	
+	$("#slider26").change(function () {                    
+	   var newValue = $('#slider26').val();
+	   $("#W26").html(newValue);
+	});
+	$("#slider27").change(function () {                    
+	   var newValue = $('#slider27').val();
+	   $("#W27").html(newValue);
+	});
+	$("#slider28").change(function () {                    
+	   var newValue = $('#slider28').val();
+	   $("#W28").html(newValue);
+	});
+	$("#slider29").change(function () {                    
+	   var newValue = $('#slider29').val();
+	   $("#W29").html(newValue);
+	});
+	$("#slider30").change(function () {                    
+	   var newValue = $('#slider30').val();
+	   $("#W30").html(newValue);
+	});
+	$("#slider31").change(function () {                    
+	   var newValue = $('#slider31').val();
+	   $("#W31").html(newValue);
+	});
+	$("#slider32").change(function () {                    
+	   var newValue = $('#slider32').val();
+	   $("#W32").html(newValue);
+	});
+	$("#slider33").change(function () {                    
+	   var newValue = $('#slider33').val();
+	   $("#W33").html(newValue);
+	});
+	$("#slider34").change(function () {                    
+	   var newValue = $('#slider34').val();
+	   $("#W34").html(newValue);
+	});
+	$("#slider35").change(function () {                    
+	   var newValue = $('#slider35').val();
+	   $("#W35").html(newValue);
+	});	
+	$("#slider36").change(function () {                    
+	   var newValue = $('#slider36').val();
+	   $("#W36").html(newValue);
+	});
+	$("#slider37").change(function () {                    
+	   var newValue = $('#slider37').val();
+	   $("#W37").html(newValue);
+	});
+	$("#slider38").change(function () {                    
+	   var newValue = $('#slider38').val();
+	   $("#W38").html(newValue);
+	});
+	$("#slider39").change(function () {                    
+	   var newValue = $('#slider39').val();
+	   $("#W39").html(newValue);
+	});
+	$("#slider40").change(function () {                    
+	   var newValue = $('#slider40').val();
+	   $("#W40").html(newValue);
+	});
+	$("#slider41").change(function () {                    
+	   var newValue = $('#slider41').val();
+	   $("#W41").html(newValue);
+	});
+	$("#slider42").change(function () {                    
+	   var newValue = $('#slider42').val();
+	   $("#W42").html(newValue);
+	});
+	$("#slider43").change(function () {                    
+	   var newValue = $('#slider43').val();
+	   $("#W43").html(newValue);
+	});
+	$("#slider44").change(function () {                    
+	   var newValue = $('#slider44').val();
+	   $("#W44").html(newValue);
+	});
+	$("#slider45").change(function () {                    
+	   var newValue = $('#slider45').val();
+	   $("#W45").html(newValue);
+	});	
+	$("#slider46").change(function () {                    
+	   var newValue = $('#slider46').val();
+	   $("#W46").html(newValue);
+	});
+	$("#slider47").change(function () {                    
+	   var newValue = $('#slider47').val();
+	   $("#W47").html(newValue);
+	});
+	$("#slider48").change(function () {                    
+	   var newValue = $('#slider48').val();
+	   $("#W48").html(newValue);
+	});
+	$("#slider49").change(function () {                    
+	   var newValue = $('#slider49').val();
+	   $("#W49").html(newValue);
+	});
+	$("#slider50").change(function () {                    
+	   var newValue = $('#slider50').val();
+	   $("#W50").html(newValue);
+	});
+	$("#slider51").change(function () {                    
+	   var newValue = $('#slider51').val();
+	   $("#W51").html(newValue);
+	});
+	$("#slider52").change(function () {                    
+	   var newValue = $('#slider52').val();
+	   $("#W52").html(newValue);
+	});
+	$("#slider53").change(function () {                    
+	   var newValue = $('#slider53').val();
+	   $("#W53").html(newValue);
+	});
+	
 });
 </script>
 </body>

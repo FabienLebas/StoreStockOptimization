@@ -101,12 +101,16 @@ footer nav {
 /* Slider seasonality cote a cote */
 #apnd input{
 	height:400px;
-	width:15px;
+	width:16px;
 	float:left;
 	-webkit-appearance: slider-vertical;
 	-moz-transfrom: rotate(270deg);
 }
 
 #apnd{
-	width:1010px;
+	width:1060px;
+}
+
+#apnd text{
+	width:15px;
 }

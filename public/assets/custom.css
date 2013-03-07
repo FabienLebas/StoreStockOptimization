@@ -99,8 +99,14 @@ footer nav {
 }
 
 /* Slider seasonality cote a cote */
-#apnd div{
-	width:10px;
-	margin-left:3px;
+#apnd input{
+	height:400px;
+	width:15px;
 	float:left;
+	-webkit-appearance: slider-vertical;
+	-moz-transfrom: rotate(270deg);
+}
+
+#apnd{
+	width:1010px;
 }

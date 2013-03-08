@@ -22,5 +22,11 @@ module ArticlesHelper
     stock = (@article.stock_qty + Movement.where(:movement_date => date+1..Date.today, :article_code => @article.article_code).sum("quantity")) 
     end
   end
+
+  def sortable (column, title = nil)
+    title ||= column.titleize
+    direction = column == params[:sort] && params[:direction] == "desc" ? "asc" : "desc"
+    link_to title, :sort => column, :direction => direction
+  end
   
 end

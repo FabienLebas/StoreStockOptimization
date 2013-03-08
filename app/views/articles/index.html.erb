@@ -1,24 +1,32 @@
 <h1>Listing articles</h1>
 
+<%= form_tag articles_path, :method => 'get', :id => "articles_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search in article text", :name => nil %>
+  </p>
+  <div id="cresults_div"></div>
+<% end %>
+
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
    <tr style="background-color:lightgrey;"> 
-      <th style="width:150px;">Article code</th> 
-      <th style="width:150px;">Article text</th> 
-      <th style="width:150px;">Model code</th> 
-      <th style="width:150px;">Model text</th> 
-      <th style="width:150px;">Family</th> 
-      <th style="width:150px;">Department</th> 
+      <th style="width:150px;"><%= sortable "article_code", "Article code"%></th> 
+      <th style="width:150px;"><%= sortable "article_text", "Article text"%></th> 
+      <th style="width:150px;"><%= sortable "model_code", "Model code"%></th> 
+      <th style="width:150px;"><%= sortable "model_name", "Model text"%></th> 
+      <th style="width:150px;"><%=sortable "family", "Family"%></th> 
+      <th style="width:150px;"><%=sortable "department", "Department"%></th> 
       <th style="width:150px;">Stock</th>
       <th style="width:150px;">Sales/day</th> 
       <th style="width:150px;">Stock lifetime</th> 
-	  <th style="width:150px;">Supplier</th> 
+	  <th style="width:150px;"><%= sortable "supplier", "Supplier"%></th> 
       <th style="width:150px;">Price if box</th> 
       <th style="width:150px;">Price if massive</th> 
-      <th style="width:150px;">Selling price incl VAT</th> 
+      <th style="width:150px;"><%= sortable "selling_price_inc_vat", "Selling price incl VAT"%></th> 
       <th style="width:150px;">VAT rate</th> 
       <th style="width:150px;">End of life</th> 
-      <th style="width:150px;">Seasonality</th> 
+      <th style="width:150px;"><%sortable "seasonality_code", "Seasonality"%></th> 
       <th style="width:150px;">Creation date</th> 
 
    </tr> 
@@ -47,7 +55,8 @@
    </tr> 
 <% end %>
 </table>
-
 <br />
 
 <%= link_to 'New Article', new_article_path %>
+
+

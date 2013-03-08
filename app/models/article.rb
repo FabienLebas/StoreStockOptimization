@@ -5,4 +5,13 @@ class Article < ActiveRecord::Base
   has_many:plannedorders
   has_many:suppliers
   belongs_to:seasonalities
+  
+  def self.search(search)
+        if search
+          where('article_text LIKE ?', "%#{search}%")
+        else
+          scoped
+        end
+    end
+  
 end

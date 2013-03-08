@@ -2,7 +2,6 @@
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
 	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
-	
 </head>
 <body>
 <%= form_for(@seasonality) do |f| %>
@@ -19,76 +18,86 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :seasonality %><br />
+    <%= f.label :seasonality, "Seasonality title" %><br />
     <%= f.text_field :seasonality %>
   </div>
 	</br>
 	
-<div id="apnd">	
-	<div>
-	<input type="range" min="0" max="100" id="slider1"/>
-	<input type="range" min="0" max="100" id="slider2">
-	<input type="range" min="0" max="100" id="slider3">
-	<input type="range" min="0" max="100" id="slider4">
-	<input type="range" min="0" max="100" id="slider5">
-	<input type="range" min="0" max="100" id="slider6">
-	<input type="range" min="0" max="100" id="slider7">
-	<input type="range" min="0" max="100" id="slider8">
-	<input type="range" min="0" max="100" id="slider9">
-	<input type="range" min="0" max="100" id="slider10">
-	<input type="range" min="0" max="100" id="slider11">
-	<input type="range" min="0" max="100" id="slider12">
-	<input type="range" min="0" max="100" id="slider13">
-	<input type="range" min="0" max="100" id="slider14">
-	<input type="range" min="0" max="100" id="slider15">
-	<input type="range" min="0" max="100" id="slider16">
-	<input type="range" min="0" max="100" id="slider17">
-	<input type="range" min="0" max="100" id="slider18">
-	<input type="range" min="0" max="100" id="slider19">
-	<input type="range" min="0" max="100" id="slider20">
-	<input type="range" min="0" max="100" id="slider21">
-	<input type="range" min="0" max="100" id="slider22">
-	<input type="range" min="0" max="100" id="slider23">
-	<input type="range" min="0" max="100" id="slider24">
-	<input type="range" min="0" max="100" id="slider25">
-	<input type="range" min="0" max="100" id="slider26">
-	<input type="range" min="0" max="100" id="slider27">
-	<input type="range" min="0" max="100" id="slider28">
-	<input type="range" min="0" max="100" id="slider29">
-	<input type="range" min="0" max="100" id="slider30">
-	<input type="range" min="0" max="100" id="slider31">
-	<input type="range" min="0" max="100" id="slider32">
-	<input type="range" min="0" max="100" id="slider33">
-	<input type="range" min="0" max="100" id="slider34">
-	<input type="range" min="0" max="100" id="slider35">
-	<input type="range" min="0" max="100" id="slider36">
-	<input type="range" min="0" max="100" id="slider37">
-	<input type="range" min="0" max="100" id="slider38">
-	<input type="range" min="0" max="100" id="slider39">
-	<input type="range" min="0" max="100" id="slider40">
-	<input type="range" min="0" max="100" id="slider41">
-	<input type="range" min="0" max="100" id="slider42">
-	<input type="range" min="0" max="100" id="slider43">
-	<input type="range" min="0" max="100" id="slider44">
-	<input type="range" min="0" max="100" id="slider45">
-	<input type="range" min="0" max="100" id="slider46">
-	<input type="range" min="0" max="100" id="slider47">
-	<input type="range" min="0" max="100" id="slider48">
-	<input type="range" min="0" max="100" id="slider49">
-	<input type="range" min="0" max="100" id="slider50">
-	<input type="range" min="0" max="100" id="slider51">
-	<input type="range" min="0" max="100" id="slider52">
-	<input type="range" min="0" max="100" id="slider53">
+	<table>
+		<tr>
+			<div class="slide"><th><input type="range" min="0" max="100" id="slider1"></th></div>
+		</tr>
+	</table>
+	
+	<table cellspacing="0" cellpadding="3px" rules="all" 
+	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px" >		
+		<tr>
+			
+	<th><input type="range" min="0" max="100" id="slider2"></th>
+	<th><input type="range" min="0" max="100" id="slider3"></th>
+	<th><input type="range" min="0" max="100" id="slider4"></th>
+	<th><input type="range" min="0" max="100" id="slider5"></th>
+	<th><input type="range" min="0" max="100" id="slider6"></th>
+	<th><input type="range" min="0" max="100" id="slider7"></th>
+	<th><input type="range" min="0" max="100" id="slider8"></th>
+	<th><input type="range" min="0" max="100" id="slider9"></th>
+	<th><input type="range" min="0" max="100" id="slider10"></th>
+	<th><input type="range" min="0" max="100" id="slider11"></th>
+	<th><input type="range" min="0" max="100" id="slider12"></th>
+	<th><input type="range" min="0" max="100" id="slider13"></th>
+	<th><input type="range" min="0" max="100" id="slider14"></th>
+	<th><input type="range" min="0" max="100" id="slider15"></th>
+	<th><input type="range" min="0" max="100" id="slider16"></th>
+	<th><input type="range" min="0" max="100" id="slider17"></th>
+	<th><input type="range" min="0" max="100" id="slider18"></th>
+	<th><input type="range" min="0" max="100" id="slider19"></th>
+	<th><input type="range" min="0" max="100" id="slider20"></th>
+	<th><input type="range" min="0" max="100" id="slider21"></th>
+	<th><input type="range" min="0" max="100" id="slider22"></th>
+	<th><input type="range" min="0" max="100" id="slider23"></th>
+	<th><input type="range" min="0" max="100" id="slider24"></th>
+	<th><input type="range" min="0" max="100" id="slider25"></th>
+	<th><input type="range" min="0" max="100" id="slider26"></th>
+	<th><input type="range" min="0" max="100" id="slider27"></th>
+	<th><input type="range" min="0" max="100" id="slider28"></th>
+	<th><input type="range" min="0" max="100" id="slider29"></th>
+	<th><input type="range" min="0" max="100" id="slider30"></th>
+	<th><input type="range" min="0" max="100" id="slider31"></th>
+	<th><input type="range" min="0" max="100" id="slider32"></th>
+	<th><input type="range" min="0" max="100" id="slider33"></th>
+	<th><input type="range" min="0" max="100" id="slider34"></th>
+	<th><input type="range" min="0" max="100" id="slider35"></th>
+	<th><input type="range" min="0" max="100" id="slider36"></th>
+	<th><input type="range" min="0" max="100" id="slider37"></th>
+	<th><input type="range" min="0" max="100" id="slider38"></th>
+	<th><input type="range" min="0" max="100" id="slider39"></th>
+	<th><input type="range" min="0" max="100" id="slider40"></th>
+	<th><input type="range" min="0" max="100" id="slider41"></th>
+	<th><input type="range" min="0" max="100" id="slider42"></th>
+	<th><input type="range" min="0" max="100" id="slider43"></th>
+	<th><input type="range" min="0" max="100" id="slider44"></th>
+	<th><input type="range" min="0" max="100" id="slider45"></th>
+	<th><input type="range" min="0" max="100" id="slider46"></th>
+	<th><input type="range" min="0" max="100" id="slider47"></th>
+	<th><input type="range" min="0" max="100" id="slider48"></th>
+	<th><input type="range" min="0" max="100" id="slider49"></th>
+	<th><input type="range" min="0" max="100" id="slider50"></th>
+	<th><input type="range" min="0" max="100" id="slider51"></th>
+	<th><input type="range" min="0" max="100" id="slider52"></th>
+	<th><input type="range" min="0" max="100" id="slider53"></th>
+	</tr>
 	</div>
-		<text id="W1">50</text>
-		<text id="W2">50</text>
-		<text id="W3">50</text>
-		<text id="W4">50</text>
-		<text id="W5">50</text>
-		<text id="W6">50</text>
-		<text id="W7">50</text>
-		<text id="W8">50</text>
-		<text id="W9">50</text>
+	</table>
+<hr size=5 width=20% align=left>	
+		<text id="W1">50 |</text>
+		<text id="W2">50 |</text>
+		<text id="W3">50 |</text>
+		<text id="W4">50 |</text>
+		<text id="W5">50 |</text>
+		<text id="W6">50 |</text>
+		<text id="W7">50 |</text>
+		<text id="W8">50 |</text>
+		<text id="W9">50 |</text>
 		<text id="W10">50</text>
 		<text id="W11">50</text>
 		<text id="W12">50</text>
@@ -133,7 +142,7 @@
 		<text id="W51">50</text>
 		<text id="W52">50</text>
 		<text id="W53">50</text>
-</div>
+<p>01 02 03 04 05 06 07 08 09 10</p>
 </br>
 
   <div class="field">

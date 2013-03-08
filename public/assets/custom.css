@@ -98,27 +98,12 @@ footer nav {
   border-radius:         10px;
 }
 
-/* Slider seasonality cote a cote */
-#apnd input{
-	height:400px;
-	width:21px;
-	float:left;
-	-webkit-appearance: slider-vertical;
-	-moz-transfrom: rotate(270deg);
-}
-
-#apnd{
-	width:105%;
-	margin-left:20px;
-}
-
-#apnd text{
-	font-size:92%;
-	width:30px;
-	float:clear;
-}
-
-slide {
+/* Slider seasonality */
+.slide {
+		width:20px;
+		height:400px;
+		float:left;
 		-webkit-appearance: slider-vertical;
 		-moz-transfrom: rotate(270deg);
 	}
+	

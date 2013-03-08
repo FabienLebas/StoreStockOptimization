@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   def index
     params[:sort] ||= "article_text "
     params[:direction] ||= "desc"
-    @articles = Article.order(params[:sort] + " " + params[:direction])
+    @articles = Article.search(params[:search]).order(params[:sort] + " " + params[:direction])
 
     respond_to do |format|
       format.html # index.html.erb

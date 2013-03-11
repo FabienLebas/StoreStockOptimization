@@ -7,6 +7,17 @@ class SuppliersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @suppliers }
+      format.xlsx {
+        xlsx_package = Supplier.to_xlsx
+        begin
+          temp = Tempfile.new("suppliers.xlsx")
+          xlsx_package.serialize temp.path
+          send_data xlsx_package.to_stream.read, :filename => 'suppliers.xlsx', :type=> "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        ensure
+          temp.close
+          temp.unlink
+        end
+      }
     end
   end
 

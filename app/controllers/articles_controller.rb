@@ -9,6 +9,17 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @articles }
+      format.xlsx {
+        xlsx_package = Article.to_xlsx
+        begin
+          temp = Tempfile.new("articles.xlsx")
+          xlsx_package.serialize temp.path
+          send_data xlsx_package.to_stream.read, :filename => 'articles.xlsx', :type=> "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        ensure
+          temp.close
+          temp.unlink
+        end
+      }
     end
   end
 

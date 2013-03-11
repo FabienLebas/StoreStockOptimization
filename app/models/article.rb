@@ -6,6 +6,8 @@ class Article < ActiveRecord::Base
   has_many:suppliers
   belongs_to:seasonalities
   
+  acts_as_xlsx
+  
   def self.search(search)
         if search
           where('article_text LIKE ?', "%#{search}%")

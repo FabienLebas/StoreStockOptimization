@@ -10,6 +10,17 @@ class MovementsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @movements }
+      format.xlsx {
+        xlsx_package = Movement.to_xlsx
+        begin
+          temp = Tempfile.new("movements.xlsx")
+          xlsx_package.serialize temp.path
+          send_data xlsx_package.to_stream.read, :filename => 'movements.xlsx', :type=> "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        ensure
+          temp.close
+          temp.unlink
+        end
+      }
     end
   end
 

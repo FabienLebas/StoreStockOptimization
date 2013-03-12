@@ -1,16 +1,19 @@
 class ArticlesController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /articles
   # GET /articles.json
   def index
     params[:sort] ||= "article_text "
     params[:direction] ||= "desc"
-    @articles = Article.search(params[:search]).order(params[:sort] + " " + params[:direction])
+    @articles = Article.search(params[:search]).order(params[:sort] + " " + params[:direction]).where(:user => current_user.email)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @articles }
       format.xlsx {
-        xlsx_package = Article.to_xlsx
+        xlsx_package = Article.where(:user => current_user.email).to_xlsx
         begin
           temp = Tempfile.new("articles.xlsx")
           xlsx_package.serialize temp.path
@@ -27,8 +30,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-    @movements = Movement.where(:article_code => @article.article_code).select("movement_date, article_code, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date, article_code").order("movement_date DESC")
-    @average_sales = Movement.where(:article_code => @article.article_code, :movement_date => Date.today-6..Date.today).sum("quantity").to_f / 7
+    @movements = Movement.where(:article_code => @article.article_code, :user => current_user.email).select("movement_date, article_code, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date, article_code").order("movement_date DESC")
+    @average_sales = Movement.where(:article_code => @article.article_code, :movement_date => Date.today-6..Date.today, :user => current_user.email).sum("quantity").to_f / 7
 
     respond_to do |format|
       format.html # show.html.erb
@@ -59,6 +62,9 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        article = Article.last
+        article.user = current_user.email
+        article.save
         format.html { redirect_to @article, :notice => 'Article was successfully created.' }
         format.json { render :json => @article, :status => :created, :location => @article }
       else

@@ -1,14 +1,17 @@
 class SuppliersController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /suppliers
   # GET /suppliers.json
   def index
-    @suppliers = Supplier.all
+    @suppliers = Supplier.where(:user => current_user.email).all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @suppliers }
       format.xlsx {
-        xlsx_package = Supplier.to_xlsx
+        xlsx_package = Supplier.where(:user => current_user.email).to_xlsx
         begin
           temp = Tempfile.new("suppliers.xlsx")
           xlsx_package.serialize temp.path
@@ -25,7 +28,7 @@ class SuppliersController < ApplicationController
   # GET /suppliers/1.json
   def show
     @supplier = Supplier.find(params[:id])
-    @articles = Article.where(:supplier => @supplier.supplier)
+    @articles = Article.where(:supplier => @supplier.supplier, :user => current_user.email)
     @movements = Movement.where(:article_code => @articles.select("article_code")).order("movement_date DESC").all
 
     respond_to do |format|
@@ -57,6 +60,9 @@ class SuppliersController < ApplicationController
 
     respond_to do |format|
       if @supplier.save
+        supplier = Supplier.last
+        supplier.user = current_user.email
+        supplier.save
         format.html { redirect_to @supplier, :notice => 'Supplier was successfully created.' }
         format.json { render :json => @supplier, :status => :created, :location => @supplier }
       else

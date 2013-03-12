@@ -1,8 +1,11 @@
 class SeasonalitiesController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /seasonalities
   # GET /seasonalities.json
   def index
-    @seasonalities = Seasonality.all
+    @seasonalities = Seasonality.where(:user => current_user.email).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,6 +47,9 @@ class SeasonalitiesController < ApplicationController
 
     respond_to do |format|
       if @seasonality.save
+        seasonality = Seasonality.last
+        seasonality.user = current_user.email
+        seasonality.save
         format.html { redirect_to @seasonality, :notice => 'Seasonality was successfully created.' }
         format.json { render :json => @seasonality, :status => :created, :location => @seasonality }
       else

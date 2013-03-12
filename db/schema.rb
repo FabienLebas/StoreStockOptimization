@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130311140603) do
+ActiveRecord::Schema.define(:version => 20130312093451) do
 
   create_table "articles", :force => true do |t|
     t.string   "article_code"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130311140603) do
     t.string   "department"
     t.string   "model_code"
     t.string   "model_name"
+    t.string   "user"
   end
 
   create_table "movements", :force => true do |t|
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130311140603) do
     t.integer  "quantity"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "user"
   end
 
   create_table "orders", :force => true do |t|
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20130311140603) do
     t.date     "expected_delivery_date"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.string   "user"
   end
 
   create_table "planned_orders", :force => true do |t|
@@ -65,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20130311140603) do
     t.boolean  "validated"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.string   "user"
   end
 
   create_table "seasonalities", :force => true do |t|
@@ -124,6 +128,7 @@ ActiveRecord::Schema.define(:version => 20130311140603) do
     t.float    "w53"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "user"
   end
 
   create_table "suppliers", :force => true do |t|
@@ -134,6 +139,7 @@ ActiveRecord::Schema.define(:version => 20130311140603) do
     t.float    "order_minimum_value"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "user"
   end
 
   create_table "users", :force => true do |t|
@@ -149,6 +155,7 @@ ActiveRecord::Schema.define(:version => 20130311140603) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "store"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

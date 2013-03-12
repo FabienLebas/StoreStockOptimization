@@ -1,17 +1,20 @@
 class MovementsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /movements
   # GET /movements.json
   def index
     params[:sort] ||= "movement_date"
     params[:direction] ||= "desc"    
-    @movements = Movement.order(params[:sort] + " " + params[:direction])
-    @movements_grouped = Movement.select("movement_date, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date").order(params[:sort] + " " + params[:direction])
+    @movements = Movement.order(params[:sort] + " " + params[:direction]).where(:user => current_user.email)
+    @movements_grouped = Movement.select("movement_date, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date").order(params[:sort] + " " + params[:direction]).where(:user => current_user.email)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @movements }
       format.xlsx {
-        xlsx_package = Movement.to_xlsx
+        xlsx_package = Movement.where(:user => current_user.email).to_xlsx
         begin
           temp = Tempfile.new("movements.xlsx")
           xlsx_package.serialize temp.path
@@ -61,6 +64,9 @@ class MovementsController < ApplicationController
         article = Article.where(:article_code => @movement.article_code).first
         article.stock_qty = article.stock_qty - @movement.quantity
         article.save
+        movement = Movement.last
+        movement.user = current_user.email
+        movement.save
         format.html { redirect_to @movement, :notice => 'Movement was successfully created.' }
         format.json { render :json => @movement, :status => :created, :location => @movement }
       else
@@ -103,10 +109,10 @@ class MovementsController < ApplicationController
   
   def getTO
   	selected_date = Date.parse(params[:date])
-  	new_html_to_return1 = Movement.where(:movement_date =>selected_date).sum("turnover")
-  	new_html_to_return2 = Movement.where(:movement_date =>selected_date).sum("quantity")
-  	new_html_to_return3 = Movement.where(:movement_date =>selected_date).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
-  	new_html_to_return4 = Article.where(:article_code =>Movement.where(:movement_date => selected_date).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
+  	new_html_to_return1 = Movement.where(:movement_date =>selected_date, :user => current_user.email).sum("turnover")
+  	new_html_to_return2 = Movement.where(:movement_date =>selected_date, :user => current_user.email).sum("quantity")
+  	new_html_to_return3 = Movement.where(:movement_date =>selected_date, :user => current_user.email).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
+  	new_html_to_return4 = Article.where(:article_code =>Movement.where(:movement_date => selected_date, :user => current_user.email).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
   	  	@table = [new_html_to_return1, new_html_to_return2, new_html_to_return3, new_html_to_return4]
         render :json => @table
   end
@@ -114,16 +120,16 @@ class MovementsController < ApplicationController
   def getTO2Dates
   	selected_date1 = Date.parse(params[:date1])
   	selected_date2 = Date.parse(params[:date2])
-  	new_html_to_return1 = Movement.where(:movement_date =>selected_date1..selected_date2).sum("turnover")
-  	new_html_to_return2 = Movement.where(:movement_date =>selected_date1..selected_date2).sum("quantity")
-  	new_html_to_return3 = Movement.where(:movement_date =>selected_date1..selected_date2).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
-  	new_html_to_return4 = Article.where(:article_code =>Movement.where(:movement_date => selected_date1..selected_date2).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
+  	new_html_to_return1 = Movement.where(:movement_date =>selected_date1..selected_date2, :user => current_user.email).sum("turnover")
+  	new_html_to_return2 = Movement.where(:movement_date =>selected_date1..selected_date2, :user => current_user.email).sum("quantity")
+  	new_html_to_return3 = Movement.where(:movement_date =>selected_date1..selected_date2, :user => current_user.email).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code
+  	new_html_to_return4 = Article.where(:article_code =>Movement.where(:movement_date => selected_date1..selected_date2, :user => current_user.email).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code).first.article_text
   	  	@table = [new_html_to_return1, new_html_to_return2, new_html_to_return3, new_html_to_return4]
         render :json => @table
   end
   
   def getStartDate
-    @startDate = [Date.parse(Movement.order("movement_date ASC").first.movement_date)]
+    @startDate = [Date.parse(Movement.where(:user => current_user.email).order("movement_date ASC").first.movement_date)]
     respond_to do |format|
         format.html
         format.json { render :json => @startDate }

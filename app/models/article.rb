@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   has_many:plannedorders
   has_many:suppliers
   belongs_to:seasonalities
+  belongs_to:users
   
   acts_as_xlsx
   

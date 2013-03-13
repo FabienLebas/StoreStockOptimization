@@ -58,9 +58,25 @@
 <%= link_to 'Back to listing articles', articles_path %>
 </br>
 </br>
+
 <h1>Performances</h1>
-<p>Average sales per day: <%=number_with_precision(@average_sales, :precision =>2)%></p>
-<p>Stock lifetime: <%=number_with_precision(@article.stock_qty.to_f / @average_sales.to_f, :precision =>2)%> days</p>
+<p><%=if @article.stock_qty.to_f - @average_sales.to_f * Supplier.where(:supplier => @article.supplier, :user => current_user.email).first.leadtime + Order.where(:article_code => @article.article_code, :user => current_user.email, :expected_delivery_date => Date.today..Date.today+Supplier.where(:user => current_user.email, :supplier => @article.supplier).first.leadtime).sum("quantity") <= 0 
+	then "Warning : you are about to fall into shortage. You should re-order."
+	end%></p>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   		<tr style="background-color:lightgrey;">
+	      <th style="width:75px;">Average sales per day</th> 
+	      <th style="width:75px;">Stock lifetime</th> 
+	      <th style="width:75px;">Forecasted sales during replenishment</th> 
+	      <th style="width:75px;">Forecasted stock at first possible replenishment date</th> 
+		</tr>
+		<td><%=number_with_precision(@average_sales, :precision =>2)%> qty/day</td>
+		<td><%=number_with_precision(@article.stock_qty.to_f / @average_sales.to_f, :precision =>2)%> days</td>
+		<td><%=number_with_precision(@average_sales.to_f * Supplier.where(:supplier => @article.supplier, :user => current_user.email).first.leadtime, :precision =>0)%> qty</td>
+		<td><%=number_with_precision(@article.stock_qty.to_f - @average_sales.to_f * Supplier.where(:supplier => @article.supplier, :user => current_user.email).first.leadtime + Order.where(:article_code => @article.article_code, :user => current_user.email, :expected_delivery_date => Date.today..Date.today+Supplier.where(:user => current_user.email, :supplier => @article.supplier).first.leadtime).sum("quantity"), :precision => 0) %> qty</td>
+</table>
+
 <div id="container" style="width:100%; height:400px;"></div>
 </br>
 

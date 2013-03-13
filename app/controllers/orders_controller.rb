@@ -5,7 +5,9 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.where(:user => current_user.email).all
+    params[:sort] ||= "article_code"
+    params[:direction] ||= "desc"
+    @orders = Order.order(params[:sort] + " " + params[:direction]).where(:user => current_user.email)
 
     respond_to do |format|
       format.html # index.html.erb

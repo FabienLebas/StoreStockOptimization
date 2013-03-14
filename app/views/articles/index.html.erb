@@ -1,5 +1,61 @@
-<h1>Listing articles</h1>
+<h1>Shortage risk: 5% articles with lowest stock expected</h1>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
+	   <tr style="background-color:lightgrey;"> 
+	      <th style="width:150px;">Article code</th>
+	      <th style="width:150px;">Article text</th>
+	      <th style="width:150px;">Family</th>
+	      <th style="width:150px;">Department</th>		
+	      <th style="width:150px;">Stock at supplier leadtime</th>
+	      <th style="width:150px;">Sales / day</th>	
+	      <th style="width:150px;">Turnover / day</th>			
+		</tr>
+	<% @articles_not_sorted.sort_by {|i| i.stock_at_replenishment}[0..(@articles.length * 0.05)].each do |article| %>
+		<tr>
+		<td><%= article.article_code %></td> 
+		<td><%= article.article_text %></td> 
+		<td><%= article.family %></td> 
+		<td><%= article.department %></td> 				
+		<td><%= number_with_precision(article.stock_at_replenishment, :precision => 1) %></td> 
+		<td><%= number_with_precision(article.sales_per_day, :precision =>2) %></td> 		
+		<td><%= number_with_precision(article.sales_per_day * article.selling_price_inc_vat, :precision =>2) %></td> 
+		<td><%= link_to 'Show', article %></td>
+	    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+	    <td><%= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>								
+		</tr>
+	<%end%>
+</table>
+<br/>
+<h1>Overstock risk: 5% articles with highest stock expected</h1>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
+	   <tr style="background-color:lightgrey;"> 
+	      <th style="width:150px;">Article code</th>
+	      <th style="width:150px;">Article text</th>
+	      <th style="width:150px;">Family</th>
+	      <th style="width:150px;">Department</th>		
+	      <th style="width:150px;">Stock at supplier leadtime</th>
+	      <th style="width:150px;">Sales / day</th>	
+	      <th style="width:150px;">Turnover / day</th>			
+		</tr>
+	<% @articles_not_sorted.sort_by {|i| i.stock_at_replenishment}.reverse![0..(@articles.length * 0.05)].each do |article| %>
+		<tr>
+		<td><%= article.article_code %></td> 
+		<td><%= article.article_text %></td> 	
+		<td><%= article.family %></td> 	
+		<td><%= article.department %></td> 				
+		<td><%= number_with_precision(article.stock_at_replenishment, :precision => 1) %></td> 
+		<td><%= number_with_precision(article.sales_per_day, :precision =>2) %></td> 		
+		<td><%= number_with_precision(article.sales_per_day * article.selling_price_inc_vat, :precision =>2) %></td> 
+		<td><%= link_to 'Show', article %></td>
+	    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+	    <td><%= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>								
+		</tr>
+	<%end%>
+</table>
+<br/>
 
+<h1>Listing articles</h1>
 <%= form_tag articles_path, :method => 'get', :id => "articles_search" do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -39,8 +95,8 @@
       	<td style="padding-left:10px; color:midnightblue;"><%= article.family %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= article.department %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.stock_qty %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%= number_with_precision(Movement.where(:article_code => article.article_code, :movement_date => Date.today-6..Date.today).sum("quantity").to_f / 7, :precision =>2) %></td> 	
-		<td style="padding-left:10px; color:midnightblue;"><%= number_with_precision(article.stock_qty.to_f * 7/Movement.where(:article_code => article.article_code, :movement_date => Date.today-6..Date.today).sum("quantity").to_f, :precision =>2) %></td> 				
+		<td style="padding-left:10px; color:midnightblue;"><%= number_with_precision(article.sales_per_day, :precision =>2) %></td> 	
+		<td style="padding-left:10px; color:midnightblue;"><%= number_with_precision(article.stock_lifetime, :precision =>2) %></td> 				
       	<td style="padding-left:10px; color:midnightblue;"><%= link_to article.supplier, Supplier.where(:supplier => article.supplier).first %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.unitary_price_if_box %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.unitary_price_if_massive %></td> 
@@ -60,16 +116,8 @@
 
 <br /><br/>
 <%= link_to 'Download Article Data', url_for(:format=>"xlsx") %>
-<h1>Low stock article</h1>
-<table>
-	<% @articles_not_sorted.sort_by {|i| i.stock_at_rep}.each do |article| %>
-		<tr>
-		<td><%= article.article_code %></td> 
-		<td><%= number_with_precision(article.stock_at_rep, :precision => 1) %></td> 		
-		</tr>
-	<%end%>
-	
-</table>
+<br/>
+
 		
 		
 

@@ -16,5 +16,9 @@ class Article < ActiveRecord::Base
           scoped
         end
     end
+    
+    def stock_at_rep
+      self.stock_qty - (Movement.where(:article_code => self.article_code, :movement_date => Date.today-6..Date.today).sum("quantity").to_f / 7)  * Supplier.where(:supplier => self.supplier).first.leadtime + Order.where(:article_code => self.article_code, :expected_delivery_date => Date.today..Date.today+Supplier.where(:supplier => self.supplier).first.leadtime).sum("quantity")
+    end
   
 end

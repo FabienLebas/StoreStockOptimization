@@ -72,7 +72,7 @@
 	      <th style="width:75px;">Forecasted stock at first possible replenishment date</th> 
 		</tr>
 		<td><%=number_with_precision(@average_sales, :precision =>2)%> qty/day</td>
-		<td><%=number_with_precision(@article.stock_qty.to_f / @average_sales.to_f, :precision =>2)%> days</td>
+		<td><%=number_with_precision(@article.stock_qty.to_f / @average_sales.to_f, :precision =>0)%> days</td>
 		<td><%=number_with_precision(@average_sales.to_f * Supplier.where(:supplier => @article.supplier, :user => current_user.email).first.leadtime, :precision =>0)%> qty</td>
 		<td><%=number_with_precision(@article.stock_qty.to_f - @average_sales.to_f * Supplier.where(:supplier => @article.supplier, :user => current_user.email).first.leadtime + Order.where(:article_code => @article.article_code, :user => current_user.email, :expected_delivery_date => Date.today..Date.today+Supplier.where(:user => current_user.email, :supplier => @article.supplier).first.leadtime).sum("quantity"), :precision => 0) %> qty</td>
 </table>

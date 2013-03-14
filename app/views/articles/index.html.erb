@@ -17,9 +17,9 @@
       <th style="width:150px;"><%= sortable "model_name", "Model text"%></th> 
       <th style="width:150px;"><%=sortable "family", "Family"%></th> 
       <th style="width:150px;"><%=sortable "department", "Department"%></th> 
-      <th style="width:150px;">Stock</th>
+      <th style="width:150px;"><%= sortable "stock_qty", "Stock"%></th>
       <th style="width:150px;">Sales/day</th> 
-      <th style="width:150px;">Stock lifetime</th> 
+      <th style="width:150px;">Stock lifetime</th>
 	  <th style="width:150px;"><%= sortable "supplier", "Supplier"%></th> 
       <th style="width:150px;">Price if box</th> 
       <th style="width:150px;">Price if massive</th> 
@@ -56,10 +56,21 @@
 <% end %>
 </table>
 <br />
-
 <%= link_to 'New Article', new_article_path %>
 
 <br /><br/>
 <%= link_to 'Download Article Data', url_for(:format=>"xlsx") %>
+<h1>Low stock article</h1>
+<table>
+	<% @articles_not_sorted.sort_by {|i| i.stock_at_rep}.each do |article| %>
+		<tr>
+		<td><%= article.article_code %></td> 
+		<td><%= number_with_precision(article.stock_at_rep, :precision => 1) %></td> 		
+		</tr>
+	<%end%>
+	
+</table>
+		
+		
 
 

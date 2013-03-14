@@ -7,7 +7,11 @@ class ArticlesController < ApplicationController
   def index
     params[:sort] ||= "article_text "
     params[:direction] ||= "desc"
+    @articles_not_sorted = Article.where(:user => current_user.email)
     @articles = Article.search(params[:search]).order(params[:sort] + " " + params[:direction]).where(:user => current_user.email)
+    @sales_per_article_last_week = Movement.where(:movement_date => Date.today-6..Date.today, :user => current_user.email).select("article_code, sum(quantity) as quantity").group("article_code")
+    qty = Article.sum("stock_qty")
+    @low_stock = Article.where("stock_qty < ?", ).all
 
     respond_to do |format|
       format.html # index.html.erb

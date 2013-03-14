@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
+    @suppliers = Supplier.where(:user => current_user.email).select("supplier_text")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -65,6 +66,7 @@ class OrdersController < ApplicationController
   # PUT /orders/1.json
   def update
     @order = Order.find(params[:id])
+    @suppliers = Supplier.where(:user => current_user.email).select("supplier_text")
 
     respond_to do |format|
       if @order.update_attributes(params[:order])

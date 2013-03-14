@@ -1,3 +1,6 @@
+<%= link_to 'New Article', new_article_path %>
+<br /><br/>
+
 <h1>Shortage risk: 5% articles with lowest stock expected</h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 
 	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
@@ -111,8 +114,6 @@
    </tr> 
 <% end %>
 </table>
-<br />
-<%= link_to 'New Article', new_article_path %>
 
 <br /><br/>
 <%= link_to 'Download Article Data', url_for(:format=>"xlsx") %>

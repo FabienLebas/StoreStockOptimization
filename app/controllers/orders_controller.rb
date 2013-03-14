@@ -12,6 +12,17 @@ class OrdersController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @orders }
+      format.xlsx {
+        xlsx_package = Order.where(:user => current_user.email).to_xlsx
+        begin
+          temp = Tempfile.new("orders.xlsx")
+          xlsx_package.serialize temp.path
+          send_data xlsx_package.to_stream.read, :filename => 'orders.xlsx', :type=> "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        ensure
+          temp.close
+          temp.unlink
+        end
+      }
     end
   end
 

@@ -70,7 +70,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.5.0)
-    mysql2 (0.2.18)
+    mysql (2.9.0)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
     pg (0.14.1)
@@ -137,7 +137,7 @@ DEPENDENCIES
   devise
   jquery-rails
   json
-  mysql2 (< 0.3)
+  mysql
   pg
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)

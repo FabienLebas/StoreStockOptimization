@@ -6,7 +6,11 @@ class SeasonalitiesController < ApplicationController
   # GET /seasonalities.json
   def index
     @seasonalities = Seasonality.where(:user => current_user.email).all
-    @users = User.all
+    if current_user.admin?
+      @users = User.all
+    else 
+      @users = User.where(:email => current_user.email).all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

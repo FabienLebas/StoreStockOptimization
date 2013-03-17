@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :supplier %><br />
-    <%= f.select(:supplier, @suppliers.map {|s| [s.supplier_text]}) %>
+    <%= f.select(:supplier, @suppliers.map {|s| [s.supplier]}) %>
   </div>
   <div class="field">
     <%= f.label :quantity %><br />

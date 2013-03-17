@@ -57,6 +57,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @suppliers = Supplier.where(:user => current_user.email)
   end
 
   # POST /articles

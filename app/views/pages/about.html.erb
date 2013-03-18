@@ -1,17 +1,17 @@
 <head>
-<title>Efficient Inventory Management | About us</title>
-<meta name="description=" content="Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free !">
+<title><%= t ".title"%></title>
+<meta name="description=" content=<%= t ".meta"%>>
 
 <%= csrf_meta_tag %>
 </head>
-<h1>About us</h1>
-<p>Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free !  <button style="width:150px; height:50px; font-size:18px"> <%= link_to "Register", new_user_registration_path %></button><p></p>
+<h1><%= t ".title_page"%></h1>
+<p><%= t ".line1"%><button style="width:150px; height:50px; font-size:18px"> <%= link_to t(".beta_testers_button"), new_user_registration_path %></button><p></p>
 <br/>
-<p>This site was created by Fabien Lebas, suppy chain expert with a background of more than 10 years experience in supply chain management in a world leader retail chain. Fabien has designed both the stores and the e-commerce supply chain for a company of several billions of € turnover, in several hundreds of stores, more than 15 countries around the world, and the same number of websites.<p>
-<p>Now this experience is given to you, for your stock management:<p>
-<li>Save time: instant access to your best sellers, your shortages, your overstock, ...</li>
-<li>Save money: with better visibility on your stock, you will be able to reduce it.</li>
-<li>Up-to-date cloud technologies are now available for you: don't worry if you grow = our price will remain the same, and you have no limitation. Sky is the limit !</li>
+<p><%= t ".line2"%><p>
+<p><%= t ".line3"%><p>
+<li><%= t ".line4"%></li>
+<li><%= t ".line5"%></li>
+<li><%= t ".line6"%></li>
 
 <script type="text/javascript">
 

@@ -5,6 +5,7 @@ fr:
     pages:
         home:
             title: "Bienvenue dans le monde de la gestion de stock !"
+            meta: "Efficient Inventory vous permet une gestion de stock efficace et peut être utilisé à la fois par les magasins physiques et virtuels. Inscrivez-vous gratuitement !"
             paragraph1_title: "Vous trouverez ici tout ce dont vous avez besoin pour :"
             paragraph1_1: "Gérer votre stock"
             paragraph1_2: "De puissants outils de reporting et d'alerte"
@@ -25,6 +26,19 @@ fr:
             paragraph3_4: "Vous souhaitez voir ce qui est en rupture ? ---> Triez par stock croissant !"
             paragraph3_5: "Vous avez beaucoup d'articles ? ---> Classez les par famille, et par rayon"
             paragraph3_6: "Vous avez une question ? ---> Nous nous engageons à vous répondre sous 24 heures, 365 jours sur 365 !"
+
+        about:
+            title: "Efficient Inventory Management | A propos de nous"
+            meta: "Efficient Inventory vous permet une gestion de stock efficace et peut être utilisé à la fois par les magasins physiques et virtuels. Inscrivez-vous gratuitement !"
+            title_page: "A propos de nous"
+            line1: "Efficient Inventory vous permet une gestion de stock efficace et peut être utilisé à la fois par les magasins physiques et virtuels. Inscrivez-vous gratuitement !    "
+            beta_testers_button: "Démarrer"
+            line2: "Ce site a été créé par Fabien Lebas, spécialiste en supply chain avec une expérience de plus de 10 ans en supply chain management pour un groupe de distribution spécialisée, leader sur son marché. J'ai construit la supply chain à la fois des magasins et du e-commerce pour une entreprise de plusieurs milliards d'euros de chiffre d'affaires, dans plusieurs centaines de magasins, dans 20 pays à travers le monde et autant de sites webs."
+            line3: "En créant ce service, je vous propose de vous aider dans votre gestion de stock :"
+            line4: "Gagnez du temps : vos meilleures ventes en temps réel, vos ruptures vos surstocks, ..."
+            line5: "Gagnez de l'argent : avec une meilleure visibilité de votre stock, vous allez pouvoir le réduire."
+            line6: "Toute la puissance du cloud est maintenant accessible : ne vous souciez pas de votre croissance = notre prix restera le même, et vous n'avez aucune limite. Sky is the limit !"
+            
             
             
     activerecord:

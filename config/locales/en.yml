@@ -5,6 +5,7 @@ en:
     pages:
         home:
             title: "Welcome to the world of stock inventory management!"
+            meta: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free!"
             paragraph1_title: "Here you will find all you need to:"
             paragraph1_1: "Manage your inventory"
             paragraph1_2: "Powerful reporting and alert tools"
@@ -25,4 +26,18 @@ en:
             paragraph3_4: "You need to see what is currently in shortage? ---> Sort by stock quantity!"
             paragraph3_5: "You have many article? ---> Classify by category and department!"
             paragraph3_6: "You have a question? ---> Our commitment is to answer you within 24 hours, 365/365!"
+            
+        about:
+            title: "Efficient Inventory Management | About us"
+            meta: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free !"
+            title_page: "About us"
+            line1: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free !    "
+            beta_testers_button: "Register"
+            line2: "This site was created by Fabien Lebas, suppy chain expert with a background of more than 10 years experience in supply chain management in a world leader retail chain. I have designed both the stores and the e-commerce supply chain for a company of several billions of euros turnover, in several hundreds of stores, in 20 countries around the world, and the same number of websites."
+            line3: "By creating this service, I am offering to help you, for your stock management:"
+            line4: "Save time: instant access to your best sellers, your shortages, your overstock, ..."
+            line5: "Save money: with better visibility on your stock, you will be able to reduce it."
+            line6: "Up-to-date cloud technologies are now available for you: don't worry if you grow = our price will remain the same, and you have no limitation. Sky is the limit!"
+            
+            
             

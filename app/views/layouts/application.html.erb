@@ -32,10 +32,10 @@
 			</div>
 			<br/>
 			<ul>
-            <a href="/articles"> Articles |</a>
-			<a href="/suppliers"> <%= t ".suppliers"%> |</a>
-			<a href="/movements"> <%= t ".movements"%> |</a>
-			<a href="/orders"> <%= t ".orders"%></a>
+            <a> <%= link_to 'Articles', articles_path %> |</a>
+			<a> <%= link_to t(".suppliers")%> |</a>
+			<a> <%= link_to t(".movements")%> |</a>
+			<a> <%= link_to t(".orders")%></a>
           </ul>
         </nav>
       </header>

@@ -4,6 +4,7 @@
 fr:
     layouts: 
         footer: 
+            home: "Accueil"
             about: "A propos de nous"
         application: 
             signed_in_as: "Utilisateur "

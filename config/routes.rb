@@ -15,9 +15,10 @@ StoreStockOptimization::Application.routes.draw do
     resources :movements
     resources :suppliers
     resources :articles
+    resources :pages
     root :to => 'pages#home'
   end
-  match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
   match '', to: redirect("/#{I18n.default_locale}")  
   
   post "movements/getTO" 

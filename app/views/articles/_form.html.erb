@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :article_code %><br />
-    <%= f.text_field :article_code %>
+    <%= f.text_field :article_code, :required => true %>
   </div>
   <div class="field">
     <%= f.label :article_text %><br />
@@ -57,7 +57,7 @@
   </div>
   <div class="field">
     <%= f.label :selling_price_inc_vat %> (mandatory field)<br />
-    <%= f.text_field :selling_price_inc_vat %>
+    <%= f.text_field :selling_price_inc_vat, :required => true %>
   </div>
   <div class="field">
     <%= f.label :vat_rate %><br />
@@ -73,7 +73,7 @@
   </div>
   <div class="field">
     <%= f.label :stock_qty %> (mandatory field)<br />
-    <%= f.number_field :stock_qty %>
+    <%= f.number_field :stock_qty, :required => true %>
   </div>
 	</br>
   <div class="actions">

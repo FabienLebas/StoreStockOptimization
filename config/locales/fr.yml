@@ -1,0 +1,33 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+fr:
+    pages:
+        home:
+            title: "Bienvenue dans le monde de la gestion de stock !"
+            paragraph1_title: "Vous trouverez ici tout ce dont vous avez besoin pour :"
+            paragraph1_1: "Gérer votre stock"
+            paragraph1_2: "De puissants outils de reporting et d'alerte"
+            paragraph1_3: "Préparer vos prochaines commandes fournisseurs"
+            paragraph1_4: "Développer votre chiffre d'affaires"
+            paragraph1_5: "... Et plein d'autres choses encore !"
+            beta_testers_title: "Nous recrutons des beta-testeurs :"
+            beta_testers_text: "commencez gratuitement à utiliser votre outil, et envoyez-nous vos remarques pour que nous puissions construire votre outil idéal.  "
+            beta_testers_button: "Démarrer"
+            paragraph2_title: "Avec efficient-inventory.com :"
+            paragraph2_1: "Gagnez du temps : vos meilleures ventes en temps réel, vos ruptures vos surstocks, ..."
+            paragraph2_2: "Gagnez de l'argent : avec une meilleure visibilité de votre stock, vous allez pouvoir le réduire."
+            paragraph2_3: "Toute la puissance du cloud est maintenant accessible : ne vous souciez pas de votre croissance = notre prix restera le même, et vous n'avez aucune limite. Sky is the limit !"
+            paragraph3_title: "Petit aperçu de quelques écrans :"
+            paragraph3_1: "Un contrôle instantané de votre activité (chiffre d'affaires, quantités, valeur du stock, ...) :"
+            paragraph3_2: "Gagnez du temps et des clients par une analyse en temps réel de vos futurs ruptures et surstock :"
+            paragraph3_3: "Vous souhaitez un autre reporting ? ---> Exportez vos données sur Excel ! (et dites-le nous pour qu'on l'ajoute !)"
+            paragraph3_4: "Vous souhaitez voir ce qui est en rupture ? ---> Triez par stock croissant !"
+            paragraph3_5: "Vous avez beaucoup d'articles ? ---> Classez les par famille, et par rayon"
+            paragraph3_6: "Vous avez une question ? ---> Nous nous engageons à vous répondre sous 24 heures, 365 jours sur 365 !"
+            
+            
+    activerecord:
+        attributes:
+            article:
+                article_code: "Code Article"

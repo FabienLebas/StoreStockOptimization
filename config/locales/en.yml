@@ -4,5 +4,25 @@
 en:
     pages:
         home:
-            title: "Welcome to the world of stock inventory management !"
+            title: "Welcome to the world of stock inventory management!"
             paragraph1_title: "Here you will find all you need to:"
+            paragraph1_1: "Manage your inventory"
+            paragraph1_2: "Powerful reporting and alert tools"
+            paragraph1_3: "Prepare your future orders to your suppliers"
+            paragraph1_4: "Improve your turnover"
+            paragraph1_5: "... and so much more!"
+            beta_testers_title: "We are recruiting beta-testers:"
+            beta_testers_text: "start using 100% free, and send us your remarks so that we can build your perfect tool.  "
+            beta_testers_button: "Register"
+            paragraph2_title: "With Efficient inventory management:"
+            paragraph2_1: "Save time: instant access to your best sellers, your shortages, your overstock, ..."
+            paragraph2_2: "Save money: with better visibility on your stock, you will be able to reduce it."
+            paragraph2_3: "Up-to-date cloud technologies are now available for you: don't worry if you grow = our price will remain the same, and you have no limitation. Sky is the limit!"
+            paragraph3_title: "Quick tour of our main functionalities:"
+            paragraph3_1: "Instant overview of your activity (turnover, quantities, stock value, ...):"
+            paragraph3_2: "Save time, save customers with real-time analysis of your future shortages or overstock:"
+            paragraph3_3: "You need another report? ---> Export data to Excel! (and tell us to create a new report!)"
+            paragraph3_4: "You need to see what is currently in shortage? ---> Sort by stock quantity!"
+            paragraph3_5: "You have many article? ---> Classify by category and department!"
+            paragraph3_6: "You have a question? ---> Our commitment is to answer you within 24 hours, 365/365!"
+            

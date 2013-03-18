@@ -27,14 +27,15 @@
 			</div>
 			<div id="language">
 				Language:
+				<%= link_to_unless_current "English", locale: "en"%> |
+				<%= link_to_unless_current "Français", locale: "fr"%>
 			</div>
 			<br/>
 			<ul>
             <a href="/articles"> Articles |</a>
 			<a href="/suppliers"> Suppliers |</a>
 			<a href="/movements"> Stock Movements |</a>
-			<a href="/orders"> Orders |</a>
-			<a href="/pages/home">Home</a>
+			<a href="/orders"> Orders</a>
           </ul>
         </nav>
       </header>

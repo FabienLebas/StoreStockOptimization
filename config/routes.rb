@@ -1,29 +1,25 @@
 StoreStockOptimization::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/contact"
+    get "pages/home"
 
-  get "pages/about"
+    get "pages/contact"
 
+    get "pages/about"
   devise_for :users
+  
+  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
 
-  resources :seasonalities
-
-
-  resources :planned_orders
-
-
-  resources :orders
-
-
-  resources :movements
-
-
-  resources :suppliers
-
-
-  resources :articles
-
+    resources :seasonalities
+    resources :planned_orders
+    resources :orders
+    resources :movements
+    resources :suppliers
+    resources :articles
+    root :to => 'pages#home'
+  end
+  match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  match '', to: redirect("/#{I18n.default_locale}")  
+  
   post "movements/getTO" 
   post "movements/getTO2Dates"
   post "movements/getStartDate" 
@@ -77,7 +73,7 @@ StoreStockOptimization::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'pages#home'
+
 
   # See how all your routes lay out with "rake routes"
 

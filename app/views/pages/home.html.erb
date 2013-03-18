@@ -15,19 +15,19 @@
 <h1><%= t ".title"%></h1>
 <br/>
 <h3><%= t ".paragraph1_title"%></h3>
-<li><dd>Manage your inventory</li></dd>
-<li><dd>Powerful reporting tools</li></dd>
-<li><dd>Prepare your future orders to your suppliers</li></dd>
-<li><dd>Manage your customer database</li></dd>
-<li><dd>... and so much more !</li></dd>
+<li><dd><%= t ".paragraph1_1"%></li></dd>
+<li><dd><%= t ".paragraph1_2"%></li></dd>
+<li><dd><%= t ".paragraph1_3"%></li></dd>
+<li><dd><%= t ".paragraph1_4"%></li></dd>
+<li><dd><%= t ".paragraph1_5"%></li></dd>
 <br/>
 
-<h3>We are recruiting beta-testers:</h3> start using 100% free, and send us your remarks so that we can build your perfect tool.  <button style="width:150px; height:50px; font-size:18px; margin-left:70px"> <%= link_to "Register", new_user_registration_path %></button><p>
+<h3><%= t ".beta_testers_title"%></h3> <%= t ".beta_testers_text"%><button style="width:150px; height:50px; font-size:18px; margin-left:70px"> <%= link_to t(".beta_testers_button"), new_user_registration_path %></button><p>
 
-<h3>With Efficient inventory management:</h3>
-<li><dd>Save time: instant access to your best sellers, your shortages, your overstock, ...</li></dd>
-<li><dd>Save money: with better visibility on your stock, you will be able to reduce it.</li></dd>
-<li><dd>Up-to-date cloud technologies are now available for you: don't worry if you grow = our price will remain the same, and you have no limitation. Sky is the limit !</li></dd>
+<h3><%= t ".paragraph2_title"%></h3>
+<li><dd><%= t ".paragraph2_1"%></li></dd>
+<li><dd><%= t ".paragraph2_2"%></li></dd>
+<li><dd><%= t ".paragraph2_3"%></li></dd>
 
 <table>
 	<td><img src="/images/efficient_inventory_beta.jpg" width="125" height="125" align="middle"></td>
@@ -35,17 +35,17 @@
 	<td><img src="/images/efficient_inventory_growth.jpg" width="125" height="125"></td>	
 </table>
 
-<h3>Quick tour of our main functionalities:</h3>
-<li><dd>Instant overview of your activity (turnover, quantities, stock value, ...):</li></dd>
+<h3><%= t ".paragraph3_title"%></h3>
+<li><dd><%= t ".paragraph3_1"%></li></dd>
 <img src="/images/efficient_inventory_graph2.jpg" style="border: solid black 1px; padding: 2 px" >
 <p></p>
-<li><dd>Save time, save customers with real-time analysis of your future shortages or overstock:</li></dd>
+<li><dd><%= t ".paragraph3_2"%></li></dd>
 <img src="/images/efficient_inventory_articles.jpg" style="border: solid black 1px; padding: 2 px">
 <p></p>
-<li><dd>You need another report? ---> Export data to Excel! (and tell us to create a new report!)</li></dd>
-<li><dd>You need to see what is currently in shortage? ---> Sort by stock quantity!</li></dd>
-<li><dd>You have many article? ---> Classify by category!</li></dd>
-<li><dd>You have a question? ---> Our commitment is to answer you within 24 hours!</li></dd>
+<li><dd><%= t ".paragraph3_3"%></li></dd>
+<li><dd><%= t ".paragraph3_4"%></li></dd>
+<li><dd><%= t ".paragraph3_5"%></li></dd>
+<li><dd><%= t ".paragraph3_6"%>You have a question? ---> Our commitment is to answer you within 24 hours!</li></dd>
 
 
 

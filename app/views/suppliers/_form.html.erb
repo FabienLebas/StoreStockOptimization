@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :leadtime %> (mandatory field)<br />
-    <%= f.number_field :leadtime %>
+    <%= f.number_field :leadtime, :required => true %>
   </div>
   <div class="field">
     <%= f.label :order_minimum_qty %><br />

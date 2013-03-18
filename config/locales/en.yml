@@ -9,6 +9,13 @@ en:
             signed_in_as: "Signed in as "
             not_you: ". Not you?"
             sign_out: "Sign out"
+            register: "Register"
+            or: "or"
+            sign_in: "Sign in"
+            language: "Language:"
+            suppliers: "Suppliers"
+            movements: "Stock Movements"
+            orders: "Orders"
 
     pages:        
         home:

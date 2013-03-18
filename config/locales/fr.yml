@@ -8,7 +8,15 @@ fr:
         application: 
             signed_in_as: "Utilisateur "
             not_you: ". "
-            sign_out: "Déconnexion"            
+            sign_out: "Déconnexion"  
+            register: "S'inscrire"      
+            or: "ou"
+            sign_in: "Connexion" 
+            language: "Langue :"   
+            suppliers: "Fournisseurs"
+            movements: "Mouvements de stock"
+            orders: "Commandes"
+            
     
     pages:
         home:
@@ -22,7 +30,7 @@ fr:
             paragraph1_5: "... Et plein d'autres choses encore !"
             beta_testers_title: "Nous recrutons des beta-testeurs :"
             beta_testers_text: "commencez gratuitement à utiliser votre outil, et envoyez-nous vos remarques pour que nous puissions construire votre outil idéal.  "
-            beta_testers_button: "Démarrer"
+            beta_testers_button: "S'inscrire"
             paragraph2_title: "Avec efficient-inventory.com :"
             paragraph2_1: "Gagnez du temps : vos meilleures ventes en temps réel, vos ruptures, vos surstocks, ..."
             paragraph2_2: "Gagnez de l'argent : avec une meilleure visibilité de votre stock, vous allez pouvoir le réduire."
@@ -40,7 +48,7 @@ fr:
             meta: "Efficient Inventory vous permet une gestion de stock efficace,  essentielle pour les magasins physiques et virtuels. Inscrivez-vous gratuitement !"
             title_page: "A propos de nous"
             line1: "Efficient Inventory vous permet une gestion de stock efficace, essentielle pour les magasins physiques ou virtuels. Inscrivez-vous gratuitement !    "
-            beta_testers_button: "Démarrer"
+            beta_testers_button: "S'inscrire"
             line2: "Ce site a été créé par Fabien Lebas, spécialiste en supply chain avec une expérience de plus de 10 ans en supply chain management pour un groupe de distribution spécialisée, leader sur son marché. J'ai construit la supply chain à la fois des magasins et du e-commerce pour une entreprise de plusieurs milliards d'euros de chiffre d'affaires, dans plusieurs centaines de magasins, dans 20 pays à travers le monde et autant de sites webs."
             line3: "En créant ce service, je vous propose de vous aider dans votre gestion de stock :"
             line4: "Gagnez du temps : vos meilleures ventes en temps réel, vos ruptures vos surstocks, ..."

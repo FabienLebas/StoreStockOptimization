@@ -2,7 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-    pages:
+    layouts:
+        footer:
+            about: "About us"
+        application:
+            signed_in_as: "Signed in as "
+            not_you: ". Not you?"
+            sign_out: "Sign out"
+
+    pages:        
         home:
             title: "Welcome to the world of stock inventory management!"
             meta: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free!"

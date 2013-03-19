@@ -14,8 +14,8 @@
   <body>
     <div class="container">
       <header>
-        <%= image_tag("logo.jpg", :alt => "Application Exemple", :class => "round") %>
-        <nav class="round">
+        <%= image_tag("logo.jpg", :alt => "Application Exemple", :class => "round") %>	
+		<nav class="round">
           	<div id="user_nav">
 			<% if user_signed_in? %>
 				<%= t ".signed_in_as"%><%= current_user.email %><%= t ".not_you"%>

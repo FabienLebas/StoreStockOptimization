@@ -94,6 +94,13 @@ en:
             title4: "Listing all movements"
         new:
             title: "New movement"
+        edit: 
+            title: "Editing movement"
+            
+    orders:
+        index:
+            new: "New order"
+            title: "Listing orders"
             
     activerecord:
         attributes:
@@ -138,6 +145,8 @@ en:
                 order_minimum_qty: "Order minimum qty"
                 order_minimum_value: "Order minimum value"
                 supplier: "Supplier"
+            order:
+                expected_delivery_date: "Expected delivery date"
 
     actions:
         show: "Show"
@@ -148,6 +157,7 @@ en:
         download_article: "Download Article Data"
         download_supplier: "Download Supplier Data"
         download_movements: "Download Movements Data"
+        download_order: "Download Order Data"
         mandatory: "mandatory field"
         back: "Back"
         qty_day: "qty/day"

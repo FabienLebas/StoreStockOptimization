@@ -1,16 +1,16 @@
-<%= link_to 'New Order', new_order_path %>
+<%= link_to t(".new"), new_order_path %>
 <br /><br/>
 
-<h1>Listing orders</h1>
+<h1><%= t ".title"%></h1>
 
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
    <tr style="background-color:lightgrey;"> 
-      <th style="width:150px;"><%= sortable "article_code", "Article code"%></th> 
-      <th style="width:150px;"><%= sortable "supplier", "Supplier" %></th> 
-      <th style="width:150px;"><%= sortable "quantity", "Quantity"%></th> 
-      <th style="width:150px;"><%= sortable "creation_date", "Creation Date"%></th> 
-      <th style="width:150px;"><%= sortable "expected_delivery_date", "Expected delivery date"%></th> 
+      <th style="width:150px;"><%= sortable "article_code", t("activerecord.attributes.article.article_code")%></th> 
+      <th style="width:150px;"><%= sortable "supplier", t("activerecord.attributes.supplier.supplier") %></th> 
+      <th style="width:150px;"><%= sortable "quantity", t("activerecord.attributes.movement.quantity")%></th> 
+      <th style="width:150px;"><%= sortable "creation_date", t("activerecord.attributes.order.creation_date")%></th> 
+      <th style="width:150px;"><%= sortable "expected_delivery_date", t("activerecord.attributes.order.expected_delivery_date")%></th> 
    </tr> 
    <% @orders.each do |order| %>
 	<tr> 
@@ -19,14 +19,14 @@
       	<td style="padding-left:10px; color:midnightblue;"><%= order.quantity %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= order.creation_date %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= order.expected_delivery_date %></td> 
-	    <td><%= link_to 'Show', order %></td>
-	    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-	    <td><%= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+	    <td><%= link_to t("actions.show"), order %></td>
+	    <td><%= link_to t("actions.edit"), edit_order_path(order) %></td>
+	    <td><%= link_to t("actions.destroy"), order, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>
   	</tr>
 <% end %>
 </table>
 <br />
-<%= link_to 'Download Order Data', url_for(:format=>"xlsx") %>
+<%= link_to t("actions.download_order"), url_for(:format=>"xlsx") %>
 <br/>
 
 

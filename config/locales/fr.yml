@@ -96,6 +96,11 @@ fr:
             title: "Nouveau Mouvement"
         edit:
             title: "Modification Mouvement"
+            
+    orders:
+        index:
+            new: "Créer une commande"
+            title: "Toutes les commandes"
                    
     activerecord:
         attributes:
@@ -141,6 +146,10 @@ fr:
                 order_minimum_qty: "Min qtés dans une commande"
                 order_minimum_value: "Valeur min d'une commande"
                 supplier: "Fournisseur"
+                
+            order:
+                creation_date: "Créée le"
+                expected_delivery_date: "Date de livraison prévue"
 
     actions:
         show: "Voir"
@@ -151,6 +160,7 @@ fr:
         download_article: "Télécharger la base Articles"
         download_supplier: "Télécharger la base Fournisseurs"
         download_movements: "Télécharger la base Mouvements"
+        download_order: "Télécharger la base Commandes"
         mandatory: "champ obligatoire"
         back: "Retour"
         qty_day: "qtés/jour"

@@ -20,7 +20,7 @@
     <%= f.text_field :supplier_text %>
   </div>
   <div class="field">
-    <%= f.label :leadtime %> (mandatory field)<br />
+    <%= f.label :leadtime %> (<%= t "actions.mandatory"%>)<br />
     <%= f.number_field :leadtime, :required => true %>
   </div>
   <div class="field">

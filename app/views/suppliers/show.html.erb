@@ -7,16 +7,16 @@
 
 </head>
 <body>
-<h1>Supplier view</h1>
+<h1><%= t ".title1"%></h1>
 
 	<table cellspacing="0" cellpadding="3px" rules="all" 
 	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
 	   		<tr style="background-color:lightgrey;">
-		      <th style="width:75px;">Supplier</th> 
-		      <th style="width:75px;">Supplier Test</th> 
-		      <th style="width:75px;">Leatime</th> 
-		      <th style="width:75px;">Order Min Qty</th> 
-		      <th style="width:75px;">Order Min Value</th> 	
+		      <th style="width:75px;"><%= t "activerecord.attributes.supplier.supplier"%></th> 
+		      <th style="width:75px;"><%= t "activerecord.attributes.supplier.supplier_text"%></th> 
+		      <th style="width:75px;"><%= t "activerecord.attributes.supplier.leadtime"%></th> 
+		      <th style="width:75px;"><%= t "activerecord.attributes.supplier.order_minimum_qty"%></th> 
+		      <th style="width:75px;"><%= t "activerecord.attributes.supplier.order_minimum_value"%></th> 	
 			</tr>
 				<td><%= @supplier.supplier %></td>
 				<td><%= @supplier.supplier_text %></td>
@@ -25,18 +25,18 @@
 				<td><%= @supplier.order_minimum_value %></td>
 			</tr>
 	</table>
-<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
-<%= link_to 'Back to suppliers list', suppliers_path %>
+<%= link_to t("actions.edit"), edit_supplier_path(@supplier) %> |
+<%= link_to t(".back"), suppliers_path %>
 </br>
 </br>
 <h1>Articles</h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;">Article code: <%= Article.where(:article_code => @articles.select("article_code")).count%></th> 
-	      <th style="width:150px;">Article text</th> 
-	      <th style="width:150px;">Total turnover: <%= Movement.where(:article_code => @articles.select("article_code")).sum("turnover")%></th> 
-	      <th style="width:150px;">Total quantity: <%= Movement.where(:article_code => @articles.select("article_code")).sum("quantity")%></th> 
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_code"%> : <%= Article.where(:article_code => @articles.select("article_code")).count%></th> 
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_text"%></th> 
+	      <th style="width:150px;">Total <%= t "activerecord.attributes.movement.turnover"%> : <%= Movement.where(:article_code => @articles.select("article_code")).sum("turnover")%></th> 
+	      <th style="width:150px;">Total <%= t "activerecord.attributes.movement.quantity"%> : <%= Movement.where(:article_code => @articles.select("article_code")).sum("quantity")%></th> 
 	   </tr> 
 	<% @articles.each do |article| %>
 		<tr> 
@@ -48,14 +48,14 @@
 		<% end %>
 </table>
 </br>
-<h1>Movements</h1>
+<h1><%= t ".title2"%></h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;">Article code: <%= @movements.count%></th> 
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_code"%> : <%= @movements.count%></th> 
 	      <th style="width:150px;">Date</th> 
-	      <th style="width:150px;">Turnover: <%= Movement.where(:article_code => @articles.select("article_code")).sum("turnover")%></th> 
-	      <th style="width:150px;">Quantity: <%= Movement.where(:article_code => @articles.select("article_code")).sum("quantity")%></th> 
+	      <th style="width:150px;"><%= t "activerecord.attributes.movement.turnover"%> : <%= Movement.where(:article_code => @articles.select("article_code")).sum("turnover")%></th> 
+	      <th style="width:150px;"><%= t "activerecord.attributes.movement.quantity"%> : <%= Movement.where(:article_code => @articles.select("article_code")).sum("quantity")%></th> 
 	   </tr> 
 	<% @movements.each do |movement| %>
 		<tr> 

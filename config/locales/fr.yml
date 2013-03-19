@@ -71,6 +71,17 @@ fr:
             warning: "Attention : vous êtes sur le point de tomber en rupture. Vous devriez re-commander."
             title3: "Ventes par jour"
             stock_end_day: "Stock (soir)"
+            
+    suppliers:
+        index:
+            new_supplier: "Nouveau fournisseur"
+            title: "Base fournisseurs"
+        new: 
+            title: "Nouveau fournisseur"
+        show:
+            title1: "Vue fournisseur"
+            back: "Retour liste fournisseurs" 
+            title2: "Mouvements"
                    
     activerecord:
         attributes:
@@ -106,7 +117,14 @@ fr:
             movement:
                 movement_date: "Date du mouvement"
                 turnover: "Chiffre d'affaires"
-                quantity: "Quantité"       
+                quantity: "Quantité"     
+                
+            supplier: 
+                supplier_text: "Libellé fournisseur"
+                leadtime: "Délai"
+                order_minimum_qty: "Min qtés dans une commande"
+                order_minimum_value: "Valeur min d'une commande"
+                supplier: "Fournisseur"
 
     actions:
         show: "Voir"
@@ -115,6 +133,7 @@ fr:
         confirm: "Etes-vous sûr ?"
         created_at: "Date de création"
         download_article: "Télécharger la base Articles"
+        download_supplier: "Télécharger la base Fournisseurs"
         mandatory: "champ obligatoire"
         back: "Retour"
         qty_day: "qtés/jour"

@@ -1,16 +1,16 @@
-<%= link_to 'New Supplier', new_supplier_path %>
+<%= link_to t(".new_supplier"), new_supplier_path %>
 <br /><br/>
 
-<h1>Listing suppliers</h1>
+<h1><%= t ".title"%></h1>
 
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
    <tr style="background-color:lightgrey;"> 
-      <th style="width:150px;">Supplier</th> 
-      <th style="width:150px;">Supplier text</th> 
-      <th style="width:150px;">Leadtime</th> 
-      <th style="width:150px;">Order minimum qty</th> 
-      <th style="width:150px;">Order minimum value</th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.article.supplier"%></th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.supplier.supplier_text"%></th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.supplier.leadtime"%></th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.supplier.order_minimum_qty"%></th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.supplier.order_minimum_value"%></th> 
    </tr> 
    <% @suppliers.each do |supplier| %>
 	<tr> 
@@ -19,12 +19,12 @@
       	<td style="padding-left:10px; color:midnightblue;"><%= supplier.leadtime %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= supplier.order_minimum_qty %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= supplier.order_minimum_value %></td> 
-	  	<td><%= link_to 'Show', supplier %></td>
-	    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-	    <td><%= link_to 'Destroy', supplier, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+	  	<td><%= link_to t("actions.show"), supplier %></td>
+	    <td><%= link_to t("actions.edit"), edit_supplier_path(supplier) %></td>
+	    <td><%= link_to t("actions.destroy"), supplier, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>
 	  </tr>
 	<% end %>
 </table>
 
 <br /><br/>
-<%= link_to 'Download Supplier Data', url_for(:format=>"xlsx") %>
+<%= link_to t("actions.download_supplier"), url_for(:format=>"xlsx") %>

@@ -71,6 +71,17 @@ en:
             warning:"Warning : you are about to fall into shortage. You should re-order."
             title3: "Sales per day"
             stock_end_day: "Stock (end of the day)"
+    
+    suppliers:
+        index:
+            new_supplier: "New Supplier"
+            title: "Listing suppliers"
+        new: 
+            title: "New supplier"
+        show:
+            title1: "Supplier view"
+            back: "Back to listing suppliers"
+            title2: "Movements"
             
     activerecord:
         attributes:
@@ -106,7 +117,14 @@ en:
             movement:
                 movement_date: "Movement date"
                 turnover: "Turnover"
-                quantity: "Quantity"       
+                quantity: "Quantity"     
+                
+            supplier:
+                supplier_text: "Supplier text"
+                leadtime: "Leadtime"
+                order_minimum_qty: "Order minimum qty"
+                order_minimum_value: "Order minimum value"
+                supplier: "Supplier"
 
     actions:
         show: "Show"
@@ -115,6 +133,7 @@ en:
         confirm: "Are you sure?"
         created_at: "Creation Date"
         download_article: "Download Article Data"
+        download_supplier: "Download Supplier Data"
         mandatory: "mandatory field"
         back: "Back"
         qty_day: "qty/day"

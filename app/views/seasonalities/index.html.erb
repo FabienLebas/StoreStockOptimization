@@ -1,3 +1,52 @@
+<h1>Listing users</h1>
+
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   <tr style="background-color:lightgrey;"> 
+      <th style="width:150px;">User</th> 
+      <th style="width:150px;">Creation date</th> 
+      <th style="width:150px;">Article nb</th> 
+      <th style="width:150px;">Supplier nb</th> 
+      <th style="width:150px;">Movement nb</th> 
+      <th style="width:150px;">Order nb</th> 
+   </tr> 
+   <% @users.each do |user| %>
+	<tr> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= user.email %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= user.created_at %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= Article.where(:user => user.email).length %></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%=  Supplier.where(:user => user.email).length%></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%=  Movement.where(:user => user.email).length%></td> 
+		<td style="padding-left:10px; color:midnightblue;"><%=  Order.where(:user => user.email).length%></td>
+	  </tr>
+	<% end %>
+</table>
+
+<h1>Détails Edouard</h1>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
+	   <tr style="background-color:lightgrey;"> 
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_code"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_text"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.family"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.deparment"%></th>		
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.supplier"%></th>
+	      <th style="width:150px;">Stock</th>	
+		</tr>
+	<% @articles_edouard.each do |article| %>
+		<tr>
+		<td><%= article.article_code %></td> 
+		<td><%= article.article_text %></td> 
+		<td><%= article.family %></td> 
+		<td><%= article.department %></td> 				
+		<td><%= article.supplier %></td> 
+		<td><%= article.stock_qty %></td> 		
+		<td><%= link_to t("actions.show"), article %></td>
+	    <td><%= link_to t("actions.edit"), edit_article_path(article) %></td>
+	    <td><%= link_to t("actions.destroy"), article, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>								
+		</tr>
+	<%end%>
+</table>
 <h1>Listing seasonalities</h1>
 
 <table>
@@ -128,27 +177,5 @@
 
 <%= link_to 'New Seasonality', new_seasonality_path %>
 
-<h1>Listing users</h1>
 
-<table cellspacing="0" cellpadding="3px" rules="all" 
-   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
-   <tr style="background-color:lightgrey;"> 
-      <th style="width:150px;">User</th> 
-      <th style="width:150px;">Creation date</th> 
-      <th style="width:150px;">Article nb</th> 
-      <th style="width:150px;">Supplier nb</th> 
-      <th style="width:150px;">Movement nb</th> 
-      <th style="width:150px;">Order nb</th> 
-   </tr> 
-   <% @users.each do |user| %>
-	<tr> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= user.email %></td> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= user.created_at %></td> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= Article.where(:user => user.email).length %></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%=  Supplier.where(:user => user.email).length%></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%=  Movement.where(:user => user.email).length%></td> 
-		<td style="padding-left:10px; color:midnightblue;"><%=  Order.where(:user => user.email).length%></td>
-	  </tr>
-	<% end %>
-</table>
 

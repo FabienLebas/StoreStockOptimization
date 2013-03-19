@@ -39,6 +39,7 @@ en:
             paragraph3_title: "Quick tour of our main functionalities:"
             paragraph3_1: "Instant overview of your activity (turnover, quantities, stock value, ...):"
             paragraph3_2: "Save time, save customers with real-time analysis of your future shortages or overstock:"
+            paragraph3_2_image: "/images/efficient_inventory_articles.jpg"
             paragraph3_3: "You need another report? ---> Export data to Excel! (and tell us to create a new report!)"
             paragraph3_4: "You need to see what is currently in shortage? ---> Sort by stock quantity!"
             paragraph3_5: "You have many article? ---> Classify by category and department!"

@@ -4,7 +4,9 @@
 en:
     layouts:
         footer:
+            home: "Home"
             about: "About us"
+
         application:
             signed_in_as: "Signed in as "
             not_you: ". Not you?"
@@ -40,8 +42,8 @@ en:
             paragraph3_3: "You need another report? ---> Export data to Excel! (and tell us to create a new report!)"
             paragraph3_4: "You need to see what is currently in shortage? ---> Sort by stock quantity!"
             paragraph3_5: "You have many article? ---> Classify by category and department!"
-            paragraph3_6: "You have a question? ---> Our commitment is to answer you within 24 hours, 365/365!"
-            
+            paragraph3_6: "You have a question? ---> Our commitment is to answer you within 24 hours, 365/365!"          
+
         about:
             title: "Efficient Inventory Management | About us"
             meta: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free !"
@@ -52,7 +54,45 @@ en:
             line3: "By creating this service, I am offering to help you, for your stock management:"
             line4: "Save time: instant access to your best sellers, your shortages, your overstock, ..."
             line5: "Save money: with better visibility on your stock, you will be able to reduce it."
-            line6: "Up-to-date cloud technologies are now available for you: don't worry if you grow = our price will remain the same, and you have no limitation. Sky is the limit!"
-            
-            
+            line6: "Up-to-date cloud technologies are now available for you: don't worry if you grow = our price will remain the same, and you have no limitation. Sky is the limit!"           
+
+    articles:
+        index:
+            new_article: "New Article"
+            title1: "Shortage risk: 5% articles with lowest stock expected"
+            title2: "Overstock risk: 5% articles with highest stock expected"
+            title3: "Listing articles"
+
+    activerecord:
+        attributes:
+            article:
+                article_code: "Article Code"
+                article_text: "Article Text"
+                model_code: "Model Code"
+                model_text: "Model Text"
+                family: "Family"
+                deparment: "Department"
+                supplier: "Supplier"
+                price_if_box: "Price if purchased by box"
+                price_if_massive: "Price if purchased by massive quantity"
+                selling_price: "Selling Price incl. VAT"
+                vat_rate: "VAT rate"
+                end_life: "End of life date"
+                stock_at_leadtime: "Stock at supplier leadtime"
+                sales_per_day: "Sales / day"
+                turnover_per_day: "Turnover / day"
+                stock_lifetime: "Stock lifetime"
+                search: "Search in article text"
+
+            seasonality:
+                seasonality: "Seasonality"       
+
+    actions:
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
+        confirm: "Are you sure?"
+        created_at: "Creation Date"
+        download_article: "Download Article Data"
+        
             

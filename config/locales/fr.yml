@@ -6,6 +6,7 @@ fr:
         footer: 
             home: "Accueil"
             about: "A propos de nous"
+            
         application: 
             signed_in_as: "Utilisateur "
             not_you: ". "
@@ -18,7 +19,6 @@ fr:
             movements: "Mouvements de stock"
             orders: "Commandes"
             
-    
     pages:
         home:
             title: "Bienvenue dans le monde de la gestion de stock !"
@@ -56,9 +56,41 @@ fr:
             line5: "Gagnez de l'argent : avec une meilleure visibilité de votre stock, vous allez pouvoir le réduire."
             line6: "Toute la puissance du cloud est maintenant accessible : ne vous souciez pas de votre croissance = notre prix restera le même, et vous n'avez aucune limite. Sky is the limit !"
             
-            
-            
+    articles:
+        index:
+            new_article: "Créer Article"
+            title1: "Risque de rupture : voici les 5% des articles ayant le plus de chances de tomber en rupture"
+            title2: "Risque de surstock : voici les 5% des articles ayant le plus fort stock prévu"
+            title3: "Base articles"
+                   
     activerecord:
         attributes:
             article:
                 article_code: "Code Article"
+                article_text: "Libellé Article"
+                model_code: "Code Modèle"
+                model_text: "Libellé Modèle"
+                family: "Famille"
+                deparment: "Rayon"
+                supplier: "Fournisseur"
+                price_if_box: "Prix d'achat au carton"
+                price_if_massive: "Prix d'acaht en gros"
+                selling_price: "Prix de vente TTC"
+                vat_rate: "Taux TVA"
+                end_life: "Date de fin de vie"
+                stock_at_leadtime: "Stock prévu au délai fournisseur"
+                sales_per_day: "Ventes / jour"
+                turnover_per_day: "Chiffre d'affaires / jour"
+                stock_lifetime: "Nb de jours de stock restant"
+                search: "Chercher dans le Libellé Article"
+
+            seasonality:
+                seasonality: "Saisonnalité"       
+
+    actions:
+        show: "Voir"
+        edit: "Modifier"
+        destroy: "Supprimer"
+        confirm: "Etes-vous sûr ?"
+        created_at: "Date de création"
+        download_article: "Télécharger la base Articles"

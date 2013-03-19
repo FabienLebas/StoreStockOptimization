@@ -1,17 +1,17 @@
-<%= link_to 'New Article', new_article_path %>
+<%= link_to t(".new_article"), new_article_path %>
 <br /><br/>
 
-<h1>Shortage risk: 5% articles with lowest stock expected</h1>
+<h1><%= t ".title1" %></h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 
 	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;">Article code</th>
-	      <th style="width:150px;">Article text</th>
-	      <th style="width:150px;">Family</th>
-	      <th style="width:150px;">Department</th>		
-	      <th style="width:150px;">Stock at supplier leadtime</th>
-	      <th style="width:150px;">Sales / day</th>	
-	      <th style="width:150px;">Turnover / day</th>			
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_code"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_text"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.family"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.deparment"%></th>		
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.stock_at_leadtime"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.sales_per_day"%></th>	
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.turnover_per_day"%></th>			
 		</tr>
 	<% @articles_not_sorted.sort_by {|i| i.stock_at_replenishment}[0..(@articles.length * 0.05)].each do |article| %>
 		<tr>
@@ -22,24 +22,24 @@
 		<td><%= number_with_precision(article.stock_at_replenishment, :precision => 1) %></td> 
 		<td><%= number_with_precision(article.sales_per_day, :precision =>2) %></td> 		
 		<td><%= number_with_precision(article.sales_per_day * article.selling_price_inc_vat, :precision =>2) %></td> 
-		<td><%= link_to 'Show', article %></td>
-	    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-	    <td><%= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>								
+		<td><%= link_to t("actions.show"), article %></td>
+	    <td><%= link_to t("actions.edit"), edit_article_path(article) %></td>
+	    <td><%= link_to t("actions.destroy"), article, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>								
 		</tr>
 	<%end%>
 </table>
 <br/>
-<h1>Overstock risk: 5% articles with highest stock expected</h1>
+<h1><%= t ".title2" %></h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 
 	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;">Article code</th>
-	      <th style="width:150px;">Article text</th>
-	      <th style="width:150px;">Family</th>
-	      <th style="width:150px;">Department</th>		
-	      <th style="width:150px;">Stock at supplier leadtime</th>
-	      <th style="width:150px;">Sales / day</th>	
-	      <th style="width:150px;">Turnover / day</th>			
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_code"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_text"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.family"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.deparment"%></th>		
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.stock_at_leadtime"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.sales_per_day"%></th>	
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.turnover_per_day"%></th>			
 		</tr>
 	<% @articles_not_sorted.sort_by {|i| i.stock_at_replenishment}.reverse![0..(@articles.length * 0.05)].each do |article| %>
 		<tr>
@@ -50,19 +50,19 @@
 		<td><%= number_with_precision(article.stock_at_replenishment, :precision => 1) %></td> 
 		<td><%= number_with_precision(article.sales_per_day, :precision =>2) %></td> 		
 		<td><%= number_with_precision(article.sales_per_day * article.selling_price_inc_vat, :precision =>2) %></td> 
-		<td><%= link_to 'Show', article %></td>
-	    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-	    <td><%= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>								
+		<td><%= link_to t("actions.show"), article %></td>
+	    <td><%= link_to t("actions.edit"), edit_article_path(article) %></td>
+	    <td><%= link_to t("actions.destroy"), article, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>								
 		</tr>
 	<%end%>
 </table>
 <br/>
 
-<h1>Listing articles</h1>
+<h1><%= t ".title3" %></h1>
 <%= form_tag articles_path, :method => 'get', :id => "articles_search" do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search in article text", :name => nil %>
+    <%= submit_tag t("activerecord.attributes.article.search"), :name => nil %>
   </p>
   <div id="cresults_div"></div>
 <% end %>
@@ -70,23 +70,23 @@
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
    <tr style="background-color:lightgrey;"> 
-      <th style="width:150px;"><%= sortable "article_code", "Article code"%></th> 
-      <th style="width:150px;"><%= sortable "article_text", "Article text"%></th> 
-      <th style="width:150px;"><%= sortable "model_code", "Model code"%></th> 
-      <th style="width:150px;"><%= sortable "model_name", "Model text"%></th> 
-      <th style="width:150px;"><%=sortable "family", "Family"%></th> 
-      <th style="width:150px;"><%=sortable "department", "Department"%></th> 
+      <th style="width:150px;"><%= sortable "article_code", t("activerecord.attributes.article.article_code")%></th> 
+      <th style="width:150px;"><%= sortable "article_text", t("activerecord.attributes.article.article_text")%></th> 
+      <th style="width:150px;"><%= sortable "model_code", t("activerecord.attributes.article.model_code")%></th> 
+      <th style="width:150px;"><%= sortable "model_name", t("activerecord.attributes.article.model_text")%></th> 
+      <th style="width:150px;"><%=sortable "family", t("activerecord.attributes.article.family")%></th> 
+      <th style="width:150px;"><%=sortable "department", t("activerecord.attributes.article.department")%></th> 
       <th style="width:150px;"><%= sortable "stock_qty", "Stock"%></th>
-      <th style="width:150px;">Sales/day</th> 
-      <th style="width:150px;">Stock lifetime</th>
-	  <th style="width:150px;"><%= sortable "supplier", "Supplier"%></th> 
-      <th style="width:150px;">Price if box</th> 
-      <th style="width:150px;">Price if massive</th> 
-      <th style="width:150px;"><%= sortable "selling_price_inc_vat", "Selling price incl VAT"%></th> 
-      <th style="width:150px;">VAT rate</th> 
-      <th style="width:150px;">End of life</th> 
-      <th style="width:150px;"><%sortable "seasonality_code", "Seasonality"%></th> 
-      <th style="width:150px;">Creation date</th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.article.sales_per_day"%></th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.article.stock_lifetime"%></th>
+	  <th style="width:150px;"><%= sortable "supplier", t("activerecord.attributes.article.supplier")%></th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.article.price_if_box"%></th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.article.price_if_massive"%></th> 
+      <th style="width:150px;"><%= sortable "selling_price_inc_vat", t("activerecord.attributes.article.selling_price")%></th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.article.vat_rate"%></th> 
+      <th style="width:150px;"><%= t "activerecord.attributes.article.end_life"%></th> 
+      <th style="width:150px;"><%sortable "seasonality_code", t("activerecord.attributes.seasonality.seasonality")%></th> 
+      <th style="width:150px;"><%= t "actions.created_at"%></th> 
 
    </tr> 
    <% @articles.each do |article| %>
@@ -108,15 +108,15 @@
 		<td style="padding-left:10px; color:midnightblue;"><%= article.end_life_date.strftime("%B %d, %Y") %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.seasonality_code %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%= article.created_at.strftime("%B %d, %Y") %></td> 
-		<td><%= link_to 'Show', article %></td>
-	    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-	    <td><%= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+		<td><%= link_to t("actions.show"), article %></td>
+	    <td><%= link_to t("actions.edit"), edit_article_path(article) %></td>
+	    <td><%= link_to t("actions.destroy"), article, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>
    </tr> 
 <% end %>
 </table>
 
 <br /><br/>
-<%= link_to 'Download Article Data', url_for(:format=>"xlsx") %>
+<%= link_to t("actions.download_article"), url_for(:format=>"xlsx") %>
 <br/>
 
 

@@ -1,6 +1,6 @@
-<h1>New article</h1>
+<h1><%= t "articles.index.new_article"%></h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', articles_path %>
+<br/>
+<%= link_to t("actions.back"), articles_path %>
 

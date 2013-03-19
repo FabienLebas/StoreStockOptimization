@@ -60,10 +60,18 @@ en:
     articles:
         index:
             new_article: "New Article"
+            edit: "Editing Article"
             title1: "Shortage risk: 5% articles with lowest stock expected"
             title2: "Overstock risk: 5% articles with highest stock expected"
             title3: "Listing articles"
-
+        show: 
+            title1: "Article view"
+            back: "Back to listing articles"
+            title2: "Performances"
+            warning:"Warning : you are about to fall into shortage. You should re-order."
+            title3: "Sales per day"
+            stock_end_day: "Stock (end of the day)"
+            
     activerecord:
         attributes:
             article:
@@ -72,21 +80,33 @@ en:
                 model_code: "Model Code"
                 model_text: "Model Text"
                 family: "Family"
-                deparment: "Department"
+                department: "Department"
                 supplier: "Supplier"
+                box: "Quantities in a supplier box"
+                minimum_of_qty: "Minimum of quantities for a supplier order"
+                unitary_price_if_box: "Unitary price if bought by box"
+                unitary_price_if_massive: "Unitary price if bought in massive qties"
                 price_if_box: "Price if purchased by box"
                 price_if_massive: "Price if purchased by massive quantity"
-                selling_price: "Selling Price incl. VAT"
+                selling_price_inc_vat: "Selling Price incl. VAT"
                 vat_rate: "VAT rate"
-                end_life: "End of life date"
+                end_life_date: "End of life date"
+                created_at: "Creation date"
+                stock_qty: "Stock"
                 stock_at_leadtime: "Stock at supplier leadtime"
                 sales_per_day: "Sales / day"
                 turnover_per_day: "Turnover / day"
                 stock_lifetime: "Stock lifetime"
                 search: "Search in article text"
+                sales_until_replenishment: "Forecasted sales during replenishment"    
 
             seasonality:
-                seasonality: "Seasonality"       
+                seasonality: "Seasonality"
+                
+            movement:
+                movement_date: "Movement date"
+                turnover: "Turnover"
+                quantity: "Quantity"       
 
     actions:
         show: "Show"
@@ -95,5 +115,8 @@ en:
         confirm: "Are you sure?"
         created_at: "Creation Date"
         download_article: "Download Article Data"
-        
+        mandatory: "mandatory field"
+        back: "Back"
+        qty_day: "qty/day"
+        qty: "qty"        
             

@@ -60,9 +60,17 @@ fr:
     articles:
         index:
             new_article: "Créer Article"
+            edit: "Modification Article"
             title1: "Risque de rupture : voici les 5% des articles ayant le plus de chances de tomber en rupture"
             title2: "Risque de surstock : voici les 5% des articles ayant le plus fort stock prévu"
             title3: "Base articles"
+        show:
+            title1: "Vue article"
+            back: "Retour liste articles"
+            title2: "Performances"
+            warning: "Attention : vous êtes sur le point de tomber en rupture. Vous devriez re-commander."
+            title3: "Ventes par jour"
+            stock_end_day: "Stock (soir)"
                    
     activerecord:
         attributes:
@@ -72,21 +80,33 @@ fr:
                 model_code: "Code Modèle"
                 model_text: "Libellé Modèle"
                 family: "Famille"
-                deparment: "Rayon"
+                department: "Rayon"
                 supplier: "Fournisseur"
+                box: "Qtés dans un carton fournisseur"
+                minimum_of_qty: "Min qtés commandées au fournisseurs" 
+                unitary_price_if_box: "Prix unitaire si achat au carton"              
+                unitary_price_if_massive: "Prix unitaire si achat massif" 
                 price_if_box: "Prix d'achat au carton"
                 price_if_massive: "Prix d'achat en gros"
-                selling_price: "Prix de vente TTC"
+                selling_price_inc_vat: "Prix de vente TTC"
                 vat_rate: "Taux TVA"
-                end_life: "Date de fin de vie"
+                end_life_date: "Date de fin de vie"
+                created_at: "Date de création"
+                stock_qty: "Stock"
                 stock_at_leadtime: "Stock prévu au délai fournisseur"
                 sales_per_day: "Ventes / jour"
                 turnover_per_day: "Chiffre d'affaires / jour"
                 stock_lifetime: "Nb de jours de stock restant"
                 search: "Chercher dans le Libellé Article"
+                sales_until_replenishment: "Ventes prévues pendant délai fournisseur"
 
             seasonality:
-                seasonality: "Saisonnalité"       
+                seasonality: "Saisonnalité"
+            
+            movement:
+                movement_date: "Date du mouvement"
+                turnover: "Chiffre d'affaires"
+                quantity: "Quantité"       
 
     actions:
         show: "Voir"
@@ -95,6 +115,10 @@ fr:
         confirm: "Etes-vous sûr ?"
         created_at: "Date de création"
         download_article: "Télécharger la base Articles"
+        mandatory: "champ obligatoire"
+        back: "Retour"
+        qty_day: "qtés/jour"
+        qty: "qté"
 
     date:
         formats:
@@ -164,6 +188,11 @@ fr:
             hour:   "Heure"
             minute: "Minute"
             second: "Seconde"
+
+    number:
+        format:
+            separator: ","
+            delimiter: " "        
 
     errors: &errors
         format: "%{attribute} %{message}"

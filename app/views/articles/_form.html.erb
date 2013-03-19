@@ -56,7 +56,7 @@
     <%= f.text_field :unitary_price_if_massive %>
   </div>
   <div class="field">
-    <%= f.label :selling_price_inc_vat %> (mandatory field)<br />
+    <%= f.label :selling_price_inc_vat %> (<%= t "actions.mandatory"%>)<br />
     <%= f.text_field :selling_price_inc_vat, :required => true %>
   </div>
   <div class="field">
@@ -67,12 +67,8 @@
     <%= f.label :end_life_date %><br />
     <%= f.date_select :end_life_date %>
   </div>
- <div class="field">
-    <%= f.label :seasonality_code %><br />
-    <%= f.text_field :seasonality_code %>
-  </div>
   <div class="field">
-    <%= f.label :stock_qty %> (mandatory field)<br />
+    <%= f.label :stock_qty %> (<%= t "actions.mandatory"%>)<br />
     <%= f.number_field :stock_qty, :required => true %>
   </div>
 	</br>

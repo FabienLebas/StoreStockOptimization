@@ -101,6 +101,8 @@ en:
         index:
             new: "New order"
             title: "Listing orders"
+        new:
+            title: "New order"
             
     activerecord:
         attributes:
@@ -147,6 +149,9 @@ en:
                 supplier: "Supplier"
             order:
                 expected_delivery_date: "Expected delivery date"
+                article_code: "Article Code"
+                supplier: "Supplier"
+                quantity: "Quantity"
 
     actions:
         show: "Show"

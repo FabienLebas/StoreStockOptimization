@@ -101,6 +101,10 @@ fr:
         index:
             new: "Créer une commande"
             title: "Toutes les commandes"
+        new:
+            title: "Nouvelle commande"
+        edit:
+            title: "Modification commande"
                    
     activerecord:
         attributes:
@@ -150,6 +154,10 @@ fr:
             order:
                 creation_date: "Créée le"
                 expected_delivery_date: "Date de livraison prévue"
+                article_code: "Code Article"
+                supplier: "Fournisseur"
+                quantity: "Quantité"
+                validated: "Validée"
 
     actions:
         show: "Voir"

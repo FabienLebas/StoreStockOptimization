@@ -52,6 +52,8 @@ class OrdersController < ApplicationController
   # GET /orders/1/edit
   def edit
     @order = Order.find(params[:id])
+    @suppliers = Supplier.where(:user => current_user.email).select("supplier")
+    
   end
 
   # POST /orders

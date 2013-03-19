@@ -82,6 +82,8 @@ fr:
             title1: "Vue fournisseur"
             back: "Retour liste fournisseurs" 
             title2: "Mouvements"
+        edit: 
+            title: "Modification Fournisseur"
                    
     activerecord:
         attributes:

@@ -84,6 +84,18 @@ fr:
             title2: "Mouvements"
         edit: 
             title: "Modification Fournisseur"
+            
+    movements:
+        index:
+            new: "Créer Mouvement"
+            title1: "Reporting"
+            title2: "Résultats globaux 3 mois"
+            title3: "Ventes par jour"
+            title4: "Tous les Mouvements"
+        new:
+            title: "Nouveau Mouvement"
+        edit:
+            title: "Modification Mouvement"
                    
     activerecord:
         attributes:
@@ -119,7 +131,9 @@ fr:
             movement:
                 movement_date: "Date du mouvement"
                 turnover: "Chiffre d'affaires"
-                quantity: "Quantité"     
+                quantity: "Quantité"
+                best_seller: "Meilleure vente"     
+                article_code: "Code article"
                 
             supplier: 
                 supplier_text: "Libellé fournisseur"
@@ -136,10 +150,16 @@ fr:
         created_at: "Date de création"
         download_article: "Télécharger la base Articles"
         download_supplier: "Télécharger la base Fournisseurs"
+        download_movements: "Télécharger la base Mouvements"
         mandatory: "champ obligatoire"
         back: "Retour"
         qty_day: "qtés/jour"
         qty: "qté"
+        today: "Aujourd'hui"
+        this_week: "Cette semaine"
+        from: "Du"
+        to: "au"
+        
 
     date:
         formats:

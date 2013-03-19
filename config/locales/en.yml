@@ -82,6 +82,18 @@ en:
             title1: "Supplier view"
             back: "Back to listing suppliers"
             title2: "Movements"
+        edit:
+            title: "Editing supplier"
+    
+    movements:
+        index:
+            new: "New Movement"
+            title1: "Reporting"
+            title2: "Overall result 3 last months"
+            title3: "Sales per day"
+            title4: "Listing all movements"
+        new:
+            title: "New movement"
             
     activerecord:
         attributes:
@@ -118,6 +130,7 @@ en:
                 movement_date: "Movement date"
                 turnover: "Turnover"
                 quantity: "Quantity"     
+                best_seller: "Best sellers"
                 
             supplier:
                 supplier_text: "Supplier text"
@@ -134,8 +147,13 @@ en:
         created_at: "Creation Date"
         download_article: "Download Article Data"
         download_supplier: "Download Supplier Data"
+        download_movements: "Download Movements Data"
         mandatory: "mandatory field"
         back: "Back"
         qty_day: "qty/day"
-        qty: "qty"        
+        qty: "qty"  
+        today: "Today"      
+        this_week: "This week"
+        from: "From"
+        to: "to"
             

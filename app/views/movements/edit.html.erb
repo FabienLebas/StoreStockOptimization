@@ -1,6 +1,6 @@
-<h1>Editing movement</h1>
+<h1><%= t ".title"%></h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @movement %> |
-<%= link_to 'Back', movements_path %>
+<br/>
+<%= link_to t("actions.show"), @movement %> |
+<%= link_to t("actions.back"), movements_path %>

@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Articlecode:</b>
+  <b><%= t "activerecord.attributes.movement.article_code"%> :</b>
   <%= @movement.article_code %>
 </p>
 
 <p>
-  <b>Movementdate:</b>
+  <b><%= t "activerecord.attributes.movement.movement_date"%> :</b>
   <%= @movement.movement_date %>
 </p>
 
 <p>
-  <b>Turnover:</b>
+  <b><%= t "activerecord.attributes.movement.turnover"%> :</b>
   <%= @movement.turnover %>
 </p>
 
 <p>
-  <b>Quantity:</b>
+  <b><%= t "activerecord.attributes.movement.quantity"%> :</b>
   <%= @movement.quantity %>
 </p>
 
 
-<%= link_to 'Edit', edit_movement_path(@movement) %> |
-<%= link_to 'Back', movements_path %>
+<%= link_to t("actions.edit"), edit_movement_path(@movement) %> |
+<%= link_to t("actions.back"), movements_path %>

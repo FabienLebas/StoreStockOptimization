@@ -23,32 +23,32 @@
 </head>
 
 <body id='#my_page'>
-<%= link_to 'New Movement', new_movement_path %>
+<%= link_to t(".new"), new_movement_path %>
 <br/><br/>
-<h1>Reporting</h1>
+<h1><%= t ".title1"%></h1>
 
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
    		<tr style="background-color:lightgrey;">
 		  <th style="width:30px;"></th> 
-	      <th style="width:75px;">Today</th> 
-	      <th style="width:75px;">This week</th> 
-	      <th style="width:75px;">Date: <input type="text" id="datepicker"/></th> 
-	      <th style="width:150px;">From <input type="text" id="datepickerFrom"/> to <input type="text" id="datepickerTo"/></th>
+	      <th style="width:75px;"><%= t "actions.today"%></th> 
+	      <th style="width:75px;"><%= t "actions.this_week"%></th> 
+	      <th style="width:75px;">Date : <input type="text" id="datepicker"/></th> 
+	      <th style="width:150px;"><%= t "actions.from"%> <input type="text" id="datepickerFrom"/> <%= t"actions.to"%> <input type="text" id="datepickerTo"/></th>
 		</tr>
-		<tr><th style="background-color:lightgrey;"> Turnover </th>
+		<tr><th style="background-color:lightgrey;"> <%= t "activerecord.attributes.movement.turnover"%> </th>
 			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date =>Date.today, :user => current_user.email).sum("turnover")%></td>
 			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date => Date.today-6..Date.today, :user => current_user.email).sum("turnover")%></td>			
 			<td style="padding-left:10px; color:midnightblue;" id="resultTO"></td>
 			<td style="padding-left:10px; color:midnightblue;" id="resultTOFromTo"></td>						
 		</tr>
-		<tr><th style="background-color:lightgrey;"> Quantities </th>
+		<tr><th style="background-color:lightgrey;"> <%= t "activerecord.attributes.movement.quantity"%> </th>
 			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date =>Date.today, :user => current_user.email).sum("quantity")%></td>
 			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date => Date.today-6..Date.today, :user => current_user.email).sum("quantity")%></td>
 			<td style="padding-left:10px; color:midnightblue;" id="resultQty"></td>	
 			<td style="padding-left:10px; color:midnightblue;" id="resultQtyFromTo"></td>																	
 		</tr>
-		<tr><th style="background-color:lightgrey;"> Best sellers </th>
+		<tr><th style="background-color:lightgrey;"> <%= t "activerecord.attributes.movement.best_seller"%> </th>
 			<td style="padding-left:10px; color:midnightblue;"><%= if !Movement.where(:movement_date =>Date.today, :user => current_user.email).empty? 
 																	then link_to Movement.where(:movement_date =>Date.today, :user => current_user.email).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code, Article.where(:article_code => Movement.where(:movement_date =>Date.today, :user => current_user.email).select("article_code, sum(turnover)").group("article_code").order("sum(turnover) DESC").first.article_code, :user => current_user.email).first
 																	else 0
@@ -69,18 +69,18 @@
 </table>		
 <br />	
 
-<h1>Overall results</h1>
+<h1><%= t ".title2"%></h1>
 <div id="container" style="width:100%; height:400px;"> </div>
 <br/>
 
-<h1>Sales per day</h1>
+<h1><%= t ".title3"%></h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;"><%= sortable "movement_date", "Movement date" %></th> 
-	      <th style="width:150px;"><%= sortable "turnover", "Turnover:" %> <%= Movement.sum("turnover")%></th> 
-	      <th style="width:150px;"><%= sortable "quantity", "Quantity:"%> <%= Movement.sum("quantity")%></th> 
-	      <th style="width:150px;">Stock: <%= Article.sum("stock_qty")%></th> 
+	      <th style="width:150px;"><%= sortable "movement_date", t("activerecord.attributes.movement.movement_date") %></th> 
+	      <th style="width:150px;"><%= sortable "turnover", t("activerecord.attributes.movement.turnover") %> : <%= Movement.sum("turnover")%></th> 
+	      <th style="width:150px;"><%= sortable "quantity", t("activerecord.attributes.movement.quantity")%> : <%= Movement.sum("quantity")%></th> 
+	      <th style="width:150px;">Stock : <%= Article.sum("stock_qty")%></th> 
 	   </tr> 
 	<% @movements_grouped.each do |movement| %>
 		<tr> 
@@ -93,14 +93,14 @@
 </table>
 </br>
 
-<h1>Listing all movements</h1>
+<h1><%= t ".title4"%></h1>
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
 	   <tr style="background-color:lightgrey;"> 
-	      <th style="width:150px;"><%= sortable "article_code", "Article code"%></th> 
-	      <th style="width:150px;"><%= sortable "movement_date", "Movement Date"%></th> 
-	      <th style="width:150px;"><%= sortable "turnover", "Turnover:"%> <%= Movement.sum("turnover")%></th> 
-	      <th style="width:150px;"><%= sortable "quantity", "Quantity:"%> <%= Movement.sum("quantity")%></th> 
+	      <th style="width:150px;"><%= sortable "article_code", t("activerecord.attributes.article.article_code")%></th> 
+	      <th style="width:150px;"><%= sortable "movement_date", t("activerecord.attributes.movement.movement_date")%></th> 
+	      <th style="width:150px;"><%= sortable "turnover", t("activerecord.attributes.movement.turnover")%> : <%= Movement.sum("turnover")%></th> 
+	      <th style="width:150px;"><%= sortable "quantity", t("activerecord.attributes.movement.quantity")%> : <%= Movement.sum("quantity")%></th> 
 	   </tr> 
 	<% @movements.each do |movement| %>
 		<tr> 
@@ -108,15 +108,15 @@
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_date.strftime("%B %d, %Y") %></td> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.turnover %></td> 
 			<td style="padding-left:10px; color:midnightblue;"><%= movement.quantity %></td> 
-			<td><%= link_to 'Show', movement %></td>
-		    <td><%= link_to 'Edit', edit_movement_path(movement) %></td>
-		    <td><%= link_to 'Destroy', movement, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+			<td style="width:50px;"><%= link_to t("actions.show"), movement %></td>
+		    <td style="width:50px;"><%= link_to t("actions.edit"), edit_movement_path(movement) %></td>
+		    <td style="width:50px;"><%= link_to t("actions.destroy"), movement, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>
 		  </tr>
 		<% end %>
 </table>
 
 <br /><br/>
-<%= link_to 'Download Movement Data', url_for(:format=>"xlsx") %>
+<%= link_to t("actions.download_movements"), url_for(:format=>"xlsx") %>
 	
 <script>
 $(document).ready(function(){

@@ -9,7 +9,7 @@ en:
 
         application:
             signed_in_as: "Signed in as "
-            not_you: ". Not you?"
+            not_you: "Not you?"
             sign_out: "Sign out"
             register: "Register"
             or: "or"
@@ -21,16 +21,23 @@ en:
 
     pages:        
         home:
-            title: "Welcome to the world of stock inventory management!"
+            title: "Welcome Home !"
             meta: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free!"
-            paragraph1_title: "Here you will find all you need to:"
+            paragraph1_title1: "Individual store? Web-merchant?"
+            paragraph1_title2: "Here you will find all you need to:"
             paragraph1_1: "Manage your inventory"
             paragraph1_2: "Powerful reporting and alert tools"
             paragraph1_3: "Prepare your future orders to your suppliers"
             paragraph1_4: "Improve your turnover"
             paragraph1_5: "... and so much more!"
+            slider1_title: "Exception management"
+            slider1_text: "Spend time on what is important"
+            slider2_title: "Graphs"
+            slider2_text: "Clear, dynamics, and zoomable graphs"
             beta_testers_title: "We are recruiting beta-testers:"
-            beta_testers_text: "start using 100% free, and send us your remarks so that we can build your perfect tool.  "
+            beta_testers_text1: "Start using 100% free"
+            beta_testers_text2: "Send us your remarks so that we can build your perfect tool"
+            beta_testers_text3: "And you will be rewarded one year of free usage!"
             beta_testers_button: "Register"
             paragraph2_title: "With Efficient inventory management:"
             paragraph2_1: "Save time: instant access to your best sellers, your shortages, your overstock, ..."
@@ -44,6 +51,10 @@ en:
             paragraph3_4: "You need to see what is currently in shortage? ---> Sort by stock quantity!"
             paragraph3_5: "You have many article? ---> Classify by category and department!"
             paragraph3_6: "You have a question? ---> Our commitment is to answer you within 24 hours, 365/365!"          
+            supplier_desc: "A quick view on your suppliers, their leadtime, and the constraints to order."
+            article_desc: "Efficient creation of your articles, grouped by categories, instant access to their performances, and alert if they risk shortage or overstock."
+            movement_desc: "Save all your stock movements, keep trace of them, and analyze in real-time your turnover. Great decisions need great informations!"
+            order_desc: "In the blink of an eye, forecast your turnover, and order the right quantity at the right time."
 
         about:
             title: "Efficient Inventory Management | About us"
@@ -103,6 +114,8 @@ en:
             title: "Listing orders"
         new:
             title: "New order"
+        edit:
+            title: "Editing order"
             
     activerecord:
         attributes:
@@ -171,4 +184,5 @@ en:
         this_week: "This week"
         from: "From"
         to: "to"
+        zoom: "Click and drag in the plot area to zoom in"
             

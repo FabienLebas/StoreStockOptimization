@@ -1,7 +1,7 @@
 <%= link_to t(".new_article"), new_article_path %>
 <br /><br/>
 
-<h1><%= t ".title1" %></h1>
+<h2><%= t ".title1" %></h2>
 <table cellspacing="0" cellpadding="3px" rules="all" 
 	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
 	   <tr style="background-color:lightgrey;"> 
@@ -29,7 +29,7 @@
 	<%end%>
 </table>
 <br/>
-<h1><%= t ".title2" %></h1>
+<h2><%= t ".title2" %></h2>
 <table cellspacing="0" cellpadding="3px" rules="all" 
 	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
 	   <tr style="background-color:lightgrey;"> 
@@ -58,7 +58,7 @@
 </table>
 <br/>
 
-<h1><%= t ".title3" %></h1>
+<h2><%= t ".title3" %></h2>
 <%= form_tag articles_path, :method => 'get', :id => "articles_search" do %>
   <p>
     <%= text_field_tag :search, params[:search] %>

@@ -5,6 +5,11 @@ StoreStockOptimization::Application.routes.draw do
     get "pages/contact"
 
     get "pages/about"
+    
+    post "movements/getTO" 
+    post "movements/getTO2Dates"
+    post "movements/getStartDate" 
+    
   devise_for :users
   
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
@@ -18,12 +23,12 @@ StoreStockOptimization::Application.routes.draw do
     resources :pages
     root :to => 'pages#home'
   end
-  match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
-  match '', to: redirect("/#{I18n.default_locale}")  
-  
-  post "movements/getTO" 
-  post "movements/getTO2Dates"
-  post "movements/getStartDate" 
+    match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+    match 'movements/getTO', to: redirect("movements/getTO")
+    match '', to: redirect("/#{I18n.default_locale}")  
+
+
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

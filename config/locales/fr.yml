@@ -9,7 +9,7 @@ fr:
             
         application: 
             signed_in_as: "Utilisateur "
-            not_you: ". "
+            not_you: ""
             sign_out: "Déconnexion"  
             register: "S'inscrire"      
             or: "ou"
@@ -21,16 +21,23 @@ fr:
             
     pages:
         home:
-            title: "Bienvenue dans le monde de la gestion de stock !"
+            title: "Bienvenue chez vous !"
             meta: "Efficient Inventory vous permet une gestion de stock efficace, essentielle pour les magasins physiques et virtuels. Inscrivez-vous gratuitement !"
-            paragraph1_title: "Vous trouverez ici tout ce dont vous avez besoin pour :"
+            paragraph1_title1: "Magasin ? E-commerçant ?"
+            paragraph1_title2: "Vous trouverez ici tout ce dont vous avez besoin pour :"
             paragraph1_1: "Gérer votre stock"
             paragraph1_2: "De puissants outils de reporting et d'alerte"
             paragraph1_3: "Préparer vos prochaines commandes fournisseurs"
             paragraph1_4: "Développer votre chiffre d'affaires"
             paragraph1_5: "... Et plein d'autres choses encore !"
+            slider1_title: "Gestion par exception"
+            slider1_text: "Passez du temps sur ce qui est important"
+            slider2_title: "Graphiques"
+            slider2_text: "Des graphiques clairs, dynamiques, et zoomables"            
             beta_testers_title: "Nous recrutons des beta-testeurs :"
-            beta_testers_text: "commencez gratuitement à utiliser votre outil, et envoyez-nous vos remarques pour que nous puissions construire votre outil idéal.  "
+            beta_testers_text1: "Commencez gratuitement à utiliser votre outil"
+            beta_testers_text2: "Envoyez-nous vos remarques pour que nous puissions construire votre outil idéal"
+            beta_testers_text3: "Et nous vous offrons 1 an d'utilisation gratuite !"
             beta_testers_button: "S'inscrire"
             paragraph2_title: "Avec efficient-inventory.com :"
             paragraph2_1: "Gagnez du temps : vos meilleures ventes en temps réel, vos ruptures, vos surstocks, ..."
@@ -44,6 +51,11 @@ fr:
             paragraph3_4: "Vous souhaitez voir ce qui est en rupture ? ---> Triez par stock croissant !"
             paragraph3_5: "Vous avez beaucoup d'articles ? ---> Classez les par famille, et par rayon"
             paragraph3_6: "Vous avez une question ? ---> Nous nous engageons à vous répondre sous 24 heures, 365 jours sur 365 !"
+            supplier_desc: "Une vue rapide sur vos fournisseurs, leurs délais, et les contraintes à la commande"
+            article_desc: "Une création efficace de vos articles, groupés par rayon, accès temps réel à leurs performances, et alertes si risque de rupture ou de surstock."
+            movement_desc: "Enregistrez tous vos mouvements de stock, historisez-les, et faites une analyse temps réel de votre chiffre d'affaires. Pour prendre les bonnes décisions, vous avez besoin des bonnes informations !"
+            order_desc: "En un clin d'oeil, prévoyez votre chiffre d'affaires, et commandez la bonne quantité au bon moment."
+            
 
         about:
             title: "Efficient Inventory Management | A propos de nous"
@@ -177,6 +189,7 @@ fr:
         this_week: "Cette semaine"
         from: "Du"
         to: "au"
+        zoom: "Cliquez et maintenez appuyé pour sélectionner la zone à zoomer"
         
 
     date:

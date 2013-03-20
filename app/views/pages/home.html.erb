@@ -8,46 +8,128 @@
 <meta property="og:image" content="" />
 <meta property="og:site_name" content="" />
 <meta property="fb:admins" content="1429490313" />
+<meta charset="UTF-8">
+
 </head>
+
 <body>
-<div class="fb-like" data-href="http://www.efficient-inventory.com" data-send="true" data-width="450" data-show-faces="false"></div>
-<br/>
+<div class="fb-like" data-href="http://www.efficient-inventory.com" data-send="true" data-width="200" data-show-faces="false"></div>
+<div class="home-page main">
+	<section class="grid-wrap" >
+		<header class="grid col-full">
+			<hr>
+		</header>
+		<div class="grid col-one-half mq2-col-full">
 <h1><%= t ".title"%></h1>
 <br/>
-<h3><%= t ".paragraph1_title"%></h3>
+<h2><%= t ".paragraph1_title1"%></h2>
+<h3><%= t ".paragraph1_title2"%></h3>
+<p>
 <li><dd><%= t ".paragraph1_1"%></li></dd>
 <li><dd><%= t ".paragraph1_2"%></li></dd>
 <li><dd><%= t ".paragraph1_3"%></li></dd>
 <li><dd><%= t ".paragraph1_4"%></li></dd>
 <li><dd><%= t ".paragraph1_5"%></li></dd>
-<br/>
+</p>
+		</div>
+<div class="slider grid col-one-half mq2-col-full">
+  <div class="flexslider">
+    <div class="slides">
+      <div class="slide">
+          	<figure>
+                <img src=<%= t ".paragraph3_2_image"%> alt="">
+                <figcaption>
+                	<div>
+                	<h5><%= t ".slider1_title"%></h5>
+                	<p><%= t ".slider1_text"%></p>
+                	</div>
+                </figcaption>
+            	</figure>
+          </div>
+          
+          <div class="slide">
+              	<figure>
+                    <img src="/images/efficient_inventory_graph2.jpg" alt="">
+                    <figcaption>
+                    	<div>
+                    	<h5><%= t ".slider2_title"%></h5>
+                    	<p><%= t ".slider2_text"%></p>
+                    	</div>
+                    </figcaption>
+                	</figure>
+              </div>
+           </div>
+  </div>
+</div>
+</section>
 
-<h3><%= t ".beta_testers_title"%></h3> <%= t ".beta_testers_text"%><button style="width:150px; height:50px; font-size:18px; margin-left:70px"> <%= link_to t(".beta_testers_button"), new_user_registration_path %></button><p>
+<section class="grid-wrap" >
+	<header class="grid col-full">
+		<hr>
+	</header>
+	<div class="grid col-one-half mq2-col-full">
+		<h2><%= t ".paragraph2_title"%></h2>
+		<li><dd><%= t ".paragraph2_1"%></li></dd>
+		<li><dd><%= t ".paragraph2_2"%></li></dd>
+		<li><dd><%= t ".paragraph2_3"%></li></dd>
+	</div>
+	<div class="grid col-one-half mq2-col-full">
+		<h2><%= t ".beta_testers_title"%></h2>
+		<li><dd><%= t ".beta_testers_text1"%></li></dd>
+		<li><dd><%= t ".beta_testers_text2"%></li></dd>
+		<li><dd><%= t ".beta_testers_text3"%></li></dd>	
+		<br/>
+		<dd><button style="width:250px; height:80px; font-size:24px"> <%= link_to t(".beta_testers_button"), new_user_registration_path %></button></dd>
+	</div>		
+</section>		
 
-<h3><%= t ".paragraph2_title"%></h3>
-<li><dd><%= t ".paragraph2_1"%></li></dd>
-<li><dd><%= t ".paragraph2_2"%></li></dd>
-<li><dd><%= t ".paragraph2_3"%></li></dd>
+<section class="works grid-wrap">
+	<header class="grid col-full">
+			<hr>
+			<p class="fleft">Process</p>
+		</header>
+	
+			<div class="grid col-one-quarter mq2-col-one-half">
+				<img src="/images/supplier_icon.jpg" alt="">
+				<span class="zoom"></span>
+				</a>
+				<figcaption>
+					<a><%= t "activerecord.attributes.supplier.supplier"%></a>
+					<p><%= t ".supplier_desc"%></p>
+				</figcaption>
+			</div>
 
-<table>
-	<td><img src="/images/efficient_inventory_beta.jpg" width="125" height="125" align="middle"></td>
-	<td><img src="/images/efficient_inventory_customer_satisfaction.jpg" width="125" height="125"></td>
-	<td><img src="/images/efficient_inventory_growth.jpg" width="125" height="125"></td>	
-</table>
-
-<h3><%= t ".paragraph3_title"%></h3>
-<li><dd><%= t ".paragraph3_1"%></li></dd>
-<img src="/images/efficient_inventory_graph2.jpg" style="border: solid black 1px; padding: 2 px" >
-<p></p>
-<li><dd><%= t ".paragraph3_2"%></li></dd>
-<img src=<%= t ".paragraph3_2_image"%> style="border: solid black 1px; padding: 2 px">
-<p></p>
-<li><dd><%= t ".paragraph3_3"%></li></dd>
-<li><dd><%= t ".paragraph3_4"%></li></dd>
-<li><dd><%= t ".paragraph3_5"%></li></dd>
-<li><dd><%= t ".paragraph3_6"%></li></dd>
-
-
+			<div class="grid col-one-quarter mq2-col-one-half">
+				<img src="/images/article_icon.jpg" alt="">
+				<span class="zoom"></span>
+				</a>
+				<figcaption>
+					<a><%= t "activerecord.attributes.article.article"%></a>
+					<p><%= t ".article_desc"%></p>
+				</figcaption>
+			</div>
+		
+			<div class="grid col-one-quarter mq2-col-one-half">
+				<img src="/images/sell_icon.jpg" alt="">
+				<span class="zoom"></span>
+				</a>
+				<figcaption>
+					<a><%= t "activerecord.attributes.movement.movement"%></a>
+					<p><%= t ".movement_desc"%></p>
+				</figcaption>
+			</div>
+		
+			<div class="grid col-one-quarter mq2-col-one-half">
+				<img src="/images/order_icon.jpg" alt="">
+				<span class="zoom"></span>
+				</a>
+				<figcaption>
+					<a><%= t "activerecord.attributes.order.order"%></a>
+					<p><%= t ".order_desc"%></p>
+				</figcaption>
+			</div>
+	</section>
+		
 
 <script type="text/javascript">
 
@@ -91,6 +173,17 @@ UserVoice.push(['showTab', 'classic_widget', {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<!-- Javascript - jQuery template -->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script src="js/selectivizr.js"></script>
+<![endif]-->
+
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/scripts.js"></script>
+</script>
 </body>
 
 

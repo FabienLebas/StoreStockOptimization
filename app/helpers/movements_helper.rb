@@ -35,4 +35,8 @@ module MovementsHelper
     link_to title, :sort => column, :direction => direction
   end
   
+  def help_get_to (date)
+    to = Movement.where(:user => current_user.email).sum("turnover")
+  end
+  
 end

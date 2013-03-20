@@ -10,33 +10,37 @@
     <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
     <%= stylesheet_link_tag 'custom', :media => 'screen' %>
 	<%= javascript_include_tag :defaults %>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
   </head>
+
   <body>
     <div class="container">
-      <header>
-        <%= image_tag("logo.jpg", :alt => "Application Exemple", :class => "round") %>	
-		<nav class="round">
-          	<div id="user_nav">
-			<% if user_signed_in? %>
-				<%= t ".signed_in_as"%><%= current_user.email %><%= t ".not_you"%>
-				<%= link_to t(".sign_out"), destroy_user_session_path, :method => :delete %>
-			<% else %>
-				<%= link_to t(".register"), new_user_registration_path %> <%= t ".or"%> <%= link_to t(".sign_in"), new_user_session_path %>.
-			<% end %>
-			<br/>
-			</div>
-			<div id="language">
-				<%= t ".language"%>
-				<%= link_to_unless_current "English", locale: "en"%> |
-				<%= link_to_unless_current "Français", locale: "fr"%>
-			</div>
-			<br/>
+      <header id="navtop">
+				<img src="/images/logo.jpg" alt="Efficient-Inventory" class="logo fleft">
+				<img src="/images/logo_text.jpg" alt="Efficient-Inventory-text" class="logo fleft">		
+			<nav class="fright">
+			<ul><%= link_to t(".suppliers"), suppliers_path%></ul>				
+            <ul> <%= link_to 'Articles', articles_path %></ul>
+			<ul> <%= link_to t(".movements"), movements_path%></ul>
+			<ul> <%= link_to t(".orders"), orders_path%></ul>
 			<ul>
-			<a> <%= link_to t(".suppliers"), suppliers_path%> |</a>				
-            <a> <%= link_to 'Articles', articles_path %> |</a>
-			<a> <%= link_to t(".movements"), movements_path%> |</a>
-			<a> <%= link_to t(".orders"), orders_path%></a>
-          </ul>
+          		<div id="user_nav">
+				<li><% if user_signed_in? %>
+				<%= t ".signed_in_as"%><%= current_user.email %></li>
+				<li><%= t ".not_you"%>
+				<%= link_to t(".sign_out"), destroy_user_session_path, :method => :delete %>
+				<% else %>
+				<%= link_to t(".register"), new_user_registration_path %> <%= t ".or"%> <%= link_to t(".sign_in"), new_user_session_path %>.
+				<% end %></li>
+				</div>
+			</ul>
+			<ul>
+				<div id="language">
+				<li><%= t ".language"%></li>
+				<li><%= link_to_unless_current "English", locale: "en"%></li>
+				<li><%= link_to_unless_current "Français", locale: "fr"%></li>
+				</div>
+			</ul>
         </nav>
       </header>
       <section class="round">

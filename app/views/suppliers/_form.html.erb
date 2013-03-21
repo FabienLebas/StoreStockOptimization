@@ -12,23 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :supplier %><br />
+    <%= f.label :supplier %>
     <%= f.text_field :supplier %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :supplier_text %><br />
+    <%= f.label :supplier_text %>
     <%= f.text_field :supplier_text %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :leadtime %> (<%= t "actions.mandatory"%>)<br />
+    <%= f.label :leadtime %> (<%= t "actions.mandatory"%>)
     <%= f.number_field :leadtime, :required => true %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :order_minimum_qty %><br />
+    <%= f.label :order_minimum_qty %>
     <%= f.text_field :order_minimum_qty %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :order_minimum_value %><br />
+    <%= f.label :order_minimum_value %>
     <%= f.text_field :order_minimum_value %>
   </div>
 	</br>

@@ -14,63 +14,77 @@
 <div class="container">
 
   <div class="field">
-    <%= f.label :article_code %><br />
+    <%= f.label :article_code %>
     <%= f.text_field :article_code, :required => true %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :article_text %><br />
+    <%= f.label :article_text %>
     <%= f.text_field :article_text %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :model_code %><br />
+    <%= f.label :model_code %>
     <%= f.text_field :model_code %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :model_name %><br />
+    <%= f.label :model_name %>
     <%= f.text_field :model_name %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :family %><br />
+    <%= f.label :family %>
     <%= f.text_field :family %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :department %><br />
+    <%= f.label :department %>
     <%= f.text_field :department %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :supplier %><br />
+    <%= f.label :supplier %>
     <%= f.select(:supplier, @suppliers.map {|s| [s.supplier]})  %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :box %><br />
+    <%= f.label :box %>
     <%= f.number_field :box %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :minimum_of_qty %><br />
+    <%= f.label :minimum_of_qty %>
     <%= f.number_field :minimum_of_qty %>
   </div>
+<br/>
  <div class="field">
-    <%= f.label :unitary_price_if_box %><br />
+    <%= f.label :unitary_price_if_box %>
     <%= f.text_field :unitary_price_if_box %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :unitary_price_if_massive %><br />
+    <%= f.label :unitary_price_if_massive %>
     <%= f.text_field :unitary_price_if_massive %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :selling_price_inc_vat %> (<%= t "actions.mandatory"%>)<br />
+    <p><%= f.label :selling_price_inc_vat %> (<%= t "actions.mandatory"%>)</p>
     <%= f.text_field :selling_price_inc_vat, :required => true %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :vat_rate %><br />
+    <%= f.label :vat_rate %>
     <%= f.text_field :vat_rate %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :end_life_date %><br />
+    <%= f.label :end_life_date %>
     <%= f.date_select :end_life_date %>
   </div>
+<br/>
   <div class="field">
-    <%= f.label :stock_qty %> (<%= t "actions.mandatory"%>)<br />
+    <p><%= f.label :stock_qty %> (<%= t "actions.mandatory"%>)</p>
     <%= f.number_field :stock_qty, :required => true %>
   </div>
 	</br>

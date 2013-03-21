@@ -36,8 +36,10 @@
 			<ul>
 				<div id="language">
 				<li><%= t ".language"%></li>
-				<li><%= link_to_unless_current "English", locale: "en"%></li>
-				<li><%= link_to_unless_current "Français", locale: "fr"%></li>
+				<li><%= link_to_unless_current "English", locale: "en"%>
+					<%= link_to image_tag("/images/button_english.jpg"), locale: "en"%>
+				<li><%= link_to_unless_current "Français", locale: "fr"%>
+					<%= link_to image_tag("/images/button_france.jpg"), locale: "en"%>
 				</div>
 			</ul>
         </nav>

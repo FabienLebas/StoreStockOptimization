@@ -153,6 +153,7 @@ en:
                 turnover: "Turnover"
                 quantity: "Quantity"     
                 best_seller: "Best sellers"
+                movement: "Movement"
                 
             supplier:
                 supplier_text: "Supplier text"
@@ -160,11 +161,13 @@ en:
                 order_minimum_qty: "Order minimum qty"
                 order_minimum_value: "Order minimum value"
                 supplier: "Supplier"
+                
             order:
                 expected_delivery_date: "Expected delivery date"
                 article_code: "Article Code"
                 supplier: "Supplier"
                 quantity: "Quantity"
+                order: "Order"
 
     actions:
         show: "Show"

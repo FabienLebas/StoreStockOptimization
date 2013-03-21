@@ -155,6 +155,7 @@ fr:
                 quantity: "Quantité"
                 best_seller: "Meilleure vente"     
                 article_code: "Code article"
+                movement: "Mouvement"
                 
             supplier: 
                 supplier_text: "Libellé fournisseur"
@@ -170,6 +171,7 @@ fr:
                 supplier: "Fournisseur"
                 quantity: "Quantité"
                 validated: "Validée"
+                order: "Commande"
 
     actions:
         show: "Voir"

@@ -99,4 +99,10 @@ class SuppliersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def import
+    Supplier.import(params[:file])
+    redirect_to suppliers_path, notice: "Suppliers imported."
+  end
+  
 end

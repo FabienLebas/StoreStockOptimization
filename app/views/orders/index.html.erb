@@ -25,8 +25,15 @@
   	</tr>
 <% end %>
 </table>
+<br/><br/>
+<h3>Import Orders</h3>
+<p><%= t "actions.import"%></p>
+<p><%= t "actions.warning"%></p>
+<%= form_tag import_orders_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import"%>
+<% end %>
 <br />
 <%= link_to t("actions.download_order"), url_for(:format=>"xlsx") %>
-<br/>
 
 

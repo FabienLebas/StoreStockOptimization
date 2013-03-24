@@ -114,8 +114,15 @@
 		  </tr>
 		<% end %>
 </table>
-
-<br /><br/>
+<br/><br/>
+<h3>Import Movements</h3>
+<p><%= t "actions.import"%></p>
+<p><%= t "actions.warning"%></p>
+<%= form_tag import_movements_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import"%>
+<% end %>
+<br />
 <%= link_to t("actions.download_movements"), url_for(:format=>"xlsx") %>
 	
 <script>

@@ -103,4 +103,10 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def import
+    Order.import(params[:file])
+    redirect_to articles_path, notice: "Orders imported."
+  end
+  
 end

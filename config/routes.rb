@@ -10,6 +10,15 @@ StoreStockOptimization::Application.routes.draw do
     
     resources :articles do
       collection { post :import}
+    end    
+    resources :suppliers do
+      collection { post :import}
+    end
+    resources :movements do
+      collection { post :import}
+    end
+    resources :orders do
+      collection { post :import}
     end
     
   devise_for :users

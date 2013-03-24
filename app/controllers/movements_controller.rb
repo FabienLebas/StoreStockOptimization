@@ -136,4 +136,9 @@ class MovementsController < ApplicationController
       end
   end
 
+  def import
+    Movement.import(params[:file])
+    redirect_to articles_path, notice: "Movements imported."
+  end
+
 end

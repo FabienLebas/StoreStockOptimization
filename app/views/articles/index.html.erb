@@ -116,8 +116,8 @@
 </table>
 <br/><br/>
 <h3>Import Articles</h3>
-<p><%= t ".import"%></p>
-<p><%= t ".warning"%></p>
+<p><%= t "actions.import"%></p>
+<p><%= t "actions.warning"%></p>
 <%= form_tag import_articles_path, multipart: true do %>
 	<%= file_field_tag :file %>
 	<%= submit_tag "Import"%>

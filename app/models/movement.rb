@@ -1,5 +1,5 @@
 class Movement < ActiveRecord::Base
-  attr_accessible :article_code, :movement_date, :quantity, :turnover, :user
+  attr_accessible :article_code, :movement_date, :quantity, :turnover, :user, :movement_type
   belongs_to :article
   
   acts_as_xlsx

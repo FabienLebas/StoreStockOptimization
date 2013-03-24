@@ -20,6 +20,10 @@
   <%= @movement.quantity %>
 </p>
 
+<p>
+  <b><%= t "activerecord.attributes.movement.movement_type"%> :</b>
+  <%= @movement.movement_type %>
+</p>
 
 <%= link_to t("actions.edit"), edit_movement_path(@movement) %> |
 <%= link_to t("actions.back"), movements_path %>

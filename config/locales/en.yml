@@ -155,6 +155,7 @@ en:
                 quantity: "Quantity"     
                 best_seller: "Best sellers"
                 movement: "Movement"
+                movement_type: "Movement type"
                 
             supplier:
                 supplier_text: "Supplier text"
@@ -192,4 +193,5 @@ en:
         import: "To import a file, please use either Excel file (.xls or .xlsx) or Csv file (.csv). First export data to have the correct first row, modify the data you want, and finally import."
         warning: "Warning: You must have a column called 'user' with you user account at each row."
         register_beta: "Register now and become a beta-tester: get one year free!"
+        title_import: "Import data"
             

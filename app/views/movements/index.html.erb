@@ -81,13 +81,15 @@
 	      <th style="width:150px;"><%= sortable "turnover", t("activerecord.attributes.movement.turnover") %> : <%= Movement.sum("turnover")%></th> 
 	      <th style="width:150px;"><%= sortable "quantity", t("activerecord.attributes.movement.quantity")%> : <%= Movement.sum("quantity")%></th> 
 	      <th style="width:150px;">Stock : <%= Article.sum("stock_qty")%></th> 
+	      <th style="width:150px;"><%= sortable "movement_type", t("activerecord.attributes.movement.movement_type") %></th> 
 	   </tr> 
 	<% @movements_grouped.each do |movement| %>
 		<tr> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_date.strftime("%B %d, %Y") %></td> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.turnover %></td> 
 			<td style="padding-left:10px; color:midnightblue;"><%= movement.quantity %></td> 
-			<td style="padding-left:10px; color:midnightblue;"><%= Article.sum("stock_qty").to_i + Movement.where(:movement_date => movement.movement_date+1..Date.today).sum("quantity").to_i%></td> 			
+			<td style="padding-left:10px; color:midnightblue;"><%= Article.sum("stock_qty").to_i + Movement.where(:movement_date => movement.movement_date+1..Date.today).sum("quantity").to_i%></td> 		
+			<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_type %></td>	
 		  </tr>
 		<% end %>
 </table>
@@ -101,6 +103,7 @@
 	      <th style="width:150px;"><%= sortable "movement_date", t("activerecord.attributes.movement.movement_date")%></th> 
 	      <th style="width:150px;"><%= sortable "turnover", t("activerecord.attributes.movement.turnover")%> : <%= Movement.sum("turnover")%></th> 
 	      <th style="width:150px;"><%= sortable "quantity", t("activerecord.attributes.movement.quantity")%> : <%= Movement.sum("quantity")%></th> 
+	      <th style="width:150px;"><%= sortable "movement_type", t("activerecord.attributes.movement.movement_type") %></th> 
 	   </tr> 
 	<% @movements.each do |movement| %>
 		<tr> 
@@ -108,6 +111,7 @@
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_date.strftime("%B %d, %Y") %></td> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.turnover %></td> 
 			<td style="padding-left:10px; color:midnightblue;"><%= movement.quantity %></td> 
+			<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_type %></td>	
 			<td style="width:50px;"><%= link_to t("actions.show"), movement %></td>
 		    <td style="width:50px;"><%= link_to t("actions.edit"), edit_movement_path(movement) %></td>
 		    <td style="width:50px;"><%= link_to t("actions.destroy"), movement, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>
@@ -115,7 +119,7 @@
 		<% end %>
 </table>
 <br/><br/>
-<h3>Import Movements</h3>
+<h2><%= t "actions.title_import"%></h2>
 <p><%= t "actions.import"%></p>
 <p><%= t "actions.warning"%></p>
 <%= form_tag import_movements_path, multipart: true do %>

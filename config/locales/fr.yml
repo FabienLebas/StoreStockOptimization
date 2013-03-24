@@ -195,6 +195,7 @@ fr:
         from: "Du"
         to: "au"
         zoom: "Cliquez et maintenez appuyé pour sélectionner la zone à zoomer"
+        register_beta: "Inscrivez-vous maintenant et devenez beta-testeur : gagnez 1 an gratuit !"
         
 
     date:

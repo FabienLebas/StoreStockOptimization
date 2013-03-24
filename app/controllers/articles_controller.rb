@@ -108,4 +108,9 @@ class ArticlesController < ApplicationController
     end
   end
   
+  def import
+    Article.import(params[:file])
+    redirect_to articles_path, notice: "Articles imported."
+  end
+  
 end

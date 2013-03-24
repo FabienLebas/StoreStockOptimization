@@ -29,6 +29,7 @@ gem 'jquery-rails'
 gem 'acts_as_xlsx'
 gem 'devise'
 gem 'mysql2', '~> 0.3.11'
+gem 'roo'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

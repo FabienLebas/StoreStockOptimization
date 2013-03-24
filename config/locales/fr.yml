@@ -76,6 +76,8 @@ fr:
             title1: "Risque de rupture : voici les 5% des articles ayant le plus de chances de tomber en rupture"
             title2: "Risque de surstock : voici les 5% des articles ayant le plus fort stock prévu"
             title3: "Base articles"
+            import: "Pour importer un fichier, merci d'utiliser soit un fichier Excel (.xls ou .xslx) ou Csv (.csv). Commencez par exporter des données pour avoir la bonne 1ère ligne, modifiez les données que vous souhaitez, puis importez."
+            warning: "Attention : Il faut que la dernière colonne soit appelée 'user' et contienne à chaque ligne votre nom d'utilisateur."
         show:
             title1: "Vue article"
             back: "Retour liste articles"

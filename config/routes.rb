@@ -1,18 +1,20 @@
 StoreStockOptimization::Application.routes.draw do
 
     get "pages/home"
-
     get "pages/contact"
-
     get "pages/about"
     
     post "movements/getTO" 
     post "movements/getTO2Dates"
     post "movements/getStartDate" 
     
+    resources :articles do
+      collection { post :import}
+    end
+    
   devise_for :users
   
-  scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+  scope :path => ":locale" do
 
     resources :seasonalities
     resources :planned_orders

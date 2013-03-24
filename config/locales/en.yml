@@ -75,6 +75,8 @@ en:
             title1: "Shortage risk: 5% articles with lowest stock expected"
             title2: "Overstock risk: 5% articles with highest stock expected"
             title3: "Listing articles"
+            import: "To import a file, please use either Excel file (.xls or .xlsx) or Csv file (.csv). First export data to have the correct first row, modify the data you want, and finally import."
+            warning: "Warning: You must have a column called 'user' with you user account at each row."
         show: 
             title1: "Article view"
             back: "Back to listing articles"

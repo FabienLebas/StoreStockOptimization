@@ -114,12 +114,16 @@
    </tr> 
 <% end %>
 </table>
-
-<br /><br/>
-<%= link_to t("actions.download_article"), url_for(:format=>"xlsx") %>
+<br/><br/>
+<h3>Import Articles</h3>
+<p><%= t ".import"%></p>
+<p><%= t ".warning"%></p>
+<%= form_tag import_articles_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import"%>
+<% end %>
 <br/>
-
-
+<%= link_to t("actions.download_article"), url_for(:format=>"xlsx") %>
 		
 		
 

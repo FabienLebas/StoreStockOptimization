@@ -1,5 +1,11 @@
 StoreStockOptimization::Application.routes.draw do
 
+  get "reporting/best_sellers"
+
+  get "reporting/slow_movers"
+
+  get "reporting/end_life"
+
     get "pages/home"
     get "pages/contact"
     get "pages/about"

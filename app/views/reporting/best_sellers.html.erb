@@ -1,0 +1,37 @@
+<article id="navtabs" class="grid col-full">
+	<ul class="tabs clearfix">
+	    <li><%= link_to t(".new"), new_movement_path %></li>		
+	    <li><%= link_to "Global", movements_path %></li>
+	    <li><%= link_to t("reporting.best_sellers"), reporting_best_sellers_path %></li>
+	    <li><%= link_to t("reporting.slow_movers"), reporting_slow_movers_path %></li>
+	    <li><%= link_to t("reporting.end_life"), reporting_end_life_path %></li>
+	</ul>
+</article>
+<br />
+<hr>
+<br/>
+
+<h2>Best 20% articles past 4 weeks</h2>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
+	   <tr style="background-color:lightgrey;"> 
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_code"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.article_text"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.family"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.department"%></th>		
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.stock_at_leadtime"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.movement.turnover"%></th>	
+	      <th style="width:150px;"><%= t "activerecord.attributes.movement.quantity"%></th>			
+		</tr>
+	<% @articles_last_4weeks[0..(@articles.length * 0.2)].each do |article| %>
+		<tr>
+		<td><%= article.article_code %></td> 
+		<td><%= Article.where(:user => current_user.email, :article_code => article.article_code).first.article_text %></td> 
+		<td><%= Article.where(:user => current_user.email, :article_code => article.article_code).first.family %></td> 
+		<td><%= Article.where(:user => current_user.email, :article_code => article.article_code).first.department %></td> 				
+		<td><%= number_with_precision(Article.where(:user => current_user.email, :article_code => article.article_code).first.stock_at_replenishment, :precision => 1) %></td> 
+		<td><%= number_with_precision(article.turnover, :precision =>2) %></td> 		
+		<td><%= number_with_precision(article.quantity, :precision =>2) %></td> 
+		</tr>
+	<%end%>
+</table>

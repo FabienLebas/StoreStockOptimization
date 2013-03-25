@@ -69,6 +69,12 @@ en:
             line5: "Save money: with better visibility on your stock, you will be able to reduce it."
             line6: "Up-to-date cloud technologies are now available for you: don't worry if you grow = our price will remain the same, and you have no limitation. Sky is the limit!"           
 
+    reporting:
+
+        best_sellers: "Best sellers"
+        slow_movers: "Slow movers"
+        end_life: "End of life"
+
     articles:
         index:
             new_article: "New Article"

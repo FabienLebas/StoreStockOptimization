@@ -23,7 +23,16 @@
 </head>
 
 <body id='#my_page'>
-<%= link_to t(".new"), new_movement_path %>
+<article id="navtabs" class="grid col-full">
+	<ul class="tabs clearfix">
+	    <li><%= link_to t(".new"), new_movement_path %></li>		
+	    <li><%= link_to "Global", movements_path %></li>
+	    <li><%= link_to t("reporting.best_sellers"), reporting_best_sellers_path %></li>
+	    <li><%= link_to t("reporting.slow_movers"), reporting_slow_movers_path %></li>
+	    <li><%= link_to t("reporting.end_life"), reporting_end_life_path %></li>
+	</ul>
+</article>
+
 <br />
 <hr>
 <br/>

@@ -24,7 +24,9 @@
 
 <body id='#my_page'>
 <%= link_to t(".new"), new_movement_path %>
-<br/><br/>
+<br />
+<hr>
+<br/>
 <h2><%= t ".title1"%></h2>
 
 <table cellspacing="0" cellpadding="3px" rules="all" 
@@ -33,8 +35,8 @@
 		  <th style="width:30px;"></th> 
 	      <th style="width:75px;"><%= t "actions.today"%></th> 
 	      <th style="width:75px;"><%= t "actions.this_week"%></th> 
-	      <th style="width:75px;">Date : <input type="text" id="datepicker"/></th> 
-	      <th style="width:150px;"><%= t "actions.from"%> <input type="text" id="datepickerFrom"/> <%= t"actions.to"%> <input type="text" id="datepickerTo"/></th>
+	      <th style="width:75px;">Date : <input type="text" id="datepicker" style="width:90px"/></th> 
+	      <th style="width:150px;"><%= t "actions.from"%> <input type="text" id="datepickerFrom" style="width:90px"/> <%= t"actions.to"%> <input type="text" id="datepickerTo" style="width:90px"/></th>
 		</tr>
 		<tr><th style="background-color:lightgrey;"> <%= t "activerecord.attributes.movement.turnover"%> </th>
 			<td style="padding-left:10px; color:midnightblue;"><%= Movement.where(:movement_date =>Date.today, :user => current_user.email).sum("turnover")%></td>
@@ -66,13 +68,15 @@
 			<td style="padding-left:10px; color:midnightblue;" id="resultBestSeller"></td>
 			<td style="padding-left:10px; color:midnightblue;" id="resultBestSellerFromTo"></td>																																
 		</tr>
-</table>		
-<br />	
-
+</table>	
+<br/>	
+<hr>
+<br/>
 <h2><%= t ".title2"%></h2>
 <div id="container" style="width:100%; height:400px;"> </div>
 <br/>
-
+<hr>
+<br/>
 <h2><%= t ".title3"%></h2>
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
@@ -94,7 +98,8 @@
 		<% end %>
 </table>
 </br>
-
+<hr>
+<br/>
 <h2><%= t ".title4"%></h2>
 <table cellspacing="0" cellpadding="3px" rules="all" 
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
@@ -118,7 +123,9 @@
 		  </tr>
 		<% end %>
 </table>
-<br/><br/>
+<br/>
+<hr>
+<br/>
 <h2><%= t "actions.title_import"%></h2>
 <p><%= t "actions.import"%></p>
 <p><%= t "actions.warning"%></p>

@@ -1,6 +1,7 @@
 <%= link_to t(".new_article"), new_article_path %>
-<br /><br/>
-
+<br />
+<hr>
+<br/>
 <h2><%= t ".title1" %></h2>
 <table cellspacing="0" cellpadding="3px" rules="all" 
 	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
@@ -28,6 +29,8 @@
 		</tr>
 	<%end%>
 </table>
+<br/>
+<hr>
 <br/>
 <h2><%= t ".title2" %></h2>
 <table cellspacing="0" cellpadding="3px" rules="all" 
@@ -57,7 +60,8 @@
 	<%end%>
 </table>
 <br/>
-
+<hr>
+<br/>
 <h2><%= t ".title3" %></h2>
 <%= form_tag articles_path, :method => 'get', :id => "articles_search" do %>
   <p>
@@ -114,7 +118,9 @@
    </tr> 
 <% end %>
 </table>
-<br/><br/>
+<br/>
+<hr>
+<br/>
 <h2><%= t "actions.title_import"%></h2>
 <p><%= t "actions.import"%></p>
 <p><%= t "actions.warning"%></p>

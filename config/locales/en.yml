@@ -99,6 +99,9 @@ en:
             title1: "Shortage risk: 5% articles with lowest stock expected"
             title2: "Overstock risk: 5% articles with highest stock expected"
             title3: "Listing articles"
+            pop_up_shortage: "You should focus on these articles because they are about to fall into shortage: re-order or find substitution articles."
+            pop_up_overstock: "You should focus on these articles because they are overstocked: their ratio sales/stock is the poorest among your articles. Cut the price? Give them a better position?"
+            
         show: 
             title1: "Article view"
             back: "Back to listing articles"

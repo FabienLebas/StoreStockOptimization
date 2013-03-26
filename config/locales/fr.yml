@@ -100,6 +100,9 @@ fr:
             title1: "Risque de rupture : voici les 5% des articles ayant le plus de chances de tomber en rupture"
             title2: "Risque de surstock : voici les 5% des articles ayant le plus fort stock prévu"
             title3: "Base articles"
+            pop_up_shortage: "Vous devriez faire attention à ces articles car ils sont sur le point de tomber en rupture : recommandez ou bien trouvez un article de substitution."
+            pop_up_overstock: "Vous devriez faire attention à ces articles car ils sont surstockés : ce sont les articles pour lesquels le ratio stock/ventes est le plus mauvais. Baisser le prix ? Mieux mettre en avant ?"
+
         show:
             title1: "Vue article"
             back: "Retour liste articles"

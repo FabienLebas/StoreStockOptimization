@@ -1,7 +1,14 @@
-<%= link_to t(".new_article"), new_article_path %>
+
+
+<body>
+<title>Efficient Inventory | Article index</title>	
+<button> <%= link_to t(".new_article"), new_article_path %></button>
 <br />
 <hr>
-<br/>
+<button id="opener_shortage">?</button>
+<div id="dialog_shortage" title="Help">
+  <p><%= t ".pop_up_shortage"%> </p>
+</div>
 <h2><%= t ".title1" %></h2>
 <table cellspacing="0" cellpadding="3px" rules="all" 
 	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
@@ -31,7 +38,10 @@
 </table>
 <br/>
 <hr>
-<br/>
+<button id="opener_overstock">?</button>
+<div id="dialog_overstock" title="Help">
+  <p><%= t ".pop_up_overstock"%> </p>
+</div>
 <h2><%= t ".title2" %></h2>
 <table cellspacing="0" cellpadding="3px" rules="all" 
 	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
@@ -130,7 +140,23 @@
 <% end %>
 <br/>
 <%= link_to t("actions.download_article"), url_for(:format=>"xlsx") %>
-		
+
+<script>
+$(document).ready(function(){
+	$( "#dialog_shortage" ).dialog({ autoOpen: false });
+	$( "#opener_shortage" ).click(function() {
+	  $( "#dialog_shortage" ).dialog( "open" );
+	});
+	$( ".selector" ).dialog({ closeOnEscape: true });
+	
+	$( "#dialog_overstock" ).dialog({ autoOpen: false });
+	$( "#opener_overstock" ).click(function() {
+	  $( "#dialog_overstock" ).dialog( "open" );
+	});
+	
+});
+</script>
+</body>		
 		
 
 

@@ -22,5 +22,6 @@ class ReportingController < ApplicationController
   end
 
   def end_life
+    
   end
 end

@@ -82,10 +82,10 @@ fr:
             title4: "20/80 quantités - 12 semaines"
             
         slow_movers:
-            title1: "40/5 chiffre d'affaires - 4 weeks"
-            title2: "40/5 quantités - 4 weeks"
-            title3: "40/5 chiffre d'affaires - 12 weeks"
-            title4: "40/5 quantités - 12 weeks"                
+            title1: "40/5 chiffre d'affaires - 4 semaines"
+            title2: "40/5 quantités - 4 semaines"
+            title3: "40/5 chiffre d'affaires - 12 semaines"
+            title4: "40/5 quantités - 12 semaines"                
             
     articles:
         index:

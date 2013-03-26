@@ -84,7 +84,10 @@ en:
             title1: "40/5 turnover - 4 weeks"
             title2: "40/5 quantity - 4 weeks"
             title3: "40/5 turnover - 12 weeks"
-            title4: "40/5 quantity - 12 weeks"            
+            title4: "40/5 quantity - 12 weeks"
+            
+        end_life:
+            title: "Articles with End Life Date in the past"            
 
     articles:
         index:

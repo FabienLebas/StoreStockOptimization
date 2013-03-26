@@ -1,1 +1,38 @@
-<h2>Under construction</h2>
+<article id="navtabs" class="grid col-full">
+	<ul class="tabs clearfix">
+	    <li><%= link_to t("movements.index.new"), new_movement_path %></li>		
+	    <li><%= link_to "Global", movements_path %></li>
+	    <li><%= link_to t("reporting.best"), reporting_best_sellers_path %></li>
+	    <li><%= link_to t("reporting.slow"), reporting_slow_movers_path %></li>
+	    <li><%= link_to t("reporting.end"), reporting_end_life_path %></li>
+	</ul>
+</article>
+<br />
+<hr>
+<br/>
+<h2><%= t ".title"%></h2>
+	<table cellspacing="0" cellpadding="3px" rules="all" 
+		   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
+		   <tr style="background-color:lightgrey;"> 
+		      <th style="width:150px;"><%= t "activerecord.attributes.article.article_code"%></th>
+		      <th style="width:150px;"><%= t "activerecord.attributes.article.article_text"%></th>
+		      <th style="width:150px;"><%= t "activerecord.attributes.article.family"%></th>
+		      <th style="width:150px;"><%= t "activerecord.attributes.article.department"%></th>		
+		      <th style="width:150px;"><%= t "activerecord.attributes.article.stock_qty"%></th>
+		      <th style="width:150px;"><%= t "activerecord.attributes.article.sales_per_day"%></th>	
+		      <th style="width:150px;"><%= t "activerecord.attributes.article.stock_lifetime"%></th>			
+			</tr>
+		<% @articles.each do |article| %>
+			<tr>
+			<td><%= link_to article.article_code, Article.where(:user => current_user.email, :article_code => article.article_code).first %></td> 
+			<td><%= link_to Article.where(:user => current_user.email, :article_code => article.article_code).first.article_text, Article.where(:user => current_user.email, :article_code => article.article_code).first%></td> 
+			<td><%= Article.where(:user => current_user.email, :article_code => article.article_code).first.family %></td> 
+			<td><%= Article.where(:user => current_user.email, :article_code => article.article_code).first.department %></td> 				
+			<td><%= article.stock_qty %></td> 
+			<td><%= article.sales_per_day %></td> 
+			<td><%= article.stock_lifetime %></td> 
+			
+
+			</tr>
+		<%end%>
+	</table>

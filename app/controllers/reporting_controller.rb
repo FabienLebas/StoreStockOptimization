@@ -22,6 +22,6 @@ class ReportingController < ApplicationController
   end
 
   def end_life
-    
+    @articles = Article.where(:user => current_user.email, :end_life_date => current_user.created_at..Date.today).order("stock_qty DESC")
   end
 end

@@ -85,7 +85,10 @@ fr:
             title1: "40/5 chiffre d'affaires - 4 semaines"
             title2: "40/5 quantités - 4 semaines"
             title3: "40/5 chiffre d'affaires - 12 semaines"
-            title4: "40/5 quantités - 12 semaines"                
+            title4: "40/5 quantités - 12 semaines"
+            
+        end_life:
+            title: "Articles avec date de fin de vie dans le passé"                
             
     articles:
         index:

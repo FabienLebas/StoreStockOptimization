@@ -7,7 +7,7 @@ class MovementsController < ApplicationController
   def index
     params[:sort] ||= "movement_date"
     params[:direction] ||= "desc"    
-    @movements = Movement.order(params[:sort] + " " + params[:direction]).where(:user => current_user.email)
+    @movements_7days = Movement.order(params[:sort] + " " + params[:direction]).where(:user => current_user.email, :movement_date => Date.today-6..Date.today)
     @movements_grouped = Movement.select("movement_date, sum(turnover) as turnover, sum(quantity) as quantity, movement_type").group("movement_date").order(params[:sort] + " " + params[:direction]).where(:user => current_user.email)
 
     respond_to do |format|

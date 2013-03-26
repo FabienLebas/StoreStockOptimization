@@ -71,9 +71,21 @@ fr:
             line6: "Toute la puissance du cloud est maintenant accessible : ne vous souciez pas de votre croissance = notre prix restera le même, et vous n'avez aucune limite. Sky is the limit !"
     
     reporting:
-        best_sellers: "Meilleures ventes"
-        slow_movers: "Faibles ventes"
-        end_life: "Fin de vie"
+        best: "Meilleures ventes"
+        slow: "Faibles ventes"
+        end: "Fin de vie"
+        
+        best_sellers:
+            title1: "20/80 chiffre d'affaires - 4 semaines"
+            title2: "20/80 quantités - 4 semaines"
+            title3: "20/80 chiffre d'affaires - 12 semaines"
+            title4: "20/80 quantités - 12 semaines"
+            
+        slow_movers:
+            title1: "40/5 chiffre d'affaires - 4 weeks"
+            title2: "40/5 quantités - 4 weeks"
+            title3: "40/5 chiffre d'affaires - 12 weeks"
+            title4: "40/5 quantités - 12 weeks"                
             
     articles:
         index:
@@ -110,7 +122,7 @@ fr:
             title1: "Reporting"
             title2: "Résultats globaux 3 mois"
             title3: "Ventes par jour"
-            title4: "Tous les Mouvements"
+            title4: "Tous les Mouvements de cette semaine"
         new:
             title: "Nouveau Mouvement"
         edit:

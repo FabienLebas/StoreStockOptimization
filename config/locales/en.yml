@@ -70,10 +70,21 @@ en:
             line6: "Up-to-date cloud technologies are now available for you: don't worry if you grow = our price will remain the same, and you have no limitation. Sky is the limit!"           
 
     reporting:
+        best: "Best sellers"
+        slow: "Slow movers"
+        end: "End of life"
 
-        best_sellers: "Best sellers"
-        slow_movers: "Slow movers"
-        end_life: "End of life"
+        best_sellers: 
+            title1: "20/80 turnover - 4 weeks"
+            title2: "20/80 quantity - 4 weeks"
+            title3: "20/80 turnover - 12 weeks"
+            title4: "20/80 quantity - 12 weeks"
+            
+        slow_movers:
+            title1: "40/5 turnover - 4 weeks"
+            title2: "40/5 quantity - 4 weeks"
+            title3: "40/5 turnover - 12 weeks"
+            title4: "40/5 quantity - 12 weeks"            
 
     articles:
         index:
@@ -109,7 +120,7 @@ en:
             title1: "Reporting"
             title2: "Overall result 3 last months"
             title3: "Sales per day"
-            title4: "Listing all movements"
+            title4: "Listing all movements of this week"
         new:
             title: "New movement"
         edit: 

@@ -27,9 +27,9 @@
 	<ul class="tabs clearfix">
 	    <li><%= link_to t(".new"), new_movement_path %></li>		
 	    <li><%= link_to "Global", movements_path %></li>
-	    <li><%= link_to t("reporting.best_sellers"), reporting_best_sellers_path %></li>
-	    <li><%= link_to t("reporting.slow_movers"), reporting_slow_movers_path %></li>
-	    <li><%= link_to t("reporting.end_life"), reporting_end_life_path %></li>
+	    <li><%= link_to t("reporting.best"), reporting_best_sellers_path %></li>
+	    <li><%= link_to t("reporting.slow"), reporting_slow_movers_path %></li>
+	    <li><%= link_to t("reporting.end"), reporting_end_life_path %></li>
 	</ul>
 </article>
 
@@ -119,7 +119,7 @@
 	      <th style="width:150px;"><%= sortable "quantity", t("activerecord.attributes.movement.quantity")%> : <%= Movement.sum("quantity")%></th> 
 	      <th style="width:150px;"><%= sortable "movement_type", t("activerecord.attributes.movement.movement_type") %></th> 
 	   </tr> 
-	<% @movements.each do |movement| %>
+	<% @movements_7days.each do |movement| %>
 		<tr> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= link_to movement.article_code, Article.where(:article_code => movement.article_code).first %></td> 
 	      	<td style="padding-left:10px; color:midnightblue;"><%= movement.movement_date.strftime("%B %d, %Y") %></td> 

@@ -138,6 +138,7 @@
 <h2><%= t "actions.title_import"%></h2>
 <p><%= t "actions.import"%></p>
 <p><%= t "actions.warning"%></p>
+<button><a href="/movements_template.xls" download="template_articles"><%= t "actions.template"%></a></button>
 <%= form_tag import_movements_path, multipart: true do %>
 	<%= file_field_tag :file %>
 	<%= submit_tag "Import"%>

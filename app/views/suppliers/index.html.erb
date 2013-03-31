@@ -33,9 +33,10 @@
 <h2><%= t "actions.title_import"%></h2>
 <p><%= t "actions.import"%></p>
 <p><%= t "actions.warning"%></p>
+<button><a href="suppliers_template.xls" download="template"><%= t "actions.template"%></a></button>
 <%= form_tag import_suppliers_path, multipart: true do %>
 	<%= file_field_tag :file %>
 	<%= submit_tag "Import"%>
-<% end %>
+	<% end %>
 <br />
 <button><%= link_to t("actions.download_supplier"), url_for(:format=>"xlsx") %></button>

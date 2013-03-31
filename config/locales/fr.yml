@@ -117,8 +117,7 @@ fr:
     suppliers:
         index:
             new_supplier: "Nouveau fournisseur"
-            title1: "Base fournisseurs"
-            title2: "Importer des données"
+            title: "Base fournisseurs"
         new: 
             title: "Nouveau fournisseur"
         show:
@@ -225,7 +224,8 @@ fr:
         to: "au"
         zoom: "Cliquez et maintenez appuyé pour sélectionner la zone à zoomer"
         register_beta: "Inscrivez-vous maintenant et devenez beta-testeur : gagnez 1 an gratuit !"
-        import: "Pour importer un fichier, merci d'utiliser soit un fichier Excel (.xls ou .xslx) ou Csv (.csv). Commencez par exporter des données pour avoir la bonne 1ère ligne, modifiez les données que vous souhaitez, puis importez."
+        import: "Pour importer un fichier, merci d'utiliser le fichier modèle à télécharger, insérez les données que vous souhaitez, puis importez."
+        template: "Modèle"
         warning: "Attention : Il faut que la dernière colonne soit appelée 'user' et contienne à chaque ligne votre nom d'utilisateur."
         title_import: "Importez des données"
 

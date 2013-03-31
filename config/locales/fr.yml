@@ -18,6 +18,11 @@ fr:
             suppliers: "Fournisseurs"
             movements: "Mouvements de stock"
             orders: "Commandes"
+            beta_testers_title: "Nous recrutons des beta-testeurs :"
+            beta_testers_text1: "Commencez gratuitement à utiliser votre outil"
+            beta_testers_text2: "Envoyez-nous vos remarques pour que nous puissions construire votre outil idéal"
+            beta_testers_text3: "Et nous vous offrons 1 an d'utilisation gratuite !"
+            beta_testers_button: "S'inscrire"            
             
     pages:
         home:
@@ -38,11 +43,6 @@ fr:
             slider3_title: "Démarrage rapide"
             slider3_text: "Vous avez déjà vos données sur Excel ou dans un autre système ? Importez-les !"
             slider3_image: "/images/efficient_inventory_import_fr.jpg"                       
-            beta_testers_title: "Nous recrutons des beta-testeurs :"
-            beta_testers_text1: "Commencez gratuitement à utiliser votre outil"
-            beta_testers_text2: "Envoyez-nous vos remarques pour que nous puissions construire votre outil idéal"
-            beta_testers_text3: "Et nous vous offrons 1 an d'utilisation gratuite !"
-            beta_testers_button: "S'inscrire"
             paragraph2_title: "Avec efficient-inventory.com :"
             paragraph2_1: "Gagnez du temps : vos meilleures ventes en temps réel, vos ruptures, vos surstocks, ..."
             paragraph2_2: "Gagnez de l'argent : avec une meilleure visibilité de votre stock, vous allez pouvoir le réduire."

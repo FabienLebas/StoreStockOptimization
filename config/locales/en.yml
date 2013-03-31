@@ -18,6 +18,11 @@ en:
             suppliers: "Suppliers"
             movements: "Stock Movements"
             orders: "Orders"
+            beta_testers_title: "We are recruiting beta-testers:"
+            beta_testers_text1: "Start using 100% free"
+            beta_testers_text2: "Send us your remarks so that we can build your perfect tool"
+            beta_testers_text3: "And you will be rewarded one year of free usage!"
+            beta_testers_button: "Register"            
 
     pages:        
         home:
@@ -38,11 +43,6 @@ en:
             slider3_title: "Easy start"
             slider3_text: "Do you already have your data in Excel or in another tool? Just import!"
             slider3_image: "/images/efficient_inventory_import_en.jpg"
-            beta_testers_title: "We are recruiting beta-testers:"
-            beta_testers_text1: "Start using 100% free"
-            beta_testers_text2: "Send us your remarks so that we can build your perfect tool"
-            beta_testers_text3: "And you will be rewarded one year of free usage!"
-            beta_testers_button: "Register"
             paragraph2_title: "With Efficient inventory management:"
             paragraph2_1: "Save time: instant access to your best sellers, your shortages, your overstock, ..."
             paragraph2_2: "Save money: with better visibility on your stock, you will be able to reduce it."

@@ -26,25 +26,35 @@
       <header id="navtop">
 				<img src="/images/logo.jpg" alt="Efficient-Inventory" class="logo fleft">
 				<img src="/images/efficient_inventory_logo_text.jpg" alt="Efficient-Inventory-text" class="logo fleft">	
-			<nav class="fright">
-			<ul><%= link_to t(".suppliers"), suppliers_path%></ul>				
-            <ul> <%= link_to 'Articles', articles_path %></ul>
-			<ul> <%= link_to t(".movements"), movements_path%></ul>
-			<ul> <%= link_to t(".orders"), orders_path%></ul>
-			<ul>
-          		<div id="user_nav">
+		<nav class="fright">
+			<% if user_signed_in? %>
+				<ul><%= link_to t(".suppliers"), suppliers_path%></ul>				
+            	<ul> <%= link_to 'Articles', articles_path %></ul>
+				<ul> <%= link_to t(".movements"), movements_path%></ul>
+				<ul> <%= link_to t(".orders"), orders_path%></ul>
+			<% else %>
+				<ul>
+				<li><h4><%= t ".beta_testers_title"%></h4></li>
+				<li><dd><%= t ".beta_testers_text1"%></li></dd>
+				<li><dd><%= t ".beta_testers_text2"%></li></dd>
+				<li><dd><%= t ".beta_testers_text3"%></li></dd>
+				</ul>
+			<% end %>	
+          		<ul><div id="user_nav">
 				<li><% if user_signed_in? %>
 				<%= t ".signed_in_as"%><%= current_user.email %></li>
 				<li><%= t ".not_you"%>
 				<%= link_to t(".sign_out"), destroy_user_session_path, :method => :delete %>
 				<% else %>
-				<%= link_to t(".register"), new_user_registration_path %> <%= t ".or"%> <%= link_to t(".sign_in"), new_user_session_path %>.
+				<li><button style="width:200px; height:80px; font-size:24px"> <%= link_to t(".beta_testers_button"), new_user_registration_path %></button></li>
+				<br/>
+				<li><h4><%= t ".or"%> <%= link_to t(".sign_in"), new_user_session_path %>.</h4></li>
 				<% end %></li>
-				</div>
+				</div></ul>
 			</ul>
 			<ul>
 				<div id="language">
-				<li><%= t ".language"%></li>
+				<h5><%= t ".language"%></h5>
 				<li><%= link_to_unless_current "English", locale: "en"%>
 					<%= link_to image_tag("/images/button_english.jpg"), locale: "en"%>
 				<li><%= link_to_unless_current "Français", locale: "fr"%>

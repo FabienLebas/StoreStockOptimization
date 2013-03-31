@@ -1,4 +1,4 @@
-<%= link_to t(".new_supplier"), new_supplier_path %>
+<button><%= link_to t(".new_supplier"), new_supplier_path %></button>
 <br />
 <hr>
 <br/>
@@ -38,4 +38,4 @@
 	<%= submit_tag "Import"%>
 <% end %>
 <br />
-<%= link_to t("actions.download_supplier"), url_for(:format=>"xlsx") %>
+<button><%= link_to t("actions.download_supplier"), url_for(:format=>"xlsx") %></button>

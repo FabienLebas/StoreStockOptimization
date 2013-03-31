@@ -139,7 +139,7 @@
 	<%= submit_tag "Import"%>
 <% end %>
 <br/>
-<%= link_to t("actions.download_article"), url_for(:format=>"xlsx") %>
+<button><%= link_to t("actions.download_article"), url_for(:format=>"xlsx") %></button>
 
 <script>
 $(document).ready(function(){

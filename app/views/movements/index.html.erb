@@ -25,7 +25,7 @@
 <body id='#my_page'>
 <article id="navtabs" class="grid col-full">
 	<ul class="tabs clearfix">
-	    <li><%= link_to t(".new"), new_movement_path %></li>		
+	    <button><%= link_to t(".new"), new_movement_path %></button>		
 	    <li><%= link_to "Global", movements_path %></li>
 	    <li><%= link_to t("reporting.best"), reporting_best_sellers_path %></li>
 	    <li><%= link_to t("reporting.slow"), reporting_slow_movers_path %></li>
@@ -143,7 +143,7 @@
 	<%= submit_tag "Import"%>
 <% end %>
 <br />
-<%= link_to t("actions.download_movements"), url_for(:format=>"xlsx") %>
+<button><%= link_to t("actions.download_movements"), url_for(:format=>"xlsx") %></button>
 	
 <script>
 $(document).ready(function(){

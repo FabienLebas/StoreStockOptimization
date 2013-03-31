@@ -1,6 +1,6 @@
 <article id="navtabs" class="grid col-full">
 	<ul class="tabs clearfix">
-	    <li><%= link_to t("movements.index.new"), new_movement_path %></li>		
+	    <button><%= link_to t("movements.index.new"), new_movement_path %></button>	
 	    <li><%= link_to "Global", movements_path %></li>
 	    <li><%= link_to t("reporting.best"), reporting_best_sellers_path %></li>
 	    <li><%= link_to t("reporting.slow"), reporting_slow_movers_path %></li>
@@ -9,7 +9,10 @@
 </article>
 <br />
 <hr>
-<br/>
+<button id="opener">?</button>
+<div id="dialog" title="Help">
+  <p><%= t ".pop_up"%> </p>
+</div>
 
 <h2><%= t ".title1"%></h2>
 <table cellspacing="0" cellpadding="3px" rules="all" 
@@ -116,3 +119,13 @@
 		</tr>
 	<%end%>
 </table>
+<script>
+$(document).ready(function(){
+	$( "#dialog" ).dialog({ autoOpen: false });
+	$( "#opener" ).click(function() {
+	  $( "#dialog" ).dialog( "open" );
+	});
+	$( ".selector" ).dialog({ closeOnEscape: true });
+	
+});
+</script>

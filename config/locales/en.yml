@@ -82,15 +82,18 @@ en:
             title2: "20/80 quantity - 4 weeks"
             title3: "20/80 turnover - 12 weeks"
             title4: "20/80 quantity - 12 weeks"
+            pop_up: "These articles are your best 20%. They should be making 80% of your turnover."
             
         slow_movers:
             title1: "40/5 turnover - 4 weeks"
             title2: "40/5 quantity - 4 weeks"
             title3: "40/5 turnover - 12 weeks"
             title4: "40/5 quantity - 12 weeks"
+            pop_up: "These articles are your worst 40%. They should be making 5% of your turnover."
             
         end_life:
             title: "Articles with End Life Date in the past"            
+            pop_up: "These articles have past the end life date you specified. You should avoid having too many of these to free cash to buy new products."
 
     articles:
         index:

@@ -83,15 +83,18 @@ fr:
             title2: "20/80 quantités - 4 semaines"
             title3: "20/80 chiffre d'affaires - 12 semaines"
             title4: "20/80 quantités - 12 semaines"
+            pop_up: "Ces articles sont vos meilleurs 20%. Généralement, ils représentent 80% du chiffre d'affaires total."
             
         slow_movers:
             title1: "40/5 chiffre d'affaires - 4 semaines"
             title2: "40/5 quantités - 4 semaines"
             title3: "40/5 chiffre d'affaires - 12 semaines"
             title4: "40/5 quantités - 12 semaines"
+            pop_up: "Ces articles sont vos plus mauvais 40%. Généralement, ils représentent 5% du chiffre d'affaires total."
             
         end_life:
             title: "Articles avec date de fin de vie dans le passé"                
+            pop_up: "Ces articles ne sont plus dans la période de vie que vous avez renseigné. Vous devriez essayer d'en avoir le moins possible pour pouvoir acheter des articles de saison."
             
     articles:
         index:

@@ -14,7 +14,6 @@ fr:
             register: "S'inscrire"      
             or: "ou"
             sign_in: "Connexion" 
-            change_parameters: "Changer mes paramètres"
             language: "Langue :"   
             suppliers: "Fournisseurs"
             movements: "Mouvements de stock"

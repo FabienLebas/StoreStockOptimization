@@ -44,7 +44,7 @@
 				<li><% if user_signed_in? %>
 				<%= t ".signed_in_as"%><%= current_user.email %></li>
 				<li><%= t ".not_you"%>
-				<%= link_to t(".sign_out"), destroy_user_session_path, :method => :delete %>
+				<%= link_to t(".sign_out"), destroy_user_session_path, :method => :delete %></li>
 				<% else %>
 				<li><button style="width:200px; height:80px; font-size:24px"> <%= link_to t(".beta_testers_button"), new_user_registration_path %></button></li>
 				<br/>
@@ -54,11 +54,15 @@
 			</ul>
 			<ul>
 				<div id="language">
+					<% if user_signed_in?%>
+					<li><%= link_to t(".change_parameters"), edit_user_registration_path%></li>
+					<% else %>
 				<h5><%= t ".language"%></h5>
 				<li><%= link_to_unless_current "English", locale: "en"%>
 					<%= link_to image_tag("/images/button_english.jpg"), locale: "en"%>
 				<li><%= link_to_unless_current "Français", locale: "fr"%>
 					<%= link_to image_tag("/images/button_france.jpg"), locale: "fr"%>
+					<% end %>
 				</div>
 			</ul>
         </nav>

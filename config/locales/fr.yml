@@ -203,6 +203,12 @@ fr:
                 quantity: "Quantité"
                 validated: "Validée"
                 order: "Commande"
+                
+            user: 
+                email: "E-mail"
+                password: "Mot de passe"
+                password_confirmation: "Confirmation mot de passe"
+                language: "Langue"
 
     actions:
         show: "Voir"
@@ -223,11 +229,26 @@ fr:
         from: "Du"
         to: "au"
         zoom: "Cliquez et maintenez appuyé pour sélectionner la zone à zoomer"
-        register_beta: "Inscrivez-vous maintenant et devenez beta-testeur : gagnez 1 an gratuit !"
         import: "Pour importer un fichier, merci d'utiliser le fichier modèle à télécharger, insérez les données que vous souhaitez, puis importez."
         template: "Modèle"
         warning: "Attention : Il faut que la dernière colonne soit appelée 'user' et contienne à chaque ligne votre nom d'utilisateur."
         title_import: "Importez des données"
+    
+    devise:
+        registrations:
+            new:
+                title1: "Nos offres"
+                text1: "Aucune limitation de quelque sorte que ce soit : nombre d'articles illimité, mouvements de stocks illimités, ... Profitez pleinement de toute la puissance du cloud !"
+                text2: "Nous garantissons à nos utilisateurs l'archivage à vie des données."
+                choose: "Choisissez parmi nos 3 offres"
+                title_option1: "Beta-testeur"
+                text_option1: "Devenez beta-testeur. Efficient-Inventory est en constante évolution. Donnez-nous votre avis, aidez-nous à construire l'outil qu'il vous faut. Nous vous offrons 3 mois gratuits pour vous remercier !"
+                price_option1: "Gratuit"
+                title_option2: "Sans engagement"
+                text_option2: "Commencez à utiliser dès maintenant ! Offre sans engagement. Vous choisissez de ne pas devenir beta-testeur donc nous ne vous solliciterons pas pour nous aider à améliorer l'outil. Restez 100% concentrés à développer votre business !"
+                title_option3: "Abonnement 1 an"
+                text_option3: "Profitez de 2 mois gratuits en prenant l'abonnement 1 an ! Vous choisissez de ne pas devenir beta-testeur donc nous ne vous solliciterons pas pour nous aider à améliorer l'outil."
+                register_beta: "Créez votre profil et choisissez votre offre à la prochaine étape"
 
     date:
         formats:

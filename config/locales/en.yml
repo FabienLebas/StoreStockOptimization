@@ -199,6 +199,10 @@ en:
                 supplier: "Supplier"
                 quantity: "Quantity"
                 order: "Order"
+                
+            user:
+                email: "E-mail"
+                
 
     actions:
         show: "Show"
@@ -222,6 +226,21 @@ en:
         import: "To import a file, please use the template file, insert your data, the import."
         template: "Template"
         warning: "Warning: You must have a column called 'user' with you user account at each row."
-        register_beta: "Register now and become a beta-tester: get one year free!"
         title_import: "Import data"
+        
+    devise:
+        registrations:
+            new:
+                title1: "Our offers"
+                text1: "No limit at all: unlimited number of articles, unlimited stock movements, ... take full advantage of the cloud!"
+                text2: "We guarantee our customers lifetime archive of your data."
+                choose: "Choose between our 3 offers"
+                title_option1: "Beta-tester"
+                text_option1: "Become a beta-tester. Efficient-Inventory is constantly improving. Give us your feedback, help us build the tool that will perfectly suit you. We offer you 3 months free!"
+                price_option1: "Free"
+                title_option2: "No commitment"
+                text_option2: "Start using now! No commitment. You choose not to become a beta-tester, so we will not contact you to help us improve the site. Keep your mind focused on developping your business!"
+                title_option3: "1 year subscription"
+                text_option3: "Get 2 months for free with this 1 year subscription! You choose not to become a beta-tester, so we will not contact you to help us improve the site. Keep your mind focused on developping your business!"
+                register_beta: "Register first, you will choose your offer at the next step"
             

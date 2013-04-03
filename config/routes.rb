@@ -1,5 +1,9 @@
 StoreStockOptimization::Application.routes.draw do
 
+
+
+
+
   get "reporting/best_sellers"
 
   get "reporting/slow_movers"
@@ -30,6 +34,8 @@ StoreStockOptimization::Application.routes.draw do
   devise_for :users
   
   scope :path => ":locale" do
+  resources :ei_products
+  resources :subscriptions
 
     resources :seasonalities
     resources :planned_orders

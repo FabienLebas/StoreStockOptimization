@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   
   # Devise: Where to redirect users once they have logged in
-    def after_sign_in_path_for(resource)
-      subscriptions_path # <- Path you want to redirect the user to.
-    end
+    #def after_sign_in_path_for(resource)
+     # subscriptions_path # <- Path you want to redirect the user to.
+    #end
   
   private
 

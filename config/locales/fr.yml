@@ -59,7 +59,7 @@ fr:
             article_desc: "Une création efficace de vos articles, groupés par rayon, accès temps réel à leurs performances, et alertes si risque de rupture ou de surstock."
             movement_desc: "Enregistrez tous vos mouvements de stock, historisez-les, et faites une analyse temps réel de votre chiffre d'affaires. Pour prendre les bonnes décisions, vous avez besoin des bonnes informations !"
             order_desc: "En un clin d'oeil, prévoyez votre chiffre d'affaires, et commandez la bonne quantité au bon moment."
-            
+            powtoon: "Créé avec"
 
         about:
             title: "Efficient Inventory Management | A propos de nous"

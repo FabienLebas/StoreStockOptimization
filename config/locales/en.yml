@@ -59,6 +59,7 @@ en:
             article_desc: "Efficient creation of your articles, grouped by categories, instant access to their performances, and alert if they risk shortage or overstock."
             movement_desc: "Save all your stock movements, keep trace of them, and analyze in real-time your turnover. Great decisions need great informations!"
             order_desc: "In the blink of an eye, forecast your turnover, and order the right quantity at the right time."
+            powtoon: "Created with"
 
         about:
             title: "Efficient Inventory Management | About us"

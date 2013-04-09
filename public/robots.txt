@@ -7,5 +7,5 @@ Disallow: /movements
 Disallow: /suppliers
 Disallow: /orders
 Disallow: /seasonalities
-
-
+Disallow: /ei_products
+Disallow: /subscriptions

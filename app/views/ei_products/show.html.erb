@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ei_product.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @ei_product.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_ei_product_path(@ei_product) %> |
+<%= link_to 'Back', ei_products_path %>

@@ -1,0 +1,2 @@
+module EiProductsHelper
+end

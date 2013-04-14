@@ -146,6 +146,10 @@ fr:
             title: "Nouvelle commande"
         edit:
             title: "Modification commande"
+            
+    subscriptions:
+        index:
+            title: "Tous les paiements"
                    
     activerecord:
         attributes:
@@ -211,6 +215,7 @@ fr:
             
             subscriptions:
                 new: "Nouvelle licence"
+                choice: "Votre choix :"
 
     actions:
         show: "Voir"

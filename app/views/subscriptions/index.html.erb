@@ -1,25 +1,28 @@
-<h1>Listing subscriptions</h1>
+<button><%= link_to t("activerecord.attributes.subscriptions.new"), new_subscription_path %></button>
+<br />
+<hr>
+<br/>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Option</th>
-    <th></th>
-    <th></th>
-    <th></th>
+<h2><%= t ".title"%></h2>
+
+<table cellspacing="0" cellpadding="3px" rules="all" 
+   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
+   <tr style="background-color:lightgrey;"> 
+    <th style="width:150px;">Option</th>
+	<th style="width:150px;">Date</th>
+	<th style="width:150px;">Expiration date</th>
   </tr>
 
 <% @subscriptions.each do |subscription| %>
   <tr>
-    <td><%= subscription.user %></td>
-    <td><%= subscription.option %></td>
-    <td><%= link_to 'Show', subscription %></td>
-    <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
-    <td><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td style="padding-left:10px; color:midnightblue;"><%= subscription.option %></td>
+	<td style="padding-left:10px; color:midnightblue;"><%= subscription.created_at.strftime("%B %d, %Y")%></td>
+	<td style="padding-left:10px; color:midnightblue;"><%= if subscription.option =="beta-tester" then (subscription.created_at + 3.month).strftime("%B %d, %Y")
+				elsif subscription.option =="1 month" then (subscription.created_at + 1.month).strftime("%B %d, %Y")
+				elsif subscription.option =="1 year" then (subscription.created_at + 1.year).strftime("%B %d, %Y")					
+			end%>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Subscription', new_subscription_path %>

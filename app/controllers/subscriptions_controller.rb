@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @subscriptions = Subscription.all
+    @subscriptions = Subscription.where(:user => current_user.email)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,6 +47,9 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
+        subscription = Subscription.last
+        subscription.user = current_user.email
+        subscription.save
         format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
         format.json { render json: @subscription, status: :created, location: @subscription }
       else

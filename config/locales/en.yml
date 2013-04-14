@@ -147,6 +147,10 @@ en:
         edit:
             title: "Editing order"
             
+    subscriptions:
+        index:
+            title:"Listing subscriptions"
+            
     activerecord:
         attributes:
             article:
@@ -205,6 +209,7 @@ en:
             
             subscriptions:
                 new: "New subscription"
+                choice: "Your choice:"
                 
 
     actions:

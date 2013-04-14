@@ -47,9 +47,10 @@
 <br/>
 
   <div class="field">
-    <%= f.label :option %><br />
-    <%= f.text_field :option %>
+   <h6> <%= t"activerecord.attributes.subscriptions.choice" %></h6>
+  	<%= f.select(:option, [[t("devise.registrations.new.title_option1"), "beta-tester"], [t("devise.registrations.new.title_option2"), "1 month"], [t("devise.registrations.new.title_option3"), "1 year"]])  %>
   </div>
+<br/>
   <div class="actions">
     <%= f.submit %>
   </div>

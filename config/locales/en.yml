@@ -68,10 +68,9 @@ en:
             line1: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free !    "
             beta_testers_button: "Register"
             line2: "This site was created by Fabien Lebas, suppy chain expert with a background of more than 10 years experience in supply chain management in a world leader retail chain. I have designed both the stores and the e-commerce supply chain for a company of several billions of euros turnover, in several hundreds of stores, in 20 countries around the world, and the same number of websites."
-            line3: "By creating this service, I am offering to help you, for your stock management:"
-            line4: "Save time: instant access to your best sellers, your shortages, your overstock, ..."
-            line5: "Save money: with better visibility on your stock, you will be able to reduce it."
-            line6: "Up-to-date cloud technologies are now available for you: don't worry if you grow = our price will remain the same, and you have no limitation. Sky is the limit!"           
+            line3: "Details"
+            line4: "We are a French company based in:"
+            line5: "Company number:"
 
     reporting:
         best: "Best sellers"
@@ -203,6 +202,9 @@ en:
                 
             user:
                 email: "E-mail"
+            
+            subscriptions:
+                new: "New subscription"
                 
 
     actions:

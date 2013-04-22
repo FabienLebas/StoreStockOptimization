@@ -117,6 +117,7 @@ en:
         index:
             new_supplier: "New Supplier"
             title: "Listing suppliers"
+            pop_up: "For each supplier, assign a leadtime corresponding to the time it takes your supplier to deliver when you order. With this leadtime, we will calculate the quantity you need thanks to the average sales."
         new: 
             title: "New supplier"
         show:
@@ -133,6 +134,7 @@ en:
             title2: "Overall result 3 last months"
             title3: "Sales per day"
             title4: "Listing all movements of this week"
+            pop_up: "Enter all your stock movements: sales, returns, quantities stolen, dumped, ..."
         new:
             title: "New movement"
         edit: 

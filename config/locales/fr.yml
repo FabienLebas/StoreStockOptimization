@@ -117,6 +117,7 @@ fr:
         index:
             new_supplier: "Nouveau fournisseur"
             title: "Base fournisseurs"
+            pop_up: "Créez un fournisseur et assignez-lui un délai. Le délai sert à calculer la quantité qu'il vous faut en stock grâce à la vente moyenne."
         new: 
             title: "Nouveau fournisseur"
         show:
@@ -133,6 +134,7 @@ fr:
             title2: "Résultats globaux 3 mois"
             title3: "Ventes par jour"
             title4: "Tous les Mouvements de cette semaine"
+            pop_up: "Entrez tous vos mouvements de stock : ventes, retours, décôte, démarque, ..."
         new:
             title: "Nouveau Mouvement"
         edit:

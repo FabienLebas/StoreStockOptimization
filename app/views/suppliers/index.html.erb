@@ -1,3 +1,7 @@
+<button id="opener">?</button>
+<div id="dialog" title="Help">
+  <p><%= t ".pop_up"%> </p>
+</div>
 <button><%= link_to t(".new_supplier"), new_supplier_path %></button>
 <br />
 <hr>
@@ -40,3 +44,14 @@
 	<% end %>
 <br />
 <button><%= link_to t("actions.download_supplier"), url_for(:format=>"xlsx") %></button>
+
+<script>
+$(document).ready(function(){
+	$( "#dialog" ).dialog({ autoOpen: false });
+	$( "#opener" ).click(function() {
+	  $( "#dialog" ).dialog( "open" );
+	});
+	$( ".selector" ).dialog({ closeOnEscape: true });
+		
+});
+</script>

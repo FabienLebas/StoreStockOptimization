@@ -30,6 +30,7 @@ gem 'acts_as_xlsx'
 gem 'devise'
 gem 'mysql2', '~> 0.3.11'
 gem 'roo'
+gem 'activemerchant', :require => 'active_merchant'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

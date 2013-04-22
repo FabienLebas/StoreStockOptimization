@@ -38,4 +38,14 @@ StoreStockOptimization::Application.configure do
   config.assets.compile = true
   
    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+   
+   config.after_initialize do
+     ActiveMerchant::Billing::Base.mode = :test
+     ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+       :login => "fabienlebas-facilitator_api1.free.fr",
+       :password => "1365973532",
+       :signature => "AlwIcqffwO.WH6XVLoKeWAv5KaOTA3juQy7D7q7qwqsmiHtLnDySuopf"
+     )
+   end
+  
 end

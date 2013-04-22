@@ -16,42 +16,48 @@
 <h5><%= t "devise.registrations.new.text2"%></h5>
 <br/>
 <h6><%= t "devise.registrations.new.choose"%></h6>
+
 <section class="services grid-wrap">
-	<article class="grid col-one-third mq3-col-full">
+	<article class="grid col-one-half mq3-col-full">
 		<aside>01</aside>
-		<h4><%= t "devise.registrations.new.title_option1"%></h4>
-		<p><%= t "devise.registrations.new.text_option1"%></p>
-	</article>	
-	<article class="grid col-one-third mq3-col-full">
-		<aside>02</aside>
 		<h4><%= t "devise.registrations.new.title_option2"%></h4>
 		<p><%= t "devise.registrations.new.text_option2"%></p>
+		<p><%= t "devise.registrations.new.text_option22"%></p>	
 	</article>	
-	<article class="grid col-one-third mq3-col-full">
-		<aside>03</aside>
+	<article class="grid col-one-half mq3-col-full">
+		<aside>02</aside>
 		<h4><%= t "devise.registrations.new.title_option3"%></h4>
 		<p><%= t "devise.registrations.new.text_option3"%></p>
+		<p><%= t "devise.registrations.new.text_option32"%></p>
 	</article>
 </section>
-<section class="services grid-wrap">
-	<article class="grid col-one-third mq3-col-full">
-		<h4><%= t "devise.registrations.new.price_option1"%></h4>
-	</article>	
-	<article class="grid col-one-third mq3-col-full">
+<section class="services grid-wrap">	
+	<article class="grid col-one-half mq3-col-full">
 		<h4>9€ / <%= t "time.prompts.month"%></h4>
 	</article>	
-	<article class="grid col-one-third mq3-col-full">
+	<article class="grid col-one-half mq3-col-full">
 		<h4>90€ / <%= t "time.prompts.year"%></h4>
 	</article>
 </section>
 <br/>
 
-  <div class="field">
-   <h6> <%= t"activerecord.attributes.subscriptions.choice" %></h6>
-  	<%= f.select(:option, [[t("devise.registrations.new.title_option1"), "beta-tester"], [t("devise.registrations.new.title_option2"), "1 month"], [t("devise.registrations.new.title_option3"), "1 year"]])  %>
-  </div>
-<br/>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
+<section class="services grid-wrap">
+	<article class="grid col-one-third mq3-col-full">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="8KBS3ZMXC42PS">
+					<input type="hidden" name="on0" value="Choose your option"><select name="os0">
+					<option value="1 month"><%= t "devise.registrations.new.1month"%> €9,00 EUR</option>
+					<option value="1 year"><%= t "devise.registrations.new.1year"%> €90,00 EUR</option>
+				</select> 
+			<input type="hidden" name="currency_code" value="EUR">
+			<br/><br/>
+			<button><%= t "devise.registrations.new.button"%></button>
+		</form>
+	</article>	
+</section>
+
+
+

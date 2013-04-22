@@ -44,14 +44,28 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions.json
   def create
     @subscription = Subscription.new(params[:subscription])
+   # @subscription = current_user.build_subscription(params[:subscription])
+    #@subscription.ip_address = request.remote_ip
+   # if @subscription.save
+    #  if @subscription.purchase
+     #   subscription = Subscription.last
+    #    subscription.user = current_user.email
+    #    subscription.save
+    #    render :action => "success"
+    #  else
+    #    render :action => "failure"
+    #  end
+    #else
+    #  render :action => 'new'
+    #end
 
     respond_to do |format|
       if @subscription.save
-        subscription = Subscription.last
-        subscription.user = current_user.email
-        subscription.save
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
-        format.json { render json: @subscription, status: :created, location: @subscription }
+          subscription = Subscription.last
+          subscription.user = current_user.email
+          subscription.save
+          format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
+          format.json { render json: @subscription, status: :created, location: @subscription }
       else
         format.html { render action: "new" }
         format.json { render json: @subscription.errors, status: :unprocessable_entity }

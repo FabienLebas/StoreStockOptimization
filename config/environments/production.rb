@@ -66,4 +66,15 @@ StoreStockOptimization::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :production
+    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+      :login => "fabienlebas_api1.free.fr",
+      :password => "SYBEWHPCBCYJQ8MX",
+      :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31AsCEq7zHQeVUzjl3KoS.Z224Qw6Y"
+    )
+  end
+  
+  
 end

@@ -5,6 +5,15 @@
 <%= csrf_meta_tag %>
 </head>
 <hr>
+<h2><%= t ".title_values"%></h2>
+<p><%= t ".value1"%></p>
+<p><dd><li><%= t ".value1_1"%></li></dd></p>
+<p><dd><li><%= t ".value1_2"%></li></dd></p>
+<p><%= t ".value2"%></p>
+<p><dd><li><%= t ".value2_1"%></li></dd></p>
+<p><dd><li><%= t ".value2_2"%></li></dd></p>
+<br/>
+<hr>
 <h2><%= t ".title_page"%></h2>
 <p><%= t ".line1"%></p>
 	<dd><dd<dd><button style="width:150px; height:50px; font-size:18px"> <%= link_to t(".beta_testers_button"), new_user_registration_path %></button></dd></dd></dd>

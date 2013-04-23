@@ -5,6 +5,7 @@
    <tr style="background-color:lightgrey;"> 
       <th style="width:150px;">User</th> 
       <th style="width:150px;">Creation date</th> 
+      <th style="width:150px;">Language</th> 
       <th style="width:150px;">Article nb</th> 
       <th style="width:150px;">Supplier nb</th> 
       <th style="width:150px;">Movement nb</th> 
@@ -13,7 +14,8 @@
    <% @users.each do |user| %>
 	<tr> 
       	<td style="padding-left:10px; color:midnightblue;"><%= user.email %></td> 
-      	<td style="padding-left:10px; color:midnightblue;"><%= user.created_at %></td> 
+      	<td style="padding-left:10px; color:midnightblue;"><%= user.created_at %></td>
+      	<td style="padding-left:10px; color:midnightblue;"><%= user.language %></td> 
       	<td style="padding-left:10px; color:midnightblue;"><%= Article.where(:user => user.email).length %></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%=  Supplier.where(:user => user.email).length%></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%=  Movement.where(:user => user.email).length%></td> 

@@ -19,7 +19,8 @@ en:
             movements: "Stock Movements"
             orders: "Orders"
             beta_testers_button: "Register"
-            slogan1: "Order what you need, only when you need!"         
+            slogan1_1: "Order what you need,"
+            slogan1_2: "only when you need!"         
             slogan2: "How much will you save if you save 1% of stock?"   
             slogan3: "How many shortages do you have?"
 
@@ -157,7 +158,8 @@ en:
             
     subscriptions:
         index:
-            title:"Listing subscriptions"
+            title: "Listing subscriptions"
+            text: "Please note that it can take up to 24h to see your registration in this list."
             
     activerecord:
         attributes:

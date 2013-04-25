@@ -196,7 +196,7 @@ h1 {font-size: 4.1em;
 h2 { font-size: 2.5em; margin: 0 0 20px; letter-spacing: -0.05em; color: #555; line-height: 1; }
 h3 { font-size: 1.75em; }
 h4 { font-size: 1.5em; }
-h5 { font-size: 1.17em; text-transform: uppercase; margin: 0; color: #555; }
+h5 { font-size: 1.17em; text-transform: uppercase; margin: 0; color: #660000; }
 h6 { font-size: 1em; margin-bottom: 2px; font-weight: 700; }
 
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#333; text-decoration: none;}

@@ -19,7 +19,8 @@ fr:
             movements: "Mouvements de stock"
             orders: "Commandes"
             beta_testers_button: "S'inscrire" 
-            slogan1: "Commandez ce dont vous avez besoin, uniquement quand vous en avez besoin !"
+            slogan1_1: "Commandez ce dont vous avez besoin,"
+            slogan1_2: "uniquement quand vous en avez besoin !"
             slogan2: "Combien allez vous gagner si vous gagnez 1% de stock ?" 
             slogan3: "Combien de ruptures avez-vous ?"          
             
@@ -158,6 +159,7 @@ fr:
     subscriptions:
         index:
             title: "Tous les paiements"
+            text: "Veuillez noter que cela peut prendre jusque 24h pour que votre paiement apparaisse ici."
                    
     activerecord:
         attributes:

@@ -243,6 +243,7 @@ en:
         template: "Template"
         warning: "Warning: You must have a column called 'user' with you user account at each row."
         title_import: "Import data"
+        rights_reserved: "All rights reserved"
         
     devise:
         registrations:

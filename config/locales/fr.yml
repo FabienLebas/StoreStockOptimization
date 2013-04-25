@@ -248,6 +248,7 @@ fr:
         template: "Modèle"
         warning: "Attention : Il faut que la dernière colonne soit appelée 'user' et contienne à chaque ligne votre nom d'utilisateur."
         title_import: "Importez des données"
+        rights_reserved: "Tous droits réservés"
     
     devise:
         registrations:

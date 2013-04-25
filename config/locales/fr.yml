@@ -203,7 +203,7 @@ fr:
                 
             supplier: 
                 supplier_text: "Libellé fournisseur"
-                leadtime: "Délai"
+                leadtime: "Délai en jours"
                 order_minimum_qty: "Min qtés dans une commande"
                 order_minimum_value: "Valeur min d'une commande"
                 supplier: "Fournisseur"

@@ -202,7 +202,7 @@ en:
                 
             supplier:
                 supplier_text: "Supplier text"
-                leadtime: "Leadtime"
+                leadtime: "Leadtime in days"
                 order_minimum_qty: "Order minimum qty"
                 order_minimum_value: "Order minimum value"
                 supplier: "Supplier"

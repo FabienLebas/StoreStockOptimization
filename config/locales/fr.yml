@@ -282,6 +282,7 @@ fr:
                 1month: "1 mois"
                 1year: "1 an"
                 button: "Acheter"
+                HT: "HT"
 
     date:
         formats:

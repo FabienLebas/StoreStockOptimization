@@ -278,12 +278,12 @@ fr:
                 text_option22: "Utilisez votre mois pour découvrir nos services, découvrez toutes les fonctionnalités. A l'issue du mois, vous choisirez de reprendre soit un mois, soit un an."
                 title_option3: "Abonnement 1 an"
                 text_option3: "Profitez de 2 mois gratuits en prenant l'abonnement 1 an ! "
-                text_option32: "La bonne gestion de votre stock vous permettra de gagner bien plus que 90€ !"
+                text_option32: "Une bonne gestion de votre stock vous permettra de gagner bien plus que 90€ !"
+                text_option33: "On constate que la mise en place d'une bonne gestion de stock débouche en moyenne sur une progression de chiffre d'affaires de 5% et une baisse du niveau de stock de 10% !"                
                 register_beta: "Créez votre profil et choisissez votre offre à la prochaine étape"
                 1month: "1 mois"
                 1year: "1 an"
                 button: "Acheter"
-                HT: "HT"
                 Paypal: "Le paiement est sécurisé par Paypal, mais il n'est pas nécessaire d'avoir un compte Paypal pour payer."
 
     date:

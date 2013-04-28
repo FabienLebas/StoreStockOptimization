@@ -27,7 +27,7 @@ fr:
     pages:
         home:
             title: "Bienvenue chez vous !"
-            meta: "Efficient Inventory vous permet une gestion de stock efficace, essentielle pour les magasins physiques et virtuels. Inscrivez-vous gratuitement !"
+            meta: "Efficient Inventory vous permet une gestion de stock efficace, essentielle pour les magasins physiques et virtuels. Inscrivez-vous maintenant !"
             paragraph1_title1: "Magasin ? E-commerçant ?"
             paragraph1_title2: "Vous trouverez ici tout ce dont vous avez besoin pour :"
             paragraph1_1: "Gérer votre stock"
@@ -47,6 +47,7 @@ fr:
             paragraph2_1_1: "Vos meilleures ventes en 1 click, vos ruptures, vos surstocks, ..."
             paragraph2_1_2: "100% temps réel"
             paragraph2_1_3: "Rien n'est installé sur votre ordinateur : 100% sécurité si vous changez / crashez votre ordinateur, accédez à vos données depuis n'importe où"
+            paragraph2_1_4: "Nous avons 10 ans d'expérience dans la gestion de stock: nous vous aidons, vous gagnez du temps pour faire autre chose !"
             paragraph2_2: "Gagnez de l'argent :"
             paragraph2_2_1: "Avec une meilleure visibilité de votre stock (et nos calculs), vous allez pouvoir le réduire."
             paragraph2_2_2: "Grâce à l'utilisation des dernières technologies disponibles, nous sommes nettement moins chers que nos concurrents !"

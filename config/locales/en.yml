@@ -27,7 +27,7 @@ en:
     pages:        
         home:
             title: "Welcome Home !"
-            meta: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free!"
+            meta: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe now!"
             paragraph1_title1: "Individual store? Web-merchant?"
             paragraph1_title2: "Here you will find all you need to:"
             paragraph1_1: "Manage your inventory"
@@ -44,9 +44,10 @@ en:
             slider3_image: "/images/efficient_inventory_import_en.jpg"
             paragraph2_title: "Why Efficient Inventory?"
             paragraph2_1: "Save time:"
-            paragraph2_1_1: "1 click to access to your best sellers, your shortages, your overstock, ..."
+            paragraph2_1_1: "1 click to check your best sellers, your shortages, your overstock, ..."
             paragraph2_1_2: "100% real time"
             paragraph2_1_3: "Nothing installed on your computer: 100% secure if you change/crash your hardware, access your data from anywhere"
+            paragraph2_1_4: "We have 10 years experience in inventory management: we help you, you save time to do something else!"
             paragraph2_2: "Save money:"
             paragraph2_2_1: "With better visibility on your inventory (and our calculations), you will be able to reduce it."
             paragraph2_2_2: "Thanks to the use of the latest technologies, we are significantly cheaper than our competitors!"

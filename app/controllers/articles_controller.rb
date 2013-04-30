@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.json
   def new
     @article = Article.new
-    @suppliers = Supplier.where(:user => current_user.email).select("supplier")
+    @suppliers = Supplier.where(:user => "adresner@globalstyletrading.com").select("supplier")
 
     respond_to do |format|
       format.html # new.html.erb

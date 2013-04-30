@@ -43,8 +43,8 @@
 		<td><%= article.family %></td> 
 		<td><%= article.department %></td> 				
 		<td><%= article.supplier %></td> 
-		<td><%= article.stock_qty %></td> 
 		<td><%= article.selling_price_inc_vat %></td> 				
+		<td><%= article.stock_qty %></td> 
 		<td><%= link_to t("actions.show"), article %></td>
 	    <td><%= link_to t("actions.edit"), edit_article_path(article) %></td>
 	    <td><%= link_to t("actions.destroy"), article, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>								

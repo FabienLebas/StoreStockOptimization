@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.json
   def new
     @article = Article.new
-    @suppliers = Supplier.where(:user => "adresner@globalstyletrading.com").select("supplier")
+    @suppliers = Supplier.where(:user => current_user.email).select("supplier")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
-    @suppliers = Supplier.where(:user => current_user.email)
+    @suppliers = Supplier.where(:user => "adresner@globalstyletrading.com")
   end
 
   # POST /articles

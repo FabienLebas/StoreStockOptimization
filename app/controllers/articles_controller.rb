@@ -83,7 +83,7 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.json
   def update
     @article = Article.find(params[:id])
-    @suppliers = Supplier.where(:user => current_user.email).select("supplier_text")
+    @suppliers = Supplier.where(:user => "adresner@globalstyletrading.com").select("supplier")
 
     respond_to do |format|
       if @article.update_attributes(params[:article])

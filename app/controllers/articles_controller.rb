@@ -33,8 +33,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-    @movements = Movement.where(:article_code => @article.article_code, :user => "adresner@globalstyletrading.com").select("movement_date, article_code, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date, article_code").order("movement_date DESC")
-    @average_sales = Movement.where(:article_code => @article.article_code, :movement_date => Date.today-6..Date.today, :user => "adresner@globalstyletrading.com").sum("quantity").to_f / 7
+    @movements = Movement.where(:article_code => @article.article_code, :user => current_user.email).select("movement_date, article_code, sum(turnover) as turnover, sum(quantity) as quantity").group("movement_date, article_code").order("movement_date DESC")
+    @average_sales = Movement.where(:article_code => @article.article_code, :movement_date => Date.today-6..Date.today, :user => current_user.email).sum("quantity").to_f / 7
 
     respond_to do |format|
       format.html # show.html.erb
@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
-    @suppliers = Supplier.where(:user => "adresner@globalstyletrading.com")
+    @suppliers = Supplier.where(:user => current_user.email)
   end
 
   # POST /articles
@@ -83,7 +83,7 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.json
   def update
     @article = Article.find(params[:id])
-    @suppliers = Supplier.where(:user => "adresner@globalstyletrading.com").select("supplier")
+    @suppliers = Supplier.where(:user => current_user.email).select("supplier")
 
     respond_to do |format|
       if @article.update_attributes(params[:article])

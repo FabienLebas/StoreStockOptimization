@@ -252,6 +252,8 @@ en:
         import: "To import a file, please use the template file, insert your data, the import."
         template: "Template"
         warning: "Warning: You must have a column called 'user' with you user account at each row."
+        warning_article: "Initial stock and selling price are mandatory fields. Please also pay attention that your supplier set in the article must be declared first in the supplier list. "
+        warning_supplier: "Supplier leadtime is a mandatory field."
         title_import: "Import data"
         rights_reserved: "All rights reserved"
         

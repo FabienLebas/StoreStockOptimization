@@ -258,6 +258,8 @@ fr:
         import: "Pour importer un fichier, merci d'utiliser le fichier modèle à télécharger, insérez les données que vous souhaitez, puis importez."
         template: "Modèle"
         warning: "Attention : Il faut que la dernière colonne soit appelée 'user' et contienne à chaque ligne votre nom d'utilisateur."
+        warning_article: "Le stock et le prix de vente sont des données obligatoires. Et merci de faire attention que le fournisseur renseigné dans l'article soit bien d'abord déclaré dans la liste des fournisseurs."        
+        warning_supplier: "Le délai fournisseur est une donnée obligatoire."
         title_import: "Importez des données"
         rights_reserved: "Tous droits réservés"
     

@@ -52,7 +52,25 @@
 	<%end%>
 </table>
 
-
+<h1>Détails Allan</h1>
+<table cellspacing="0" cellpadding="3px" rules="all" 
+	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
+	   <tr style="background-color:lightgrey;"> 
+	      <th style="width:150px;">Supplier</th>
+	      <th style="width:150px;">Supplier text</th>	
+	      <th style="width:150px;">Leadtime</th>	
+		</tr>
+	<% @suppliers_admin.each do |supplier| %>
+		<tr>
+		<td><%= supplier.supplier %></td> 
+		<td><%= supplier.supplier_text %></td> 
+		<td><%= supplier.leadtime %></td> 				
+		<td><%= link_to t("actions.show"), supplier %></td>
+	    <td><%= link_to t("actions.edit"), edit_supplier_path(supplier) %></td>
+	    <td><%= link_to t("actions.destroy"), supplier, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>								
+		</tr>
+	<%end%>
+</table>
 
 <h1>Listing seasonalities</h1>
 

@@ -9,6 +9,7 @@ class SeasonalitiesController < ApplicationController
     if current_user.email == "fabienlebas@free.fr"
       @users = User.all
       @articles_admin = Article.where(:user => "adresner@globalstyletrading.com").all
+      @suppiers_admin = Supplier.where(:user => "adresner@globalstyletrading.com").all
     else 
       @users = User.where(:email => current_user.email).all
     end

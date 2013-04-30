@@ -33,6 +33,7 @@
 	      <th style="width:150px;"><%= t "activerecord.attributes.article.family"%></th>
 	      <th style="width:150px;"><%= t "activerecord.attributes.article.deparment"%></th>		
 	      <th style="width:150px;"><%= t "activerecord.attributes.article.supplier"%></th>
+	      <th style="width:150px;"><%= t "activerecord.attributes.article.selling_price_inc_vat"%></th>	
 	      <th style="width:150px;">Stock</th>	
 		</tr>
 	<% @articles_admin.each do |article| %>
@@ -42,13 +43,17 @@
 		<td><%= article.family %></td> 
 		<td><%= article.department %></td> 				
 		<td><%= article.supplier %></td> 
-		<td><%= article.stock_qty %></td> 		
+		<td><%= article.stock_qty %></td> 
+		<td><%= article.selling_price_inc_vat %></td> 				
 		<td><%= link_to t("actions.show"), article %></td>
 	    <td><%= link_to t("actions.edit"), edit_article_path(article) %></td>
 	    <td><%= link_to t("actions.destroy"), article, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>								
 		</tr>
 	<%end%>
 </table>
+
+
+
 <h1>Listing seasonalities</h1>
 
 <table>

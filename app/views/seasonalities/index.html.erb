@@ -21,7 +21,10 @@
 		<td style="padding-left:10px; color:midnightblue;"><%=  Supplier.where(:user => user.email).length%></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%=  Movement.where(:user => user.email).length%></td> 
 		<td style="padding-left:10px; color:midnightblue;"><%=  Order.where(:user => user.email).length%></td>
-		<td style="padding-left:10px; color:midnightblue;"><%=  Subscription.where(:user => user.email).last.end%></td>		
+		<td style="padding-left:10px; color:midnightblue;"><%=  if Subscription.where(:user => user.email).length == 0
+																	then "0"
+																	else Subscription.where(:user => user.email).last.end
+																		end%></td>		
 	  </tr>
 	<% end %>
 </table>

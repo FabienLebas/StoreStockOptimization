@@ -9,3 +9,4 @@ Disallow: /orders
 Disallow: /seasonalities
 Disallow: /ei_products
 Disallow: /subscriptions
+Disallow: /pages/contact

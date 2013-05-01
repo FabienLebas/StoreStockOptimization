@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @subscriptions = Subscription.where(:user => current_user.email)
+    @subscriptions = Subscription.where(:user2 => current_user.email)
 
     respond_to do |format|
       format.html # index.html.erb

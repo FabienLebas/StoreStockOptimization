@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130501194723) do
+ActiveRecord::Schema.define(:version => 20130501204704) do
 
   create_table "articles", :force => true do |t|
     t.string   "article_code"
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(:version => 20130501194723) do
     t.string   "ip_address"
     t.date     "start"
     t.date     "end"
+    t.string   "user2"
   end
 
   create_table "suppliers", :force => true do |t|

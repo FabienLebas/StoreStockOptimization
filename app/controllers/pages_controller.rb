@@ -2,8 +2,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def contact
-    
+  def contact  
     if current_user.email=="fabienlebas@free.fr"
       @subscription = Subscription.new
 

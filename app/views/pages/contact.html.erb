@@ -1,36 +1,38 @@
-<h1>Pages#contact</h1>
+<title>Efficient Inventory | <%= t "activerecord.attributes.subscriptions.new"%></title>
+<%= form_for(@subscription) do |f| %>
+  <% if @subscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this ei_product from being saved:</h2>
 
+      <ul>
+      <% @subscription.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-39387548-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-<!-- UserVoice JavaScript SDK (only needed once on a page) -->
-<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/hlxue2ubt7UDnjVGtP7TlA.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
-
-<!-- A tab to launch the Classic Widget -->
-<script>
-UserVoice = window.UserVoice || [];
-UserVoice.push(['showTab', 'classic_widget', {
-  mode: 'full',
-  primary_color: '#cc6d00',
-  link_color: '#007dbf',
-  default_mode: 'support',
-  forum_id: 198413,
-  tab_label: 'Feedback & Support',
-  tab_color: '#cc6d00',
-  tab_position: 'middle-right',
-  tab_inverted: false
-}]);
-</script>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :option %><br />
+    <%= f.text_field :option %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br />
+    <%= f.date_select :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %><br />
+    <%= f.date_select :end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

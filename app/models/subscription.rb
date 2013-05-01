@@ -1,5 +1,5 @@
 class Subscription < ActiveRecord::Base
-  attr_accessible :option, :user, :amount, :success, :authorization, :message, :params, :first_name, :last_name, :card_type, :card_number, :card_verification, :card_expires_on, :ip_address
+  attr_accessible :option, :user, :amount, :success, :authorization, :message, :params, :first_name, :last_name, :card_type, :card_number, :card_verification, :card_expires_on, :ip_address, :start, :end
   
   has_many :transactions, :class_name => "OrderTransaction"
   

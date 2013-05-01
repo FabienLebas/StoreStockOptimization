@@ -33,7 +33,8 @@ class SubscriptionsController < ApplicationController
       format.html # new.html.erb
       format.json { render json: @subscription }
     end
-  end
+  end 
+  
 
   # GET /subscriptions/1/edit
   def edit

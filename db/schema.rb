@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417212116) do
+ActiveRecord::Schema.define(:version => 20130501194723) do
 
   create_table "articles", :force => true do |t|
     t.string   "article_code"
@@ -168,6 +168,8 @@ ActiveRecord::Schema.define(:version => 20130417212116) do
     t.string   "card_type"
     t.date     "card_expires_on"
     t.string   "ip_address"
+    t.date     "start"
+    t.date     "end"
   end
 
   create_table "suppliers", :force => true do |t|

@@ -11,19 +11,17 @@
    style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px;"> 
    <tr style="background-color:lightgrey;"> 
     <th style="width:150px;">Option</th>
-	<th style="width:150px;">Date</th>
-	<th style="width:150px;">Expiration date</th>
+    <th style="width:150px;">Amount</th>
+	<th style="width:150px;">Start</th>
+	<th style="width:150px;">End</th>
   </tr>
 
 <% @subscriptions.each do |subscription| %>
   <tr>
     <td style="padding-left:10px; color:midnightblue;"><%= subscription.option %></td>
-	<td style="padding-left:10px; color:midnightblue;"><%= subscription.created_at.strftime("%B %d, %Y")%></td>
-	<td style="padding-left:10px; color:midnightblue;"><%= if subscription.option =="beta-tester" then (subscription.created_at + 3.month).strftime("%B %d, %Y")
-				elsif subscription.option =="1 month" then (subscription.created_at + 1.month).strftime("%B %d, %Y")
-				elsif subscription.option =="1 year" then (subscription.created_at + 1.year).strftime("%B %d, %Y")					
-			end%>
-  </tr>
+    <td style="padding-left:10px; color:midnightblue;"><%= subscription.amount %></td>
+	<td style="padding-left:10px; color:midnightblue;"><%= subscription.start%></td>
+	<td style="padding-left:10px; color:midnightblue;"><%= subscription.end%></td>
 <% end %>
 </table>
 

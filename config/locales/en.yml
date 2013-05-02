@@ -182,7 +182,7 @@ en:
                 box: "Quantities in a supplier box"
                 minimum_of_qty: "Minimum of quantities for a supplier order"
                 unitary_price_if_box: "Unitary price if bought by box"
-                unitary_price_if_massive: "Unitary price if bought in massive qties"
+                unitary_price_if_massive: "Unitary price if bought in bulk qties"
                 price_if_box: "Price if purchased by box"
                 price_if_massive: "Price if purchased by massive quantity"
                 selling_price_inc_vat: "Selling Price incl. VAT"

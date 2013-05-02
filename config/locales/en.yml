@@ -6,6 +6,7 @@ en:
         footer:
             home: "Home"
             about: "About us"
+            howitworks: "How it works"
 
         application:
             signed_in_as: "Signed in as "
@@ -68,6 +69,14 @@ en:
             movement_desc: "Save all your stock movements, keep trace of them, and analyze in real-time your turnover. Great decisions need great informations!"
             order_desc: "In the blink of an eye, forecast your turnover, and order the right quantity at the right time."
             powtoon: "Created with"
+            howitworks: "Discover more details here"
+            schema_title: "This is how Efficient-Inventory works:"
+            schema_1: "Imagine if you are doing your inventory management manually or with Excel."
+            schema_2: "You have to calculate every day, for each of your articles:"
+            schema_3: "The re-order point."
+            schema_4: "The security level."
+            schema_5: "And the best order quantity."
+            schema_6: "I hope you like calculations!"
 
         about:
             title: "Efficient Inventory Management | About us"

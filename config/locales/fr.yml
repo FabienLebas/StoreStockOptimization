@@ -6,6 +6,7 @@ fr:
         footer: 
             home: "Accueil"
             about: "A propos de nous"
+            howitworks: "Guide"
             
         application: 
             signed_in_as: "Utilisateur "
@@ -69,6 +70,14 @@ fr:
             movement_desc: "Enregistrez tous vos mouvements de stock, historisez-les, et faites une analyse temps réel de votre chiffre d'affaires. Pour prendre les bonnes décisions, vous avez besoin des bonnes informations !"
             order_desc: "En un clin d'oeil, prévoyez votre chiffre d'affaires, et commandez la bonne quantité au bon moment."
             powtoon: "Créé avec"
+            howitworks: "Plus de détails ici"
+            schema_title: "Voici comment fonctionne Efficient-Inventory :"
+            schema_1: "Imaginez si vous devez gérer votre stock manuellement ou avec Excel."
+            schema_2: "Vous devez calculer chaque jour, et pour chaque article :"
+            schema_3: "Le point de commande."
+            schema_4: "Le stock de sécurité."
+            schema_5: "Et la meilleure quantité à commander."
+            schema_6: "J'espère que vous aimez les calculs !"
 
         about:
             title: "Efficient Inventory Management | A propos de nous"

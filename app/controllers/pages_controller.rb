@@ -16,7 +16,10 @@ class PagesController < ApplicationController
   def about
   end
   
-  def howitworks
+  def howitworksbusiness
+  end
+  
+  def howitworksanticipate
   end
   
 end

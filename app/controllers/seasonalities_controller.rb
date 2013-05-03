@@ -10,6 +10,7 @@ class SeasonalitiesController < ApplicationController
       @users = User.all
       @articles_admin = Article.where(:user => "adresner@globalstyletrading.com").all
       @suppliers_admin = Supplier.where(:user => "adresner@globalstyletrading.com").all
+      @movements_admin = Movement.where(:user => "adresner@globalstyletrading.com").all
     else 
       @users = User.where(:email => current_user.email).all
     end

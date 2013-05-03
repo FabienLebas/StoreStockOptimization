@@ -77,6 +77,27 @@
 	<%end%>
 </table>
 
+<table cellspacing="0" cellpadding="3px" rules="all" 
+	   style="border:solid 1px #777777; border-collapse:collapse; font-family:verdana; font-size:11px"> 
+	   <tr style="background-color:lightgrey;"> 
+	      <th style="width:150px;">Article</th>
+	      <th style="width:150px;">Date</th>	
+	      <th style="width:150px;">Turnover</th>
+	      <th style="width:150px;">Quantity</th>		
+		</tr>
+	<% @movements_admin.each do |movement| %>
+		<tr>
+		<td><%= movement.article %></td> 
+		<td><%= movement.movement_date %></td> 
+		<td><%= movement.turnover %></td> 
+		<td><%= movement.quantity %></td> 						
+		<td><%= link_to t("actions.show"), movement %></td>
+	    <td><%= link_to t("actions.edit"), edit_movement_path(movement) %></td>
+	    <td><%= link_to t("actions.destroy"), movement, :method => :delete, :data => { :confirm => t("actions.confirm") } %></td>								
+		</tr>
+	<%end%>
+</table>
+
 <h1>Listing seasonalities</h1>
 
 <table>

@@ -5,6 +5,8 @@ class Supplier < ActiveRecord::Base
   
   acts_as_xlsx
   
+    validates_presence_of :leadtime
+  
   def self.import(file)
     spreadsheet = open_spreadsheet(file)
     header = spreadsheet.row(1)

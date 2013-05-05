@@ -3,6 +3,8 @@ class Movement < ActiveRecord::Base
   belongs_to :article
   
   acts_as_xlsx
+  
+    validates_presence_of :article_code, :quantity, :turnover, :movement_date
 
   def self.import(file)
     spreadsheet = open_spreadsheet(file)
@@ -11,7 +13,10 @@ class Movement < ActiveRecord::Base
       row = Hash[[header, spreadsheet.row(i)].transpose]
       article = find_by_id(row["id"]) || new
       article.attributes = row.to_hash.slice(*accessible_attributes)
-      article.save!
+      if Article.where(:user => article.user, :article_code => article.article_code).empty?
+        then raise "The article code #{article.article_code} does not exist, so the movement will not be saved. Movements before are saved, movements after are not."
+      else article.save!
+      end
     end
   end
 

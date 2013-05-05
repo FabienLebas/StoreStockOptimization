@@ -3,6 +3,8 @@ class Order < ActiveRecord::Base
 
 acts_as_xlsx
 
+  validates_presence_of :article_code, :quantity, :expected_delivery_date, :supplier
+
 def self.import(file)
   spreadsheet = open_spreadsheet(file)
   header = spreadsheet.row(1)
@@ -10,7 +12,13 @@ def self.import(file)
     row = Hash[[header, spreadsheet.row(i)].transpose]
     article = find_by_id(row["id"]) || new
     article.attributes = row.to_hash.slice(*accessible_attributes)
-    article.save!
+    if Article.where(:user => article.user, :article_code => article.article_code).empty?
+      then raise "The article code #{article.article_code} does not exist, so the order will not be saved. Orders before are saved, orders after are not."
+      else if Supplier.where(:user => article.user, :supplier => article.supplier).empty?
+        then raise "The supplier code #{article.supplier} does not exist, so the order #{article.article_code} will not be saved. Orders before are saved, orders after are not."
+        else article.save!
+      end
+    end
   end
 end
 

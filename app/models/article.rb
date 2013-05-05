@@ -9,6 +9,8 @@ class Article < ActiveRecord::Base
   
   acts_as_xlsx
   
+    validates_presence_of :selling_price_inc_vat, :stock_qty, :supplier
+  
   def self.search(search)
         if search
           where('article_text LIKE ?', "%#{search}%")
@@ -36,7 +38,10 @@ class Article < ActiveRecord::Base
         row = Hash[[header, spreadsheet.row(i)].transpose]
         article = find_by_id(row["id"]) || new
         article.attributes = row.to_hash.slice(*accessible_attributes)
-        article.save!
+        if Supplier.where(:user => article.user, :supplier => article.supplier).empty? 
+          then raise "The supplier code #{article.supplier} does not exist, so the article #{article.article_code} will not be saved. Articles before are saved, articles after are not."
+          else article.save!
+          end
       end
     end
   

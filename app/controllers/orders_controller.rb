@@ -63,11 +63,15 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        order = Order.last
-        order.user = current_user.email
-        order.save
-        format.html { redirect_to @order, :notice => 'Order was successfully created.' }
-        format.json { render :json => @order, :status => :created, :location => @order }
+        if Article.where(:user => current_user.email, :article_code => @order.article_code).empty?
+          raise "The article code #{@order.article_code} does not exist, so the order will not be saved."
+          else
+            order = Order.last
+            order.user = current_user.email
+            order.save
+            format.html { redirect_to @order, :notice => 'Order was successfully created.' }
+            format.json { render :json => @order, :status => :created, :location => @order }
+          end
       else
         format.html { render :action => "new" }
         format.json { render :json => @order.errors, :status => :unprocessable_entity }

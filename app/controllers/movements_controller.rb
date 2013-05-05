@@ -61,14 +61,18 @@ class MovementsController < ApplicationController
 
     respond_to do |format|
       if @movement.save
-        article = Article.where(:article_code => @movement.article_code).first
-        article.stock_qty = article.stock_qty - @movement.quantity
-        article.save
-        movement = Movement.last
-        movement.user = current_user.email
-        movement.save
-        format.html { redirect_to @movement, :notice => 'Movement was successfully created.' }
-        format.json { render :json => @movement, :status => :created, :location => @movement }
+        if Article.where(:user => current_user.email, :article_code => @movement.article_code).empty?
+          raise "The article code #{@movement.article_code} does not exist, so the movement will not be saved."
+          else
+            article = Article.where(:article_code => @movement.article_code).first
+            article.stock_qty = article.stock_qty - @movement.quantity
+            article.save
+            movement = Movement.last
+            movement.user = current_user.email
+            movement.save
+            format.html { redirect_to @movement, :notice => 'Movement was successfully created.' }
+            format.json { render :json => @movement, :status => :created, :location => @movement }
+          end
       else
         format.html { render :action => "new" }
         format.json { render :json => @movement.errors, :status => :unprocessable_entity }

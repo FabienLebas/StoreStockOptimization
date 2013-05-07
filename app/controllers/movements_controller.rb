@@ -62,7 +62,7 @@ class MovementsController < ApplicationController
     respond_to do |format|
       if @movement.save
         if Article.where(:user => current_user.email, :article_code => @movement.article_code).empty?
-          format.html { redirect_to @movement, notice: "The article code #{@movement.article_code} does not exist, so the movement will not be saved."}
+          format.html { redirect_to @movement, :notice => "The article code #{@movement.article_code} does not exist, so the movement will not be saved."}
           else
             article = Article.where(:article_code => @movement.article_code).first
             article.stock_qty = article.stock_qty - @movement.quantity

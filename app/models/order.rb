@@ -13,9 +13,9 @@ def self.import(file)
     article = find_by_id(row["id"]) || new
     article.attributes = row.to_hash.slice(*accessible_attributes)
     if Article.where(:user => article.user, :article_code => article.article_code).empty?
-      then raise "The article code #{article.article_code} does not exist, so the order will not be saved. Orders before are saved, orders after are not."
+      then format.html { redirect_to orders_path, :notice => "The article code #{article.article_code} does not exist, so the order will not be saved. Orders before are saved, orders after are not."} 
       else if Supplier.where(:user => article.user, :supplier => article.supplier).empty?
-        then raise "The supplier code #{article.supplier} does not exist, so the order #{article.article_code} will not be saved. Orders before are saved, orders after are not."
+        then format.html { edirect_to orders_path, :notice => "The supplier code #{article.supplier} does not exist, so the order #{article.article_code} will not be saved. Orders before are saved, orders after are not."} 
         else article.save!
       end
     end

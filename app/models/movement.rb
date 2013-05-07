@@ -14,7 +14,7 @@ class Movement < ActiveRecord::Base
       article = find_by_id(row["id"]) || new
       article.attributes = row.to_hash.slice(*accessible_attributes)
       if Article.where(:user => article.user, :article_code => article.article_code).empty?
-        then raise "The article code #{article.article_code} does not exist, so the movement will not be saved. Movements before are saved, movements after are not."
+        then format.html { redirect_to movements_path, :notice => "The article code #{article.article_code} does not exist, so the movement will not be saved. Movements before are saved, movements after are not."  } 
       else article.save!
       end
     end

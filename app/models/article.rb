@@ -39,7 +39,7 @@ class Article < ActiveRecord::Base
         article = find_by_id(row["id"]) || new
         article.attributes = row.to_hash.slice(*accessible_attributes)
         if Supplier.where(:user => article.user, :supplier => article.supplier).empty? 
-          then raise "The supplier code #{article.supplier} does not exist, so the article #{article.article_code} will not be saved. Articles before are saved, articles after are not."
+          then format.html { redirect_to articles_path, :notice => "The supplier code #{article.supplier} does not exist, so the article #{article.article_code} will not be saved. Articles before are saved, articles after are not."} 
           else article.save!
           end
       end

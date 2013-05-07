@@ -64,7 +64,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         if Article.where(:user => current_user.email, :article_code => @order.article_code).empty?
-          raise "The article code #{@order.article_code} does not exist, so the order will not be saved."
+          format.html{ redirect_to @order, :notice: "The article code #{@order.article_code} does not exist, so the order will not be saved."} 
           else
             order = Order.last
             order.user = current_user.email

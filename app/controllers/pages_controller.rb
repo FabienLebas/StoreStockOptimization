@@ -22,4 +22,7 @@ class PagesController < ApplicationController
   def howitworksanticipate
   end
   
+  def quickstartguide
+  end
+  
 end

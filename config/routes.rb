@@ -12,7 +12,8 @@ StoreStockOptimization::Application.routes.draw do
     get "pages/contact"
     get "pages/about"
     get "pages/howitworksbusiness"    
-    get "pages/howitworksanticipate"    
+    get "pages/howitworksanticipate"
+    get "pages/quickstartguide"        
     
     post "movements/getTO" 
     post "movements/getTO2Dates"

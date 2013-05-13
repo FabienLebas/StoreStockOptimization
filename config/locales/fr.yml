@@ -92,7 +92,9 @@ fr:
             title_page: "A propos de nous"
             line1: "Efficient Inventory vous permet une gestion de stock efficace, essentielle pour les magasins physiques ou virtuels. Inscrivez-vous gratuitement !    "
             beta_testers_button: "S'inscrire"
-            line2: "Ce site a été créé par Fabien Lebas, spécialiste en supply chain avec une expérience de plus de 10 ans en supply chain management pour un groupe de distribution spécialisée, leader sur son marché. J'ai construit la supply chain à la fois des magasins et du e-commerce pour une entreprise de plusieurs milliards d'euros de chiffre d'affaires, dans plusieurs centaines de magasins, dans 20 pays à travers le monde et autant de sites webs."
+            line2_1: "Ce site a été créé par Fabien Lebas, spécialiste en supply chain avec une expérience de plus de 10 ans en supply chain management pour un groupe de distribution spécialisée, leader sur son marché. J'ai construit la supply chain à la fois des magasins et du e-commerce pour une entreprise de plusieurs milliards d'euros de chiffre d'affaires, dans plusieurs centaines de magasins, dans 20 pays à travers le monde et autant de sites webs."
+            line2_2: "Nous sommes une jeune startup, créée en avril 2013. Vous faites donc partie de nos premiers utilisateurs : merci ! Vous faites partie d'une nouvelle aventure, donc nous attachons un soin tout particulier à vous écouter !"
+            line2_3: "Comme nous sommes une jeune entreprise, vous bénéficiez des dernières technologies, et nous avons un coût de structure très faible. Cela vous permet de payer un prix aussi faible que possible."
             line3: "Coordonnées"
             line4: "Siège de l'entreprise :"
             line5: "Identification :"
@@ -271,6 +273,7 @@ fr:
         warning_supplier: "Le délai fournisseur est une donnée obligatoire."
         title_import: "Importez des données"
         rights_reserved: "Tous droits réservés"
+        quickstartguide: "Premiers pas"
     
     devise:
         registrations:

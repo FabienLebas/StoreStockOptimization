@@ -91,7 +91,9 @@ en:
             title_page: "About us"
             line1: "Efficient Inventory provides a tool for efficient inventory management to both physical and online stores. Subscribe for free !    "
             beta_testers_button: "Register"
-            line2: "This site was created by Fabien Lebas, suppy chain expert with a background of more than 10 years experience in supply chain management in a world leader retail chain. I have designed both the stores and the e-commerce supply chain for a company of several billions of euros turnover, in several hundreds of stores, in 20 countries around the world, and the same number of websites."
+            line2_1: "This site was created by Fabien Lebas, suppy chain expert with a background of more than 10 years experience in supply chain management in a world leader retail chain. I have designed both the stores and the e-commerce supply chain for a company of several billions of euros turnover, in several hundreds of stores, in 20 countries around the world, and the same number of websites."
+            line2_2: "We are a startup created in April 2013 so you belong to our first customers: thank you! You are part of a new adventure, so we will closely listen to what you have to tell us!"
+            line2_3: "As a young company, we are using new technologies and we have a light structure cost. This allows you to pay as less as possible."
             line3: "Details"
             line4: "We are a French company based in:"
             line5: "Company number:"
@@ -265,6 +267,7 @@ en:
         warning_supplier: "Supplier leadtime is a mandatory field."
         title_import: "Import data"
         rights_reserved: "All rights reserved"
+        quickstartguide: "Quick start guide"
         
     devise:
         registrations:

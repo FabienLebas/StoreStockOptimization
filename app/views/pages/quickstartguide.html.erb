@@ -1,0 +1,139 @@
+<title>Efficient Inventory | Quick start guide</title>
+<body>
+<h2><%= t "actions.quickstartguide"%></h2>
+<hr>
+
+<div class="home-page main">
+	<section class="grid-wrap" >
+		<div class="grid col-one-half mq2-col-full">
+			<img src="/images/schema_appro.jpg">
+		</div>
+		<div class="grid col-one-half mq2-col-full">
+			<h5>This is how Efficient-Inventory works.</h5>
+			<br/>
+			<p>Efficient Inventory does all the calculations for you.</p>
+			<p>Imagine if you are doing your inventory management manually or with Excel.</p>
+			<p>You have to calculate every day, for each of your articles:</p>
+			<dd><li>The re-order point.</li></dd>
+			<dd><li>The security level.</li></dd>
+			<dd><li>And the best order quantity.</li></dd>
+			<br/>
+			<p>I hope you like calculations!</p>	
+		</div>
+	</section>
+</div>
+
+<div class="home-page main">
+	<section class="grid-wrap" >
+		<div class="grid mq2-col-full">
+			<h5>1- Create suppliers</h5>
+			<a><%= link_to "link to supplier creation", new_supplier_path%></a>
+			<br/>
+			<br/>
+			<p>The first thing you have to do is to create your suppliers. Each article will belong to a supplier, so to create an article, you need a supplier.</p>
+			</br>
+			<h6>Leadtime</h6> 
+			<dd><p>Each supplier must have a leadtime so that Efficient Inventory can anticipate your needs.</p></dd>
+			</br>
+			<h6>Minimum of order</h6>
+			<dd><p>Usually your supplier will ask you to order a minimum quantity (e.g. a box, a pallet, ...). Your supplier might also request a minimum order value.</dd></p>
+		</div>
+	</section>
+</div>
+
+<div class="home-page main">
+	<section class="grid-wrap" >
+		<div class="grid mq2-col-full">
+			<h5>2- Create articles</h5>
+			<a><%= link_to "link to article creation", new_article_path%></a>
+			<br/>
+			<br/>
+			<p>Now that you have your suppliers, you should create the articles they provide you. One article belongs to one supplier. If 1 article can be provided by 2 suppliers, the best way to deal with it is to create 2 articles, but keep the same model code.</p>
+			<br/>
+			<h6>Categories</h6> 
+			<dd><p>If you have a limited number of articles, skip that part. But if you have more than 100, you definitely want to group them by categories.</p></dd>
+			<dd><p>Several articles belong to 1 model. For example several sizes of a t-shirt are several articles, but only 1 model.</p></dd>
+			<dd><p>Models can be grouped in families. Families can be groupes in department.</p></dd>
+			<dd><p>There is no limitation in terms of number of articles, models, families, or departments: create as many as you need!</p></dd>
+			<dd><p>Please note that turnover is stored at the article level, so if you change its model, family or department, your figures will automatically be updated.</p></dd>
+			<br/>
+			<h6>Quantities in a supplier box / Minimum of quantities</h6>
+			<dd><p>This is the quantity by which your supplier asks you to order. Example: 8. Then you can only order 8, 16, 24, ... quantities. It can be different from the minimum quantities for a supplier order. Example: your supplier might ask you to order a minimum of 16 quantities.</dd></p>
+			<br/>
+			<h6>End of life date</h6>
+			<dd><p>Sometimes you can have articles that you want to sell before a certain date. Example: if you are selling bikinis, you should sell them before the end of the summer. After this date, articles will be considered "end of life".</p></dd>
+			<br/>
+			<h6>Stock</h6>
+			<dd><p>This is the initial stock: you should use this only to declare the stock you have at the beginning. Any other stock movement (countings, damaged, lost, ...) should be declared as an appropriate stock movement.</dd></p>
+		</div>
+	</section>
+</div>
+
+<div class="home-page main">
+	<section class="grid-wrap" >
+		<div class="grid mq2-col-full">
+			<h5>3- Create stock movements</h5>
+			<a><%= link_to "link to stock movements creation", new_movement_path%></a>
+			<br/>
+			<br/>
+			<p>Now you are ready! Every time you are selling something, please create an entry. Please create an entry for all your stock movements so that you can keep track on it.</p>
+			</br>
+			<h6>Turnover / Quantity</h6> 
+			<dd><p>Turnover and quantities sold will be used to calculate your average sales and update your stock level.</p></dd>
+			</br>
+			<h6>Movement type</h6>
+			<dd><p>Here you can enter what you want, just for you to remember what it was.</dd></p>
+		</div>
+	</section>
+</div>
+
+<div class="home-page main">
+	<section class="grid-wrap" >
+		<div class="grid mq2-col-full">
+			<h5>4- Orders</h5>
+			<a><%= link_to "link to order creation", new_order_path%></a>
+			<br/>
+			<br/>
+			<p>You sold quite a few, you now have to re-order!</p>
+			</br>
+			<h6>Expected delivery date</h6> 
+			<dd><p>This date will be used to calculate your forecasted stock level. If you have any news after the creation date, you should update this date to ensure good calculations</p></dd>
+			</br>
+		</div>
+	</section>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39387548-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/hlxue2ubt7UDnjVGtP7TlA.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+
+<!-- A tab to launch the Classic Widget -->
+<script>
+UserVoice = window.UserVoice || [];
+UserVoice.push(['showTab', 'classic_widget', {
+  mode: 'full',
+  primary_color: '#cc6d00',
+  link_color: '#007dbf',
+  default_mode: 'support',
+  forum_id: 198413,
+  tab_label: 'Feedback & Support',
+  tab_color: '#cc6d00',
+  tab_position: 'middle-right',
+  tab_inverted: false
+}]);
+</script>
+
+</body>

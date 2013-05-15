@@ -27,8 +27,8 @@ fr:
             
     pages:
         home:
-            title: "Bienvenue chez vous !"
-            meta: "Efficient Inventory vous permet une gestion de stock efficace, essentielle pour les magasins physiques et virtuels. Inscrivez-vous maintenant !"
+            title: "1er mois gratuit !"
+            meta: "Efficient Inventory vous permet une gestion de stock efficace, essentielle pour les magasins physiques et virtuels. Inscrivez-vous maintenant ! Premier mois gratuit"
             paragraph1_title1: "Magasin ? E-commerçant ?"
             paragraph1_title2: "Nous vous proposons un logiciel de gestion des stocks pour :"
             paragraph1_1: "Gérer votre stock"
@@ -287,18 +287,22 @@ fr:
                 text6: "Réponse du support garantie en 24h, 365 jours par an."
                 text7: "Confidentialité garantie pour vos données et votre adresse email."
                 choose: "Faites votre choix"
-                title_option2: "Offre découverte"
-                text_option2: "Commencez à utiliser dès maintenant ! Découvrez Efficient Inventory à votre rythme."
-                text_option22: "Utilisez votre mois pour découvrir nos services, découvrez toutes les fonctionnalités. A l'issue du mois, vous choisirez de reprendre soit un mois, soit un an."
+                title_option1: "1er mois gratuit"
+                text_option1: "Vous avez 1 mois pour découvrir, alors n'hésitez pas !"
+                text_option12: "A l'issue du mois, vous choisirez de reprendre soit un mois, soit un an."
+                title_option2: "1 mois"
+                text_option2: "Vous n'avez besoin de gestion de stock que pendant quelques mois ?"
+                text_option22: "Cette offre est pour vous !"
                 title_option3: "Abonnement 1 an"
                 text_option3: "Profitez de 2 mois gratuits en prenant l'abonnement 1 an ! "
                 text_option32: "Une bonne gestion de votre stock vous permettra de gagner bien plus que 90€ !"
                 text_option33: "On constate que la mise en place d'une bonne gestion de stock débouche en moyenne sur une progression de chiffre d'affaires de 5% et une baisse du niveau de stock de 10% !"                
-                register_beta: "Créez votre profil et choisissez votre offre à la prochaine étape"
+                register_beta: "Créez votre profil maintenant et commencez à utilisez gratuitement !"
                 1month: "1 mois"
                 1year: "1 an"
                 button: "Acheter"
                 Paypal: "Le paiement est sécurisé par Paypal, mais il n'est pas nécessaire d'avoir un compte Paypal pour payer."
+                free: 'Gratuit !'
 
     date:
         formats:

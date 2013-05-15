@@ -1,5 +1,5 @@
 <title>Efficient Inventory | <%= t "layouts.application.register"%></title>
-<hr>
+	<hr>
 <h2><%= t "devise.registrations.new.title1"%></h2>
 <p><dd><%= t "devise.registrations.new.text1"%></dd></p>
 <p><dd><%= t "devise.registrations.new.text2"%></p></dd>
@@ -13,24 +13,33 @@
 <h2><%= t "devise.registrations.new.choose"%></h2>
 
 <section class="services grid-wrap">
-	<article class="grid col-one-half mq3-col-full">
-		<aside>01</aside>
+	<article class="grid col-one-third mq3-col-full">
+		<aside>1</aside>
+		<h4><%= t "devise.registrations.new.title_option1"%></h4>
+		<p><%= t "devise.registrations.new.text_option1"%></p>
+		<p><%= t "devise.registrations.new.text_option12"%></p>
+	</article>
+	<article class="grid col-one-third mq3-col-full">
+		<aside>2</aside>
 		<h4><%= t "devise.registrations.new.title_option2"%></h4>
 		<p><%= t "devise.registrations.new.text_option2"%></p>
 		<p><%= t "devise.registrations.new.text_option22"%></p>	
 	</article>	
-	<article class="grid col-one-half mq3-col-full">
-		<aside>02</aside>
+	<article class="grid col-one-third mq3-col-full">
+		<aside>3</aside>
 		<h4><%= t "devise.registrations.new.title_option3"%></h4>
 		<p><%= t "devise.registrations.new.text_option3"%></p>
 		<p><%= t "devise.registrations.new.text_option32"%></p>
-	</article>
+	</article>	
 </section>
 <section class="services grid-wrap">	
-	<article class="grid col-one-half mq3-col-full">
+	<article class="grid col-one-third mq3-col-full">
+		<h4><%= t "devise.registrations.new.free"%></h4>
+	</article>
+	<article class="grid col-one-third mq3-col-full">
 		<h4>9€ / <%= t "time.prompts.month"%></h4>
 	</article>	
-	<article class="grid col-one-half mq3-col-full">
+	<article class="grid col-one-third mq3-col-full">
 		<h4>90€ / <%= t "time.prompts.year"%></h4>
 	</article>
 </section>

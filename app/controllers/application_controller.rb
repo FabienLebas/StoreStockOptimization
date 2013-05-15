@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   # Devise: Where to redirect users once they have logged in
     def after_sign_in_path_for(resource)
-     new_subscription_path # <- Path you want to redirect the user to.
+     pages_quickstartguide_path # <- Path you want to redirect the user to.
     end
   
   private

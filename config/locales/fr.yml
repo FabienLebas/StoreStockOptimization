@@ -78,6 +78,7 @@ fr:
             schema_4: "Le stock de sécurité."
             schema_5: "Et la meilleure quantité à commander."
             schema_6: "J'espère que vous aimez les calculs !"
+            pricing: "Prix"
 
         about:
             title: "Efficient Inventory Management | A propos de nous"

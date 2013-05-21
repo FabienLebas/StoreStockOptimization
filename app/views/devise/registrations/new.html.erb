@@ -1,6 +1,17 @@
 <title>Efficient Inventory | <%= t "layouts.application.register"%></title>
-	<hr>
-<h2><%= t "devise.registrations.new.title1"%></h2>
+
+<article id="navtabs" class="grid col-full">
+	<ul class="tabs clearfix">
+	    <li><%= link_to t("layouts.footer.home"), root_path %></li>
+		<li><%= link_to t("layouts.footer.howitworks"), pages_howitworksbusiness_path%></li>
+	  	<li><%= link_to t("actions.quickstartguide"), pages_quickstartguide_path%></li>
+		<li><%= link_to t(".pricing"), new_user_registration_path %></li>
+		<li><%= link_to t("layouts.footer.about"), pages_about_path %></li>
+	</ul>
+</article>
+<br/>	
+	
+<h2><br/><%= t "devise.registrations.new.title1"%></h2>
 <p><dd><%= t "devise.registrations.new.text1"%></dd></p>
 <p><dd><%= t "devise.registrations.new.text2"%></p></dd>
 <p><dd><%= t "devise.registrations.new.text3"%></p></dd>

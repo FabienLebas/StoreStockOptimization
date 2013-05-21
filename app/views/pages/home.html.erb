@@ -17,10 +17,20 @@
 </head>
 
 <body>
+	
+<article id="navtabs" class="grid col-full">
+	<ul class="tabs clearfix">
+	    <li><%= link_to t("layouts.footer.home"), root_path %></li>
+		<li><%= link_to t("layouts.footer.howitworks"), pages_howitworksbusiness_path%></li>
+	  	<li><%= link_to t("actions.quickstartguide"), pages_quickstartguide_path%></li>
+		<li><%= link_to t(".pricing"), new_user_registration_path %></li>
+		<li><%= link_to t("layouts.footer.about"), pages_about_path %></li>
+	</ul>
+</article>
+	
 <div class="home-page main">
 	<section class="grid-wrap" >
 		<header class="grid col-full">
-			<hr>
 		</header>
 		<div class="grid col-one-half mq2-col-full">
 <h1><%= t ".title"%></h1>

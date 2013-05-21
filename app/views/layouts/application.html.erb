@@ -24,8 +24,8 @@
   <body>
     <div class="container">
       <header id="navtop">
-				<img src="/images/logo.jpg" alt="Efficient-Inventory" class="logo fleft">
-				<img src="/images/logo_text_beta.jpg" alt="Efficient-Inventory-text" class="logo fleft">	
+				<%= link_to image_tag("/images/logo.jpg"), root_path%>				
+				<%= link_to image_tag("/images/logo_text_beta.jpg"), root_path%>
 		<nav class="fright">
 			<% if user_signed_in? %>
 				<ul><%= link_to t(".suppliers"), suppliers_path%></ul>				

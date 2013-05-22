@@ -269,6 +269,7 @@ en:
         title_import: "Import data"
         rights_reserved: "All rights reserved"
         quickstartguide: "Quick start guide"
+        pricing: "Pricing"
         
     devise:
         registrations:

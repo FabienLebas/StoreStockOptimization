@@ -1,43 +1,27 @@
 StoreStockOptimization::Application.routes.draw do
+   
+   get "reporting/best_sellers"
+   get "reporting/slow_movers"
+   get "reporting/end_life"
 
-
-
-  get "reporting/best_sellers"
-
-  get "reporting/slow_movers"
-
-  get "reporting/end_life"
-
-    get "pages/home"
-    get "pages/contact"
-    get "pages/about"
-    get "pages/howitworksbusiness"    
-    get "pages/howitworksanticipate"
-    get "pages/quickstartguide"        
-    
-    post "movements/getTO" 
-    post "movements/getTO2Dates"
-    post "movements/getStartDate" 
-    
-    resources :articles do
-      collection { post :import}
-    end    
-    resources :suppliers do
-      collection { post :import}
-    end
-    resources :movements do
-      collection { post :import}
-    end
-    resources :orders do
-      collection { post :import}
-    end
-    
+     get "pages/home"
+     get "pages/contact"
+     get "pages/about"
+     get "pages/howitworksbusiness"    
+     get "pages/howitworksanticipate"
+     get "pages/quickstartguide"     
+           
+     post "movements/getTO" 
+     post "movements/getTO2Dates"
+     post "movements/getStartDate"
+     
+     match "en/pages/about" => "pages#about"
+              
   devise_for :users
   
-  scope :path => ":locale" do
-  resources :ei_products
-  resources :subscriptions
-
+scope "(:locale)", :locale => /en|fr/ do 
+    resources :ei_products
+    resources :subscriptions
     resources :seasonalities
     resources :planned_orders
     resources :orders
@@ -51,8 +35,18 @@ StoreStockOptimization::Application.routes.draw do
     match 'movements/getTO', to: redirect("movements/getTO")
     match '', to: redirect("/#{I18n.default_locale}")
 
-
- 
+    resources :articles do
+      collection { post :import}
+    end    
+    resources :suppliers do
+      collection { post :import}
+    end
+    resources :movements do
+      collection { post :import}
+    end
+    resources :orders do
+      collection { post :import}
+    end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
